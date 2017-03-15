@@ -14,6 +14,9 @@ class MainViewController: UIViewController {
   @IBOutlet weak var indexLabel: UILabel!
   @IBOutlet weak var descriptionTextView: UITextView!
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
