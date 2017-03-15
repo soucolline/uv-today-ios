@@ -52,7 +52,20 @@ class MainViewController: UIViewController {
 
 extension MainViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let location = manager.location?.coordinate
+    guard let latitude = manager.location?.coordinate.latitude,
+      let longitude = manager.location?.coordinate.longitude else {
+        return
+    }
+    
+    let location = CLLocation(latitude: latitude, longitude: longitude)
+    let geoCoder = CLGeocoder()
+    geoCoder.reverseGeocodeLocation(location, completionHandler: { placemarks, error in
+      if let placemarkArray = placemarks, let placemark = placemarkArray.first {
+        self.cityLabel.text = "Ville : \(placemark.locality ?? "Inconnue")"
+      } else {
+        self.cityLabel.text = "Inconnue"
+      }
+    })
     print("location = \(location)")
   }
   
