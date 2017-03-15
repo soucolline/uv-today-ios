@@ -22,6 +22,8 @@
 		EBF4B7771E79924700B7A616 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */; };
 		EBF4B7781E79924700B7A616 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */; };
 		EBF4B7791E79924700B7A616 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */; };
+		EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77B1E799BE500B7A616 /* Color.swift */; };
+		EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77E1E799CB500B7A616 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		EBF4B77B1E799BE500B7A616 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EBF4B77E1E799CB500B7A616 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		EBF4B7631E79917000B7A616 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				EBF4B77D1E799CA600B7A616 /* Extensions */,
+				EBF4B77A1E799BC600B7A616 /* Models */,
 				EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */,
 				EBF4B7611E79551B00B7A616 /* MainViewController.swift */,
 				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
@@ -116,6 +122,22 @@
 				EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		EBF4B77A1E799BC600B7A616 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B77B1E799BE500B7A616 /* Color.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EBF4B77D1E799CA600B7A616 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B77E1E799CB500B7A616 /* UIColor.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */,
+				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,
 				EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */,
+				EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
