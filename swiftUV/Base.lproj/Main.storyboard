@@ -31,8 +31,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mZ-Zh-sOH">
-                                <rect key="frame" x="176.5" y="306" width="23" height="54.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="40"/>
+                                <rect key="frame" x="165" y="279" width="46" height="109"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,7 +44,6 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="0Zq-iF-Mer">
                                 <rect key="frame" x="16" y="519" width="343" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="ZOg-WN-o7D"/>
                                 </constraints>
@@ -64,6 +63,11 @@
                             <constraint firstAttribute="bottom" secondItem="0Zq-iF-Mer" secondAttribute="bottom" constant="20" symbolic="YES" id="q7G-75-jdi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="8iu-x2-6JO" id="LcP-yr-9Zm"/>
+                        <outlet property="descriptionTextView" destination="0Zq-iF-Mer" id="9ga-82-Ahr"/>
+                        <outlet property="indexLabel" destination="5mZ-Zh-sOH" id="4P2-TR-RdD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
