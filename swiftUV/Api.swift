@@ -18,7 +18,7 @@ enum Api {
   var url: String {
     switch(self) {
       case .UVFromLocation(let latitude, let longitude):
-        return "http://api.aerisapi.com/forecasts/\(latitude),\(longitude)?client_id=\(API_CLIENT_ID)&client_secret=\(API_CLIENT_SECRET)"
+        return "https://api.aerisapi.com/forecasts/\(latitude),\(longitude)?client_id=\(API_CLIENT_ID)&client_secret=\(API_CLIENT_SECRET)"
     }
   }
 }
