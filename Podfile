@@ -8,5 +8,6 @@ target 'swiftUV' do
   # Pods for swiftUV
   pod 'Just'
   pod 'SwiftyJSON'
+  pod 'MBProgressHUD', '~> 1.0.0'
 
 end

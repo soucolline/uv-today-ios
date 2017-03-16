@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Just
 import SwiftyJSON
+import MBProgressHUD
 
 class MainViewController: UIViewController {
   
@@ -31,17 +32,24 @@ class MainViewController: UIViewController {
     
     // Add default backgroundColor
     self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: 2))
-    // Put all texts in white
+    // Put all texts in white + reset value
     self.cityLabel.textColor = UIColor.white
+    self.cityLabel.text = "Ville : -"
     self.indexLabel.textColor = UIColor.white
+    self.indexLabel.text = "-"
     self.descriptionTextView.textColor = UIColor.white
+    self.descriptionTextView.text = ""
     
     // Search for location
     if CLLocationManager.locationServicesEnabled() {
       self.locationManager.requestAlwaysAuthorization()
       self.locationManager.delegate = self
       self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+      let loader = MBProgressHUD.showAdded(to: self.view, animated: true)
+      loader.label.text = "Téléchargement des données en cours"
       self.locationManager.requestLocation()
+    } else {
+      print("No location service enabled")
     }
   }
   
