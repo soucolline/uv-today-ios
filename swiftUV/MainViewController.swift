@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     self.indexLabel.textColor = UIColor.white
     self.descriptionTextView.textColor = UIColor.white
     
+    // Search for location
     if CLLocationManager.locationServicesEnabled() {
       self.locationManager.requestAlwaysAuthorization()
       self.locationManager.delegate = self
@@ -67,6 +68,7 @@ extension MainViewController: CLLocationManagerDelegate {
       }
     })
     print("location = \(location)")
+    print(Api.UVFromLocation(latitude, longitude).url)
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
