@@ -94,8 +94,11 @@ extension MainViewController: CLLocationManagerDelegate {
       let jsonResponse = JSON(apiResponse.json as Any)
       let uvIndex = jsonResponse["response"].first?.1["periods"].first?.1["uvi"].intValue ?? 0
       self.indexLabel.text = "\(uvIndex)"
-      self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
+      UIView.animate(withDuration: 1.0, animations: {
+        self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
+      })
       self.descriptionTextView.text = self.getDescription(index: uvIndex)
+      MBProgressHUD.hide(for: self.view, animated: true)
     } else {
       print("not ok")
     }
