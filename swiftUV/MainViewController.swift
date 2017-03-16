@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import Just
+import SwiftyJSON
 
 class MainViewController: UIViewController {
   
@@ -69,6 +71,16 @@ extension MainViewController: CLLocationManagerDelegate {
     })
     print("location = \(location)")
     print(Api.UVFromLocation(latitude, longitude).url)
+    
+    let apiResponse = Just.get(Api.UVFromLocation(latitude, longitude).url)
+    if apiResponse.ok { 
+      let jsonResponse = JSON(apiResponse.json as Any)
+      let uvIndex = jsonResponse["response"].first?.1["periods"].first?.1["uvi"].intValue ?? 0
+      self.indexLabel.text = "\(uvIndex)"
+      self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
+    } else {
+      print("not ok")
+    }
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
