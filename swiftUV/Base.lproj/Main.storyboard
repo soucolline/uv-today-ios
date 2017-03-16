@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -42,10 +42,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="0Zq-iF-Mer">
-                                <rect key="frame" x="16" y="519" width="343" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="0Zq-iF-Mer">
+                                <rect key="frame" x="16" y="550" width="343" height="97"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ZOg-WN-o7D"/>
+                                    <constraint firstAttribute="width" constant="343" id="gHU-sQ-oC3"/>
+                                    <constraint firstAttribute="width" secondItem="0Zq-iF-Mer" secondAttribute="height" multiplier="343:97" placeholder="YES" id="uGB-N9-XWX"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
@@ -55,12 +56,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5mZ-Zh-sOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6R7-ln-9Q2"/>
-                            <constraint firstItem="0Zq-iF-Mer" firstAttribute="centerX" secondItem="5mZ-Zh-sOH" secondAttribute="centerX" id="IRc-WS-ruK"/>
                             <constraint firstItem="5mZ-Zh-sOH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UEZ-Rv-qnq"/>
                             <constraint firstItem="8iu-x2-6JO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z6v-ge-0gs"/>
+                            <constraint firstItem="0Zq-iF-Mer" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="czL-4G-hTU"/>
                             <constraint firstItem="8iu-x2-6JO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="gcP-ny-4a4"/>
-                            <constraint firstItem="0Zq-iF-Mer" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lgT-Hm-370"/>
-                            <constraint firstAttribute="bottom" secondItem="0Zq-iF-Mer" secondAttribute="bottom" constant="20" symbolic="YES" id="q7G-75-jdi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Zq-iF-Mer" secondAttribute="bottom" constant="20" id="wz8-vV-VZS"/>
                         </constraints>
                     </view>
                     <connections>

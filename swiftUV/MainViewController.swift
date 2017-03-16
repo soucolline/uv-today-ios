@@ -51,6 +51,23 @@ class MainViewController: UIViewController {
     }
   }
   
+  func getDescription(index: Int) -> String {
+    switch index {
+    case 1, 2:
+      return "Port de lunettes de soleil en cas de journées ensoleillées."
+    case 3, 4, 5:
+      return "Se couvrir et porter un chapeau et des lunettes de soleil. Appliquer un écran solaire de protection moyenne (indice de protection de 15 à 29), surtout pour une exposition à l’extérieur pendant plus de trente minutes. Rechercher l’ombre aux alentours de midi, quand le soleil est au zénith."
+    case 6, 7:
+      return "Réduire l’exposition entre 11 h et 16 h. Appliquer un écran solaire de haute protection (indice de 30 à 50), porter un chapeau et des lunettes de soleil, et se placer à l’ombre.Réduire l’exposition entre 11 h et 16 h. Appliquer un écran solaire de haute protection (indice de 30 à 50), porter un chapeau et des lunettes de soleil, et se placer à l’ombre."
+    case 8, 9, 10:
+      return "Sans protection, la peau sera endommagée et peut brûler. L’exposition au soleil peut être dangereuse entre 11 h et 16 h ; la recherche de l’ombre est donc importante. Sont recommandables le port de vêtements longs, d'un chapeau et de lunettes de soleil, ainsi que l'application d'un écran solaire de très haute protection (indice + 50)."
+    case 11:
+      return "La peau non protégée sera endommagée et peut brûler en quelques minutes. Toute exposition au soleil est dangereuse, et en cas de sortie il faut se couvrir absolument (chapeau, lunettes de soleil, application d'un écran solaire de très haute protection d'indice + 50)."
+    default:
+      return "Un problème est survenue, veuillez relancer l'application"
+    }
+  }
+  
 }
 
 extension MainViewController: CLLocationManagerDelegate {
@@ -78,6 +95,7 @@ extension MainViewController: CLLocationManagerDelegate {
       let uvIndex = jsonResponse["response"].first?.1["periods"].first?.1["uvi"].intValue ?? 0
       self.indexLabel.text = "\(uvIndex)"
       self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
+      self.descriptionTextView.text = self.getDescription(index: uvIndex)
     } else {
       print("not ok")
     }
