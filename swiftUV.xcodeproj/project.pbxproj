@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
+		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */; };
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.debug.xcconfig"; sourceTree = "<group>"; };
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
+		EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
 		EBF4B74C1E7951D400B7A616 /* swiftUV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF4B7541E7951D400B7A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				EBF4B77B1E799BE500B7A616 /* Color.swift */,
 				EBF4B7801E79BFA200B7A616 /* Api.swift */,
+				EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */,
 				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,
+				EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */,
 				EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */,
 				EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */,
 				EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */,
@@ -469,6 +473,7 @@
 				EBF4B7601E7951D400B7A616 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
