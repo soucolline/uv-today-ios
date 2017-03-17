@@ -11,7 +11,7 @@ import PopupDialog
 
 class PopupManager {
   static func errorPopup(message: String) -> PopupDialog {
-    let title = "Erreur"
+    let title = "Erreur".localized
     let popup = PopupDialog(title: title, message: message, image: nil, transitionStyle: .zoomIn, gestureDismissal: true)
     let okButton = DefaultButton(title: "Ok", dismissOnTap: true, action: nil)
     popup.addButton(okButton)

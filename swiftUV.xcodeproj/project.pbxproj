@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
+		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
+		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */; };
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
@@ -34,6 +36,9 @@
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
+		EBCAA0401E7C30A200DC2E9D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EBCAA0461E7C30F000DC2E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EBCAA0481E7C30F200DC2E9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBF4B74C1E7951D400B7A616 /* swiftUV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF4B7541E7951D400B7A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +90,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EBCAA0421E7C30CE00DC2E9D /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				EBCAA0471E7C30F000DC2E9D /* Localizable.strings */,
+			);
+			name = Translation;
+			sourceTree = "<group>";
+		};
 		EBF4B7431E7951D300B7A616 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +143,7 @@
 		EBF4B7641E79918100B7A616 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBCAA0421E7C30CE00DC2E9D /* Translation */,
 				EBF4B7651E79919100B7A616 /* Fonts */,
 			);
 			name = Resources;
@@ -158,6 +172,7 @@
 				EBF4B77B1E799BE500B7A616 /* Color.swift */,
 				EBF4B7801E79BFA200B7A616 /* Api.swift */,
 				EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */,
+				EBCAA0401E7C30A200DC2E9D /* String.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -236,6 +251,7 @@
 				EBF4B7781E79924700B7A616 /* OpenSans-Semibold.ttf in Resources */,
 				EBF4B7791E79924700B7A616 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */,
+				EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */,
 				EBF4B7771E79924700B7A616 /* OpenSans-Regular.ttf in Resources */,
 				EBF4B7741E79924700B7A616 /* OpenSans-Italic.ttf in Resources */,
 				EBF4B7731E79924700B7A616 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
@@ -308,6 +324,7 @@
 				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,
 				EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */,
 				EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */,
+				EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */,
 				EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */,
 				EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */,
 			);
@@ -316,6 +333,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		EBCAA0471E7C30F000DC2E9D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBCAA0461E7C30F000DC2E9D /* Base */,
+				EBCAA0481E7C30F200DC2E9D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EBF4B7531E7951D400B7A616 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
