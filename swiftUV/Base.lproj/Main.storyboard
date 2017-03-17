@@ -31,21 +31,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mZ-Zh-sOH">
-                                <rect key="frame" x="164.5" y="279.5" width="46" height="109"/>
+                                <rect key="frame" x="165" y="279" width="46" height="109"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville : Gueugnon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iu-x2-6JO">
-                                <rect key="frame" x="120.5" y="50" width="134" height="24"/>
+                                <rect key="frame" x="121" y="50" width="133.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="0Zq-iF-Mer">
-                                <rect key="frame" x="16" y="550" width="343" height="97"/>
+                                <rect key="frame" x="20" y="552.5" width="335" height="94.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="gHU-sQ-oC3"/>
                                     <constraint firstAttribute="width" secondItem="0Zq-iF-Mer" secondAttribute="height" multiplier="343:97" placeholder="YES" id="uGB-N9-XWX"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
@@ -55,7 +54,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0Zq-iF-Mer" secondAttribute="trailing" constant="20" id="1G2-Uv-KzC"/>
                             <constraint firstItem="5mZ-Zh-sOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6R7-ln-9Q2"/>
+                            <constraint firstItem="0Zq-iF-Mer" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7BO-g3-Pm8"/>
                             <constraint firstItem="5mZ-Zh-sOH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UEZ-Rv-qnq"/>
                             <constraint firstItem="8iu-x2-6JO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z6v-ge-0gs"/>
                             <constraint firstItem="0Zq-iF-Mer" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="czL-4G-hTU"/>
