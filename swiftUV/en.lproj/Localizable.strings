@@ -11,7 +11,7 @@
 "Vous avez désactivé la location" = "You disabled location service";
 "Inconnue" = "Unknown";
 "Une erreur est survenue, veuillez relancer l'application" = "An error occured, please restart the app";
-"Impossible de vous localiser" = "Could not your location";
+"Impossible de vous localiser" = "Could not find your location";
 "Erreur" = "Error";
 
 // Description
