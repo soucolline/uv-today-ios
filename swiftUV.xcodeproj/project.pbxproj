@@ -457,6 +457,7 @@
 			baseConfigurationReference = 4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -472,6 +473,7 @@
 			baseConfigurationReference = 84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
