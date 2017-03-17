@@ -32,12 +32,9 @@ class MainViewController: UIViewController {
     
     // Add default backgroundColor
     self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: 0))
-    // Put all texts in white + reset value
-    self.cityLabel.textColor = UIColor.white
+    // Show default values
     self.cityLabel.text = "Ville".localized + " : -"
-    self.indexLabel.textColor = UIColor.white
     self.indexLabel.text = "-"
-    self.descriptionTextView.textColor = UIColor.white
     self.descriptionTextView.text = ""
     
     // Search for location
