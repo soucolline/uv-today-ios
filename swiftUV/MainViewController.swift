@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
       NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     
     // Add default backgroundColor
-    self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: 2))
+    self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: 0))
     // Put all texts in white + reset value
     self.cityLabel.textColor = UIColor.white
     self.cityLabel.text = "Ville : -"

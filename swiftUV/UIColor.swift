@@ -29,6 +29,8 @@ extension UIColor {
   
   public final class func colorFromIndex(index: Int) -> UInt32 {
     switch index {
+    case 0: // Default
+      return Color.blue.rawValue
     case 1, 2:
       return Color.green.rawValue
     case 3, 4, 5:

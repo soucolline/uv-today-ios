@@ -9,6 +9,7 @@
 import Foundation
 
 enum Color: UInt32 {
+  case blue = 0x3498db //Default / splash
   case green = 0x2ECC71
   case yellow = 0xF1C40F
   case lightRed = 0xE74C3C
