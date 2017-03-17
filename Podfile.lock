@@ -1,18 +1,21 @@
 PODS:
   - Just (0.5.7)
   - MBProgressHUD (1.0.0)
+  - PopupDialog (0.5.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Just
   - MBProgressHUD (~> 1.0.0)
+  - PopupDialog (~> 0.5)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Just: d19e769d86b965e39ae58cb3c0cbad07706634a8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: c724aa336fd848e2779707ce052a8008cf468882
+PODFILE CHECKSUM: c5ac9bc19b17613aa5e298789c52bdb86409e62b
 
 COCOAPODS: 1.2.0

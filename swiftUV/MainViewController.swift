@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
       loader.label.text = "Téléchargement des données en cours"
       self.locationManager.requestLocation()
     } else {
-      print("No location service enabled")
+      self.present(PopupManager.errorPopup(message: "Vous avez désactivé la location"), animated: true)
     }
   }
   
@@ -108,11 +108,17 @@ extension MainViewController: CLLocationManagerDelegate {
       self.descriptionTextView.text = self.getDescription(index: uvIndex)
       MBProgressHUD.hide(for: self.view, animated: true)
     } else {
-      print("not ok")
+      MBProgressHUD.hide(for: self.view, animated: true)
+      self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application"), animated: true)
+      self.descriptionTextView.text = self.getDescription(index: -1)
+      print("ERROR ==> \(apiResponse.error?.localizedDescription)")
     }
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    self.present(PopupManager.errorPopup(message: "Impossible de vous localiser"), animated: true)
+    self.descriptionTextView.text = self.getDescription(index: -1)
+    MBProgressHUD.hide(for: self.view, animated: true)
     print("Error ==> \(error.localizedDescription)")
   }
 }
