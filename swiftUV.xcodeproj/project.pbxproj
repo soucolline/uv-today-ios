@@ -198,6 +198,7 @@
 				EBF4B74A1E7951D300B7A616 /* Resources */,
 				8DAFA6781280E0C278DF29AA /* [CP] Embed Pods Frameworks */,
 				11D16528E57C1F86DDC72DCD /* [CP] Copy Pods Resources */,
+				244B7BDE1E8EE49200B6E84F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -282,6 +283,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		244B7BDE1E8EE49200B6E84F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6abd8c020462b87ae70facaec8d3bd0f4b47942b 5a8a1868eef3cd55f7d6b868cf930b6ccb1828ba5edc0b524f4ba0bebd28248f";
 		};
 		8DAFA6781280E0C278DF29AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

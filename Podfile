@@ -10,5 +10,7 @@ target 'swiftUV' do
   pod 'SwiftyJSON'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'PopupDialog', '~> 0.5'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end
