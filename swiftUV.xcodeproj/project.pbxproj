@@ -35,6 +35,9 @@
 		4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.debug.xcconfig"; sourceTree = "<group>"; };
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
+		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
 		EBCAA0401E7C30A200DC2E9D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EBCAA0461E7C30F000DC2E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -233,6 +236,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = EBF4B7431E7951D300B7A616;
 			productRefGroup = EBF4B74D1E7951D400B7A616 /* Products */;
@@ -352,6 +356,7 @@
 			children = (
 				EBCAA0461E7C30F000DC2E9D /* Base */,
 				EBCAA0481E7C30F200DC2E9D /* en */,
+				EBC1904F1E8EEAB600B9F2EC /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EBF4B7541E7951D400B7A616 /* Base */,
+				EBC1904D1E8EEAB600B9F2EC /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EBF4B7591E7951D400B7A616 /* Base */,
+				EBC1904E1E8EEAB600B9F2EC /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -379,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -428,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
