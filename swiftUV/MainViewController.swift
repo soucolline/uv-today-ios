@@ -83,10 +83,10 @@ class MainViewController: UIViewController {
   func refresh() {
     self.searchLocation()
     UIView.animate(withDuration:0.5, animations: { () -> Void in
-      self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+      self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
     })
     UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: { () -> Void in
-      self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI * 2))
+      self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 2))
     }, completion: nil)
   }
   
@@ -125,7 +125,7 @@ extension MainViewController: CLLocationManagerDelegate {
       MBProgressHUD.hide(for: self.view, animated: true)
       self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
       self.descriptionTextView.text = self.getDescription(index: -1)
-      print("ERROR ==> \(apiResponse.error?.localizedDescription)")
+      print("ERROR ==> \(String(describing: apiResponse.error?.localizedDescription))")
     }
   }
   
