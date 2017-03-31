@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var cityLabel: UILabel!
   @IBOutlet weak var indexLabel: UILabel!
   @IBOutlet weak var descriptionTextView: UITextView!
+  @IBOutlet weak var refreshBtn: UIImageView!
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -37,7 +38,15 @@ class MainViewController: UIViewController {
     self.indexLabel.text = "-"
     self.descriptionTextView.text = ""
     
-    // Search for location
+    // Enable refesh on btn
+    let tap = UITapGestureRecognizer(target: self, action: #selector(refresh))
+    self.refreshBtn.isUserInteractionEnabled = true
+    self.refreshBtn.addGestureRecognizer(tap)
+    
+    self.searchLocation()
+  }
+  
+  func searchLocation() {
     if CLLocationManager.locationServicesEnabled() {
       self.locationManager.requestAlwaysAuthorization()
       self.locationManager.delegate = self
@@ -51,9 +60,7 @@ class MainViewController: UIViewController {
   }
   
   func appReturnedFromBackground() {
-    if CLLocationManager.locationServicesEnabled() {
-      self.locationManager.requestLocation()
-    }
+    self.searchLocation()
   }
   
   func getDescription(index: Int) -> String {
@@ -71,6 +78,16 @@ class MainViewController: UIViewController {
     default:
       return "Une erreur est survenue, veuillez relancer l'application".localized
     }
+  }
+  
+  func refresh() {
+    self.searchLocation()
+    UIView.animate(withDuration:0.5, animations: { () -> Void in
+      self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+    })
+    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: { () -> Void in
+      self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI * 2))
+    }, completion: nil)
   }
   
 }

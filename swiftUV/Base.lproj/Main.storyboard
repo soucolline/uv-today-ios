@@ -78,6 +78,7 @@
                         <outlet property="cityLabel" destination="8iu-x2-6JO" id="LcP-yr-9Zm"/>
                         <outlet property="descriptionTextView" destination="0Zq-iF-Mer" id="9ga-82-Ahr"/>
                         <outlet property="indexLabel" destination="5mZ-Zh-sOH" id="4P2-TR-RdD"/>
+                        <outlet property="refreshBtn" destination="Q85-hO-06c" id="lQt-YK-9Jr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
