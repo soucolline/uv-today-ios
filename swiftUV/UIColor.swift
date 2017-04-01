@@ -39,7 +39,7 @@ extension UIColor {
       return Color.lightRed.rawValue
     case 8, 9, 10:
       return Color.darkRed.rawValue
-    case 11:
+    case 11, 12, 13, 14:
       return Color.violet.rawValue
     default:
       return 0x333333
