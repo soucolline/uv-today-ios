@@ -1,0 +1,28 @@
+PODS:
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
+  - Just (0.5.7)
+  - MBProgressHUD (1.0.0)
+  - PopupDialog (0.5.4)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Crashlytics
+  - Fabric
+  - Just
+  - MBProgressHUD (~> 1.0.0)
+  - PopupDialog (~> 0.5)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  Just: d19e769d86b965e39ae58cb3c0cbad07706634a8
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: ab775b78212b0c01097f728aa037e5bffd384b8f
+
+COCOAPODS: 1.2.0

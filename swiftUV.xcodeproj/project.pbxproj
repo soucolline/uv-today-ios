@@ -7,21 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
+		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
+		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
+		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */; };
-		EBF4B7521E7951D400B7A616 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7511E7951D400B7A616 /* ViewController.swift */; };
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
 		EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7581E7951D400B7A616 /* LaunchScreen.storyboard */; };
+		EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7611E79551B00B7A616 /* MainViewController.swift */; };
+		EBF4B7701E79924700B7A616 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7661E79924700B7A616 /* OpenSans-Bold.ttf */; };
+		EBF4B7711E79924700B7A616 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7671E79924700B7A616 /* OpenSans-BoldItalic.ttf */; };
+		EBF4B7721E79924700B7A616 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7681E79924700B7A616 /* OpenSans-ExtraBold.ttf */; };
+		EBF4B7731E79924700B7A616 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7691E79924700B7A616 /* OpenSans-ExtraBoldItalic.ttf */; };
+		EBF4B7741E79924700B7A616 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76A1E79924700B7A616 /* OpenSans-Italic.ttf */; };
+		EBF4B7751E79924700B7A616 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76B1E79924700B7A616 /* OpenSans-Light.ttf */; };
+		EBF4B7761E79924700B7A616 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76C1E79924700B7A616 /* OpenSans-LightItalic.ttf */; };
+		EBF4B7771E79924700B7A616 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */; };
+		EBF4B7781E79924700B7A616 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */; };
+		EBF4B7791E79924700B7A616 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */; };
+		EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77B1E799BE500B7A616 /* Color.swift */; };
+		EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77E1E799CB500B7A616 /* UIColor.swift */; };
+		EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7801E79BFA200B7A616 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.debug.xcconfig"; sourceTree = "<group>"; };
+		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
+		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
+		EBCAA0401E7C30A200DC2E9D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EBCAA0461E7C30F000DC2E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EBCAA0481E7C30F200DC2E9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBF4B74C1E7951D400B7A616 /* swiftUV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBF4B7511E7951D400B7A616 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EBF4B7541E7951D400B7A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBF4B7561E7951D400B7A616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBF4B7591E7951D400B7A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBF4B75B1E7951D400B7A616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBF4B7611E79551B00B7A616 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EBF4B7661E79924700B7A616 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		EBF4B7671E79924700B7A616 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EBF4B7681E79924700B7A616 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EBF4B7691E79924700B7A616 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		EBF4B76A1E79924700B7A616 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		EBF4B76B1E79924700B7A616 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		EBF4B76C1E79924700B7A616 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		EBF4B77B1E799BE500B7A616 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EBF4B77E1E799CB500B7A616 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		EBF4B7801E79BFA200B7A616 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +69,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		768820A9F08C906FE75D8B77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E022E5CBE6E03142E37391DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */,
+				84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EBCAA0421E7C30CE00DC2E9D /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				EBCAA0471E7C30F000DC2E9D /* Localizable.strings */,
+			);
+			name = Translation;
+			sourceTree = "<group>";
+		};
 		EBF4B7431E7951D300B7A616 = {
 			isa = PBXGroup;
 			children = (
 				EBF4B74E1E7951D400B7A616 /* swiftUV */,
 				EBF4B74D1E7951D400B7A616 /* Products */,
+				E022E5CBE6E03142E37391DA /* Pods */,
+				768820A9F08C906FE75D8B77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +122,70 @@
 		EBF4B74E1E7951D400B7A616 /* swiftUV */ = {
 			isa = PBXGroup;
 			children = (
-				EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */,
-				EBF4B7511E7951D400B7A616 /* ViewController.swift */,
-				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
+				EBF4B7631E79917000B7A616 /* app */,
+				EBF4B7641E79918100B7A616 /* Resources */,
 				EBF4B7561E7951D400B7A616 /* Assets.xcassets */,
 				EBF4B7581E7951D400B7A616 /* LaunchScreen.storyboard */,
 				EBF4B75B1E7951D400B7A616 /* Info.plist */,
 			);
 			path = swiftUV;
+			sourceTree = "<group>";
+		};
+		EBF4B7631E79917000B7A616 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B77D1E799CA600B7A616 /* Extensions */,
+				EBF4B77A1E799BC600B7A616 /* Models */,
+				EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */,
+				EBF4B7611E79551B00B7A616 /* MainViewController.swift */,
+				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		EBF4B7641E79918100B7A616 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EBCAA0421E7C30CE00DC2E9D /* Translation */,
+				EBF4B7651E79919100B7A616 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EBF4B7651E79919100B7A616 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B7661E79924700B7A616 /* OpenSans-Bold.ttf */,
+				EBF4B7671E79924700B7A616 /* OpenSans-BoldItalic.ttf */,
+				EBF4B7681E79924700B7A616 /* OpenSans-ExtraBold.ttf */,
+				EBF4B7691E79924700B7A616 /* OpenSans-ExtraBoldItalic.ttf */,
+				EBF4B76A1E79924700B7A616 /* OpenSans-Italic.ttf */,
+				EBF4B76B1E79924700B7A616 /* OpenSans-Light.ttf */,
+				EBF4B76C1E79924700B7A616 /* OpenSans-LightItalic.ttf */,
+				EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */,
+				EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */,
+				EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		EBF4B77A1E799BC600B7A616 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B77B1E799BE500B7A616 /* Color.swift */,
+				EBF4B7801E79BFA200B7A616 /* Api.swift */,
+				EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */,
+				EBCAA0401E7C30A200DC2E9D /* String.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EBF4B77D1E799CA600B7A616 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B77E1E799CB500B7A616 /* UIColor.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +195,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBF4B75E1E7951D400B7A616 /* Build configuration list for PBXNativeTarget "swiftUV" */;
 			buildPhases = (
+				FF2CBAE60D64C458AECA6782 /* [CP] Check Pods Manifest.lock */,
 				EBF4B7481E7951D300B7A616 /* Sources */,
 				EBF4B7491E7951D300B7A616 /* Frameworks */,
 				EBF4B74A1E7951D300B7A616 /* Resources */,
+				8DAFA6781280E0C278DF29AA /* [CP] Embed Pods Frameworks */,
+				11D16528E57C1F86DDC72DCD /* [CP] Copy Pods Resources */,
+				244B7BDE1E8EE49200B6E84F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -97,7 +225,7 @@
 					EBF4B74B1E7951D300B7A616 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = XDX42S5M9N;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -108,6 +236,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = EBF4B7431E7951D300B7A616;
 			productRefGroup = EBF4B74D1E7951D400B7A616 /* Products */;
@@ -124,31 +253,119 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF4B7781E79924700B7A616 /* OpenSans-Semibold.ttf in Resources */,
+				EBF4B7791E79924700B7A616 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */,
+				EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */,
+				EBF4B7771E79924700B7A616 /* OpenSans-Regular.ttf in Resources */,
+				EBF4B7741E79924700B7A616 /* OpenSans-Italic.ttf in Resources */,
+				EBF4B7731E79924700B7A616 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */,
+				EBF4B7761E79924700B7A616 /* OpenSans-LightItalic.ttf in Resources */,
+				EBF4B7701E79924700B7A616 /* OpenSans-Bold.ttf in Resources */,
 				EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */,
+				EBF4B7751E79924700B7A616 /* OpenSans-Light.ttf in Resources */,
+				EBF4B7711E79924700B7A616 /* OpenSans-BoldItalic.ttf in Resources */,
+				EBF4B7721E79924700B7A616 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11D16528E57C1F86DDC72DCD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		244B7BDE1E8EE49200B6E84F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6abd8c020462b87ae70facaec8d3bd0f4b47942b 5a8a1868eef3cd55f7d6b868cf930b6ccb1828ba5edc0b524f4ba0bebd28248f";
+		};
+		8DAFA6781280E0C278DF29AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF2CBAE60D64C458AECA6782 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBF4B7481E7951D300B7A616 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBF4B7521E7951D400B7A616 /* ViewController.swift in Sources */,
 				EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */,
+				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,
+				EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */,
+				EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */,
+				EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */,
+				EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */,
+				EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		EBCAA0471E7C30F000DC2E9D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBCAA0461E7C30F000DC2E9D /* Base */,
+				EBCAA0481E7C30F200DC2E9D /* en */,
+				EBC1904F1E8EEAB600B9F2EC /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EBF4B7531E7951D400B7A616 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EBF4B7541E7951D400B7A616 /* Base */,
+				EBC1904D1E8EEAB600B9F2EC /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -157,6 +374,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EBF4B7591E7951D400B7A616 /* Base */,
+				EBC1904E1E8EEAB600B9F2EC /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -168,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -217,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -257,26 +477,38 @@
 		};
 		EBF4B75F1E7951D400B7A616 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.swiftUV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ff2f93fb-7946-4ffc-a9c8-b1a55133e36e";
+				PROVISIONING_PROFILE_SPECIFIER = SwiftUV_development;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		EBF4B7601E7951D400B7A616 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.swiftUV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f7c749cb-6205-4c81-895e-2b74e79d6421";
+				PROVISIONING_PROFILE_SPECIFIER = SwiftUV_distribution;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -300,6 +532,7 @@
 				EBF4B7601E7951D400B7A616 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
