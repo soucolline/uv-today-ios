@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-import Just
+import Alamofire
 import SwiftyJSON
 import MBProgressHUD
 
@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
     }
   }
   
-  func appReturnedFromBackground() {
+  @objc func appReturnedFromBackground() {
     self.searchLocation()
   }
   
@@ -79,7 +79,7 @@ class MainViewController: UIViewController {
     }
   }
   
-  func refresh() {
+  @objc func refresh() {
     self.searchLocation()
     UIView.animate(withDuration:0.5, animations: { () -> Void in
       self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
@@ -110,21 +110,23 @@ extension MainViewController: CLLocationManagerDelegate {
     print("location = \(location)")
     print(Api.UVFromLocation(latitude, longitude).url)
     
-    let apiResponse = Just.get(Api.UVFromLocation(latitude, longitude).url)
-    if apiResponse.ok { 
-      let jsonResponse = JSON(apiResponse.json as Any)
-      let uvIndex = jsonResponse["currently"]["uvIndex"].intValue
-      self.indexLabel.text = "\(uvIndex)"
-      UIView.animate(withDuration: 1.0, animations: {
-        self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
-      })
-      self.descriptionTextView.text = self.getDescription(index: uvIndex)
-      MBProgressHUD.hide(for: self.view, animated: true)
-    } else {
-      MBProgressHUD.hide(for: self.view, animated: true)
-      self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
-      self.descriptionTextView.text = self.getDescription(index: -1)
-      print("ERROR ==> \(String(describing: apiResponse.error?.localizedDescription))")
+    Alamofire.request(Api.UVFromLocation(latitude, longitude).url).validate().responseJSON { apiResponse in
+      switch apiResponse.result {
+        case .success:
+          let jsonResponse = JSON(apiResponse.value as Any)
+          let uvIndex = jsonResponse["currently"]["uvIndex"].intValue
+          self.indexLabel.text = "\(uvIndex)"
+          UIView.animate(withDuration: 1.0, animations: {
+            self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
+          })
+          self.descriptionTextView.text = self.getDescription(index: uvIndex)
+          MBProgressHUD.hide(for: self.view, animated: true)
+        case .failure:
+          MBProgressHUD.hide(for: self.view, animated: true)
+          self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
+          self.descriptionTextView.text = self.getDescription(index: -1)
+          print("ERROR ==> \(String(describing: apiResponse.error?.localizedDescription))")
+      }
     }
   }
   
