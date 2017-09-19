@@ -48,7 +48,6 @@ class MainViewController: UIViewController {
   
   func searchLocation() {
     if CLLocationManager.locationServicesEnabled() {
-      self.locationManager.requestAlwaysAuthorization()
       self.locationManager.delegate = self
       self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
       let loader = MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -114,7 +113,7 @@ extension MainViewController: CLLocationManagerDelegate {
     let apiResponse = Just.get(Api.UVFromLocation(latitude, longitude).url)
     if apiResponse.ok { 
       let jsonResponse = JSON(apiResponse.json as Any)
-      let uvIndex = jsonResponse["response"].first?.1["periods"].first?.1["uvi"].intValue ?? 0
+      let uvIndex = jsonResponse["currently"]["uvIndex"].intValue
       self.indexLabel.text = "\(uvIndex)"
       UIView.animate(withDuration: 1.0, animations: {
         self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
