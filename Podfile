@@ -6,8 +6,8 @@ target 'swiftUV' do
   use_frameworks!
 
   # Pods for swiftUV
-  pod 'Just'
-  pod 'SwiftyJSON'
+  pod 'Alamofire', '~> 4.5.1'
+  pod 'SwiftyJSON', '~> 4.0.0-alpha.1'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'PopupDialog', '~> 0.5'
   pod 'Fabric'

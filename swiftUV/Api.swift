@@ -9,8 +9,7 @@
 import Foundation
 import CoreLocation
 
-let API_CLIENT_ID = "sy9KaP1viQco8mDz94JSk"
-let API_CLIENT_SECRET = "9RC0ImYhbS5Nu4Jgbma4AQt1iHHijxke2bin2mw5"
+let API_CLIENT_SECRET = "cc3256542b7071cba719d7ccd2b03c39"
 
 enum Api {
   case UVFromLocation(CLLocationDegrees, CLLocationDegrees)
@@ -18,7 +17,7 @@ enum Api {
   var url: String {
     switch(self) {
       case .UVFromLocation(let latitude, let longitude):
-        return "https://api.aerisapi.com/forecasts/\(latitude),\(longitude)?client_id=\(API_CLIENT_ID)&client_secret=\(API_CLIENT_SECRET)"
+        return "https://api.darksky.net/forecast/\(API_CLIENT_SECRET)/\(latitude),\(longitude)"
     }
   }
 }
