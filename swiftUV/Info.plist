@@ -42,7 +42,9 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>IndexUV would like to access your location to give you the UV index from your city</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>IndexUV would like to access your location to give you the UV index from your city</string>
 	<key>UIAppFonts</key>
 	<array>

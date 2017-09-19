@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-import Just
+import Alamofire
 import SwiftyJSON
 import MBProgressHUD
 
@@ -48,7 +48,6 @@ class MainViewController: UIViewController {
   
   func searchLocation() {
     if CLLocationManager.locationServicesEnabled() {
-      self.locationManager.requestAlwaysAuthorization()
       self.locationManager.delegate = self
       self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
       let loader = MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -59,13 +58,13 @@ class MainViewController: UIViewController {
     }
   }
   
-  func appReturnedFromBackground() {
+  @objc func appReturnedFromBackground() {
     self.searchLocation()
   }
   
   func getDescription(index: Int) -> String {
     switch index {
-    case 1, 2:
+    case 0, 1, 2:
       return "Port de lunettes de soleil en cas de journées ensoleillées.".localized
     case 3, 4, 5:
       return "Se couvrir et porter un chapeau et des lunettes de soleil. Appliquer un écran solaire de protection moyenne (indice de protection de 15 à 29), surtout pour une exposition à l’extérieur pendant plus de trente minutes. Rechercher l’ombre aux alentours de midi, quand le soleil est au zénith.".localized
@@ -80,7 +79,7 @@ class MainViewController: UIViewController {
     }
   }
   
-  func refresh() {
+  @objc func refresh() {
     self.searchLocation()
     UIView.animate(withDuration:0.5, animations: { () -> Void in
       self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
@@ -111,21 +110,23 @@ extension MainViewController: CLLocationManagerDelegate {
     print("location = \(location)")
     print(Api.UVFromLocation(latitude, longitude).url)
     
-    let apiResponse = Just.get(Api.UVFromLocation(latitude, longitude).url)
-    if apiResponse.ok { 
-      let jsonResponse = JSON(apiResponse.json as Any)
-      let uvIndex = jsonResponse["response"].first?.1["periods"].first?.1["uvi"].intValue ?? 0
-      self.indexLabel.text = "\(uvIndex)"
-      UIView.animate(withDuration: 1.0, animations: {
-        self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
-      })
-      self.descriptionTextView.text = self.getDescription(index: uvIndex)
-      MBProgressHUD.hide(for: self.view, animated: true)
-    } else {
-      MBProgressHUD.hide(for: self.view, animated: true)
-      self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
-      self.descriptionTextView.text = self.getDescription(index: -1)
-      print("ERROR ==> \(String(describing: apiResponse.error?.localizedDescription))")
+    Alamofire.request(Api.UVFromLocation(latitude, longitude).url).validate().responseJSON { apiResponse in
+      switch apiResponse.result {
+        case .success:
+          let jsonResponse = JSON(apiResponse.value as Any)
+          let uvIndex = jsonResponse["currently"]["uvIndex"].intValue
+          self.indexLabel.text = "\(uvIndex)"
+          UIView.animate(withDuration: 1.0, animations: {
+            self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
+          })
+          self.descriptionTextView.text = self.getDescription(index: uvIndex)
+          MBProgressHUD.hide(for: self.view, animated: true)
+        case .failure:
+          MBProgressHUD.hide(for: self.view, animated: true)
+          self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
+          self.descriptionTextView.text = self.getDescription(index: -1)
+          print("ERROR ==> \(String(describing: apiResponse.error?.localizedDescription))")
+      }
     }
   }
   
