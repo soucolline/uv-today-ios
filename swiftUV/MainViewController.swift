@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
   
   func getDescription(index: Int) -> String {
     switch index {
-    case 1, 2:
+    case 0, 1, 2:
       return "Port de lunettes de soleil en cas de journées ensoleillées.".localized
     case 3, 4, 5:
       return "Se couvrir et porter un chapeau et des lunettes de soleil. Appliquer un écran solaire de protection moyenne (indice de protection de 15 à 29), surtout pour une exposition à l’extérieur pendant plus de trente minutes. Rechercher l’ombre aux alentours de midi, quand le soleil est au zénith.".localized
