@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
       self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
       let loader = MBProgressHUD.showAdded(to: self.view, animated: true)
       loader.label.text = "Téléchargement des données en cours".localized
+      self.locationManager.requestWhenInUseAuthorization()
       self.locationManager.requestLocation()
     } else {
       self.present(PopupManager.errorPopup(message: "Vous avez désactivé la location".localized), animated: true)
