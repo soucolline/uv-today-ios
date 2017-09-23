@@ -506,6 +506,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = SwiftUV_development;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -526,6 +527,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = SwiftUV_distribution;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
