@@ -40,7 +40,6 @@ class MainViewController: UIViewController {
     
     // Enable refesh on btn
     let tap = UITapGestureRecognizer(target: self, action: #selector(refresh))
-    self.refreshBtn.isUserInteractionEnabled = true
     self.refreshBtn.addGestureRecognizer(tap)
     
     self.searchLocation()
