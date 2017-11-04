@@ -14,3 +14,9 @@ target 'swiftUV' do
   pod 'Crashlytics'
 
 end
+
+target 'swiftUVTests' do
+  use_frameworks!
+  pod 'Quick'
+  pod 'Nimble'
+end
