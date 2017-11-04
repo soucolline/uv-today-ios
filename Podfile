@@ -9,7 +9,7 @@ target 'swiftUV' do
   pod 'Alamofire', '~> 4.5.1'
   pod 'SwiftyJSON', '~> 4.0.0-alpha.1'
   pod 'MBProgressHUD', '~> 1.0.0'
-  pod 'PopupDialog', '~> 0.5'
+  pod 'PopupDialog', '~> 0.6'
   pod 'Fabric'
   pod 'Crashlytics'
 

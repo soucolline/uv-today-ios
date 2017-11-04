@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
@@ -81,6 +82,7 @@
 		EBF4B77B1E799BE500B7A616 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EBF4B77E1E799CB500B7A616 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EBF4B7801E79BFA200B7A616 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */,
+				EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
