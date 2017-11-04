@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBDA888E1FAE5814009514AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDA888D1FAE5814009514AB /* Constants.swift */; };
+		EBDA88961FAE5C89009514AB /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDA88951FAE5C89009514AB /* MainViewControllerTests.swift */; };
 		EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */; };
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
@@ -32,10 +34,22 @@
 		EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7801E79BFA200B7A616 /* Api.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EBDA88981FAE5C89009514AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBF4B7441E7951D300B7A616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBF4B74B1E7951D300B7A616;
+			remoteInfo = swiftUV;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		091ACF6A8F16618D0F5A2B41 /* Pods-swiftUVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.debug.xcconfig"; sourceTree = "<group>"; };
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
+		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB055CB01FAE532700FE7A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -45,6 +59,9 @@
 		EBCAA0461E7C30F000DC2E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBCAA0481E7C30F200DC2E9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBDA888D1FAE5814009514AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EBDA88931FAE5C89009514AB /* swiftUVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swiftUVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBDA88951FAE5C89009514AB /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		EBDA88971FAE5C89009514AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBF4B74C1E7951D400B7A616 /* swiftUV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBF4B7541E7951D400B7A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,9 +82,18 @@
 		EBF4B77B1E799BE500B7A616 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EBF4B77E1E799CB500B7A616 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EBF4B7801E79BFA200B7A616 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EBDA88901FAE5C89009514AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBF4B7491E7951D300B7A616 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */,
+				EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,6 +119,8 @@
 			children = (
 				4F32DAD95650411C27D7704A /* Pods-swiftUV.debug.xcconfig */,
 				84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */,
+				091ACF6A8F16618D0F5A2B41 /* Pods-swiftUVTests.debug.xcconfig */,
+				8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -104,10 +133,20 @@
 			name = Translation;
 			sourceTree = "<group>";
 		};
+		EBDA88941FAE5C89009514AB /* swiftUVTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBDA88951FAE5C89009514AB /* MainViewControllerTests.swift */,
+				EBDA88971FAE5C89009514AB /* Info.plist */,
+			);
+			path = swiftUVTests;
+			sourceTree = "<group>";
+		};
 		EBF4B7431E7951D300B7A616 = {
 			isa = PBXGroup;
 			children = (
 				EBF4B74E1E7951D400B7A616 /* swiftUV */,
+				EBDA88941FAE5C89009514AB /* swiftUVTests */,
 				EBF4B74D1E7951D400B7A616 /* Products */,
 				E022E5CBE6E03142E37391DA /* Pods */,
 				768820A9F08C906FE75D8B77 /* Frameworks */,
@@ -118,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				EBF4B74C1E7951D400B7A616 /* swiftUV.app */,
+				EBDA88931FAE5C89009514AB /* swiftUVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +235,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EBDA88921FAE5C89009514AB /* swiftUVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBDA889A1FAE5C89009514AB /* Build configuration list for PBXNativeTarget "swiftUVTests" */;
+			buildPhases = (
+				6E12D50FD8431F6DF4E052E4 /* [CP] Check Pods Manifest.lock */,
+				EBDA888F1FAE5C89009514AB /* Sources */,
+				EBDA88901FAE5C89009514AB /* Frameworks */,
+				EBDA88911FAE5C89009514AB /* Resources */,
+				9724060F794018FE06B0FACD /* [CP] Embed Pods Frameworks */,
+				5AB16CE1AD99EB7BA8C780DE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBDA88991FAE5C89009514AB /* PBXTargetDependency */,
+			);
+			name = swiftUVTests;
+			productName = swiftUVTests;
+			productReference = EBDA88931FAE5C89009514AB /* swiftUVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EBF4B74B1E7951D300B7A616 /* swiftUV */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBF4B75E1E7951D400B7A616 /* Build configuration list for PBXNativeTarget "swiftUV" */;
@@ -222,10 +283,16 @@
 		EBF4B7441E7951D300B7A616 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Thomas Guilleminot";
 				TargetAttributes = {
+					EBDA88921FAE5C89009514AB = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = XDX42S5M9N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EBF4B74B1E7951D300B7A616;
+					};
 					EBF4B74B1E7951D300B7A616 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = XDX42S5M9N;
@@ -249,11 +316,19 @@
 			projectRoot = "";
 			targets = (
 				EBF4B74B1E7951D300B7A616 /* swiftUV */,
+				EBDA88921FAE5C89009514AB /* swiftUVTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EBDA88911FAE5C89009514AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBF4B74A1E7951D300B7A616 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +381,39 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6abd8c020462b87ae70facaec8d3bd0f4b47942b 5a8a1868eef3cd55f7d6b868cf930b6ccb1828ba5edc0b524f4ba0bebd28248f";
 		};
+		5AB16CE1AD99EB7BA8C780DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E12D50FD8431F6DF4E052E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swiftUVTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8DAFA6781280E0C278DF29AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +438,26 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9724060F794018FE06B0FACD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FF2CBAE60D64C458AECA6782 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +479,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EBDA888F1FAE5C89009514AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBDA88961FAE5C89009514AB /* MainViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBF4B7481E7951D300B7A616 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,6 +503,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBDA88991FAE5C89009514AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBF4B74B1E7951D300B7A616 /* swiftUV */;
+			targetProxy = EBDA88981FAE5C89009514AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EBCAA0471E7C30F000DC2E9D /* Localizable.strings */ = {
@@ -401,6 +545,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EBDA889B1FAE5C89009514AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 091ACF6A8F16618D0F5A2B41 /* Pods-swiftUVTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDX42S5M9N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = swiftUVTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftUV.app/swiftUV";
+			};
+			name = Debug;
+		};
+		EBDA889C1FAE5C89009514AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XDX42S5M9N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = swiftUVTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftUV.app/swiftUV";
+			};
+			name = Release;
+		};
 		EBF4B75C1E7951D400B7A616 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,7 +613,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -419,7 +623,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -461,7 +669,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -469,7 +679,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -538,6 +752,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EBDA889A1FAE5C89009514AB /* Build configuration list for PBXNativeTarget "swiftUVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBDA889B1FAE5C89009514AB /* Debug */,
+				EBDA889C1FAE5C89009514AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBF4B7471E7951D300B7A616 /* Build configuration list for PBXProject "swiftUV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
