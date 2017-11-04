@@ -65,17 +65,17 @@ class MainViewController: UIViewController {
   func getDescription(index: Int) -> String {
     switch index {
     case 0, 1, 2:
-      return "Port de lunettes de soleil en cas de journées ensoleillées.".localized
+      return K.i18n.lowUV.localized
     case 3, 4, 5:
-      return "Se couvrir et porter un chapeau et des lunettes de soleil. Appliquer un écran solaire de protection moyenne (indice de protection de 15 à 29), surtout pour une exposition à l’extérieur pendant plus de trente minutes. Rechercher l’ombre aux alentours de midi, quand le soleil est au zénith.".localized
+      return K.i18n.middleUV.localized
     case 6, 7:
-      return "Réduire l’exposition entre 11 h et 16 h. Appliquer un écran solaire de haute protection (indice de 30 à 50), porter un chapeau et des lunettes de soleil, et se placer à l’ombre.Réduire l’exposition entre 11 h et 16 h. Appliquer un écran solaire de haute protection (indice de 30 à 50), porter un chapeau et des lunettes de soleil, et se placer à l’ombre.".localized
+      return K.i18n.highUV.localized
     case 8, 9, 10:
-      return "Sans protection, la peau sera endommagée et peut brûler. L’exposition au soleil peut être dangereuse entre 11 h et 16 h ; la recherche de l’ombre est donc importante. Sont recommandables le port de vêtements longs, d'un chapeau et de lunettes de soleil, ainsi que l'application d'un écran solaire de très haute protection (indice + 50).".localized
+      return K.i18n.veryHighUV.localized
     case 11, 12, 13, 14:
-      return "La peau non protégée sera endommagée et peut brûler en quelques minutes. Toute exposition au soleil est dangereuse, et en cas de sortie il faut se couvrir absolument (chapeau, lunettes de soleil, application d'un écran solaire de très haute protection d'indice + 50).".localized
+      return K.i18n.extremeUV.localized
     default:
-      return "Une erreur est survenue, veuillez relancer l'application".localized
+      return K.i18n.error.localized
     }
   }
   
