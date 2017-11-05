@@ -15,7 +15,7 @@ enum Api {
   case UVFromLocation(CLLocationDegrees, CLLocationDegrees)
   
   var url: String {
-    switch(self) {
+    switch self {
       case .UVFromLocation(let latitude, let longitude):
         return "https://api.darksky.net/forecast/\(API_CLIENT_SECRET)/\(latitude),\(longitude)"
     }
