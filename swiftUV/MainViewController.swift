@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Update location when app return from background
-    NotificationCenter.default.addObserver(self, selector:#selector(appReturnedFromBackground), name:
+    NotificationCenter.default.addObserver(self, selector: #selector(appReturnedFromBackground), name:
       NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     
     // Add default backgroundColor
@@ -82,7 +82,7 @@ class MainViewController: UIViewController {
   
   @objc func refresh() {
     self.searchLocation()
-    UIView.animate(withDuration:0.5, animations: { () -> Void in
+    UIView.animate(withDuration: 0.5, animations: { () -> Void in
       self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
     })
     UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: { () -> Void in
@@ -101,7 +101,7 @@ extension MainViewController: CLLocationManagerDelegate {
     
     let location = CLLocation(latitude: latitude, longitude: longitude)
     let geoCoder = CLGeocoder()
-    geoCoder.reverseGeocodeLocation(location, completionHandler: { placemarks, error in
+    geoCoder.reverseGeocodeLocation(location, completionHandler: { placemarks, _ in
       if let placemarkArray = placemarks, let placemark = placemarkArray.first {
         self.cityLabel.text = "Ville".localized + " : \(placemark.locality ?? "Inconnue".localized)"
       } else {

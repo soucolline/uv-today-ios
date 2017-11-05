@@ -267,6 +267,7 @@
 				8DAFA6781280E0C278DF29AA /* [CP] Embed Pods Frameworks */,
 				11D16528E57C1F86DDC72DCD /* [CP] Copy Pods Resources */,
 				244B7BDE1E8EE49200B6E84F /* ShellScript */,
+				EBC31C9F1FAF7FC6004DC13C /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -459,6 +460,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EBC31C9F1FAF7FC6004DC13C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		FF2CBAE60D64C458AECA6782 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
