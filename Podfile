@@ -12,6 +12,7 @@ target 'swiftUV' do
   pod 'PopupDialog', '~> 0.6'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'ZLogger'
 
 end
 

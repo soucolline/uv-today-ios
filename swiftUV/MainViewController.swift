@@ -11,6 +11,7 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 import MBProgressHUD
+import ZLogger
 
 class MainViewController: UIViewController {
   
@@ -107,8 +108,8 @@ extension MainViewController: CLLocationManagerDelegate {
         self.cityLabel.text = "Inconnue".localized
       }
     })
-    print("location = \(location)")
-    print(Api.UVFromLocation(latitude, longitude).url)
+    ZLogger.log(message: "location = \(location)", event: .info)
+    ZLogger.log(message: Api.UVFromLocation(latitude, longitude).url, event: .info)
     
     Alamofire.request(Api.UVFromLocation(latitude, longitude).url).validate().responseJSON { apiResponse in
       switch apiResponse.result {
@@ -125,7 +126,7 @@ extension MainViewController: CLLocationManagerDelegate {
           MBProgressHUD.hide(for: self.view, animated: true)
           self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
           self.descriptionTextView.text = self.getDescription(index: -1)
-          print("ERROR ==> \(String(describing: apiResponse.error?.localizedDescription))")
+          ZLogger.log(message: apiResponse.error?.localizedDescription ?? "", event: .error)
       }
     }
   }
@@ -134,6 +135,6 @@ extension MainViewController: CLLocationManagerDelegate {
     self.present(PopupManager.errorPopup(message: "Impossible de vous localiser".localized), animated: true)
     self.descriptionTextView.text = self.getDescription(index: -1)
     MBProgressHUD.hide(for: self.view, animated: true)
-    print("Error ==> \(error.localizedDescription)")
+    ZLogger.log(message: error.localizedDescription, event: .error)
   }
 }
