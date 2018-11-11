@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     // Update location when app return from background
     NotificationCenter.default.addObserver(self, selector: #selector(appReturnedFromBackground), name:
-      NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+      UIApplication.willEnterForegroundNotification, object: nil)
     
     // Add default backgroundColor
     self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: 0))
