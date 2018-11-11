@@ -13,18 +13,22 @@ import SwiftyJSON
 import SVProgressHUD
 import ZLogger
 
-class MainViewController: UIViewController {
+class UVViewController: UIViewController {
   
   @IBOutlet weak var cityLabel: UILabel!
   @IBOutlet weak var indexLabel: UILabel!
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var refreshBtn: UIImageView!
   
+  lazy var presenter: UVPresenter = {
+    return UVPresenterImpl(with: self, locationService: LocationService(with: CLLocationManager()))
+  }()
+  
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
   
-  let locationManager = CLLocationManager()
+  //let locationManager = CLLocationManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,10 +47,12 @@ class MainViewController: UIViewController {
     let tap = UITapGestureRecognizer(target: self, action: #selector(refresh))
     self.refreshBtn.addGestureRecognizer(tap)
     
-    self.searchLocation()
+    //self.searchLocation()
+    
+    self.presenter.searchLocation()
   }
   
-  func searchLocation() {
+  /*func searchLocation() {
     if CLLocationManager.locationServicesEnabled() {
       self.locationManager.delegate = self
       self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -56,10 +62,10 @@ class MainViewController: UIViewController {
     } else {
       self.present(PopupManager.errorPopup(message: "Vous avez désactivé la location".localized), animated: true)
     }
-  }
+  }*/
   
   @objc func appReturnedFromBackground() {
-    self.searchLocation()
+    //self.searchLocation()
   }
   
   func getDescription(index: Int) -> String {
@@ -80,7 +86,7 @@ class MainViewController: UIViewController {
   }
   
   @objc func refresh() {
-    self.searchLocation()
+    //self.searchLocation()
     UIView.animate(withDuration: 0.5, animations: { () -> Void in
       self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
     })
@@ -91,7 +97,7 @@ class MainViewController: UIViewController {
   
 }
 
-extension MainViewController: CLLocationManagerDelegate {
+/*extension UVViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let latitude = manager.location?.coordinate.latitude,
       let longitude = manager.location?.coordinate.longitude else {
@@ -136,4 +142,42 @@ extension MainViewController: CLLocationManagerDelegate {
     SVProgressHUD.dismiss()
     ZLogger.log(message: error.localizedDescription, event: .error)
   }
+}*/
+
+extension  UVViewController: UVViewDelegate {
+  
+  func onShowLoader() {
+    
+  }
+  
+  func onShowLoaderForLocationSearch() {
+    DispatchQueue.main.async {
+      SVProgressHUD.show(withStatus: "Téléchargement des données en cours".localized)
+    }
+  }
+  
+  func onDismissLoader() {
+    DispatchQueue.main.async {
+      SVProgressHUD.dismiss()
+    }
+  }
+  
+  func onUpdateLocationWithSuccess() {
+    ZLogger.log(message: "Did receive location", event: .info)
+  }
+  
+  func onUpdateLocationWithError() {
+    ZLogger.log(message: "Failed receiving location", event: .error)
+  }
+  
+  func onAcceptLocation() {
+    self.presenter.searchLocation()
+  }
+  
+  func onShowRefusedLocation() {
+    DispatchQueue.main.async {
+      self.present(PopupManager.errorPopup(message: "Vous avez désactivé la location".localized), animated: true)
+    }
+  }
+  
 }

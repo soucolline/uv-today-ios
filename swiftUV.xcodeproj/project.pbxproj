@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
+		EBB061492198960B0084E975 /* UVPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061482198960B0084E975 /* UVPresenterImpl.swift */; };
+		EBB0614C219897290084E975 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614B219897290084E975 /* LocationService.swift */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
@@ -18,7 +20,7 @@
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
 		EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7581E7951D400B7A616 /* LaunchScreen.storyboard */; };
-		EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7611E79551B00B7A616 /* MainViewController.swift */; };
+		EBF4B7621E79551B00B7A616 /* UVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7611E79551B00B7A616 /* UVViewController.swift */; };
 		EBF4B7701E79924700B7A616 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7661E79924700B7A616 /* OpenSans-Bold.ttf */; };
 		EBF4B7711E79924700B7A616 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7671E79924700B7A616 /* OpenSans-BoldItalic.ttf */; };
 		EBF4B7721E79924700B7A616 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7681E79924700B7A616 /* OpenSans-ExtraBold.ttf */; };
@@ -51,6 +53,8 @@
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB055CB01FAE532700FE7A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		EBB061482198960B0084E975 /* UVPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVPresenterImpl.swift; sourceTree = "<group>"; };
+		EBB0614B219897290084E975 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -68,7 +72,7 @@
 		EBF4B7561E7951D400B7A616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBF4B7591E7951D400B7A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBF4B75B1E7951D400B7A616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBF4B7611E79551B00B7A616 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EBF4B7611E79551B00B7A616 /* UVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVViewController.swift; sourceTree = "<group>"; };
 		EBF4B7661E79924700B7A616 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		EBF4B7671E79924700B7A616 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EBF4B7681E79924700B7A616 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -125,6 +129,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EBB061462198956B0084E975 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B7611E79551B00B7A616 /* UVViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EBB06147219895700084E975 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				EBB061482198960B0084E975 /* UVPresenterImpl.swift */,
+			);
+			name = Presenters;
+			sourceTree = "<group>";
+		};
+		EBB0614A219897140084E975 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EBB0614B219897290084E975 /* LocationService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		EBCAA0421E7C30CE00DC2E9D /* Translation */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,10 +205,12 @@
 		EBF4B7631E79917000B7A616 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				EBB061462198956B0084E975 /* Views */,
+				EBB06147219895700084E975 /* Presenters */,
+				EBB0614A219897140084E975 /* Services */,
 				EBF4B77D1E799CA600B7A616 /* Extensions */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
 				EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */,
-				EBF4B7611E79551B00B7A616 /* MainViewController.swift */,
 				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
 			);
 			name = app;
@@ -465,9 +495,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */,
+				EBB061492198960B0084E975 /* UVPresenterImpl.swift in Sources */,
+				EBB0614C219897290084E975 /* LocationService.swift in Sources */,
 				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,
 				EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */,
-				EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */,
+				EBF4B7621E79551B00B7A616 /* UVViewController.swift in Sources */,
 				EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */,
 				EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */,
 				EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */,
