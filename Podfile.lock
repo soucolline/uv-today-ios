@@ -9,6 +9,7 @@ PODS:
   - PopupDialog (0.9.1):
     - DynamicBlurView (~> 3.0.1)
   - Quick (1.2.0)
+  - SwiftLint (0.27.0)
   - SwiftyJSON (4.0.0-alpha.1)
   - ZLogger (1.0.0)
 
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Nimble
   - PopupDialog (~> 0.9)
   - Quick
+  - SwiftLint (~> 0.27)
   - SwiftyJSON (~> 4.0.0-alpha.1)
   - ZLogger
 
@@ -33,6 +35,7 @@ SPEC REPOS:
     - Nimble
     - PopupDialog
     - Quick
+    - SwiftLint
     - SwiftyJSON
     - ZLogger
 
@@ -45,9 +48,10 @@ SPEC CHECKSUMS:
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   PopupDialog: 03985b669c29802661c187513bf827340db1ae4d
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
   ZLogger: 10113443f92e2514b852883df4431e35360df0dc
 
-PODFILE CHECKSUM: 5ce8c297b1917330893556ef1ca1b71da3a2901c
+PODFILE CHECKSUM: efd8969198ab88d11f21221bf25ed44ac3964e0e
 
 COCOAPODS: 1.5.3
