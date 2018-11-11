@@ -9,7 +9,7 @@ target 'swiftUV' do
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftLint', '~> 0.27'
   pod 'SwiftyJSON', '~> 4.0.0-alpha.1'
-  pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'SVProgressHUD', '~> 2.2'
   pod 'PopupDialog', '~> 0.9'
   pod 'ZLogger'
 

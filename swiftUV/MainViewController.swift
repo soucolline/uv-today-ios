@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
-import MBProgressHUD
+import SVProgressHUD
 import ZLogger
 
 class MainViewController: UIViewController {
@@ -50,8 +50,7 @@ class MainViewController: UIViewController {
     if CLLocationManager.locationServicesEnabled() {
       self.locationManager.delegate = self
       self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-      let loader = MBProgressHUD.showAdded(to: self.view, animated: true)
-      loader.label.text = "Téléchargement des données en cours".localized
+      SVProgressHUD.show(withStatus: "Téléchargement des données en cours".localized)
       self.locationManager.requestWhenInUseAuthorization()
       self.locationManager.requestLocation()
     } else {
@@ -121,9 +120,9 @@ extension MainViewController: CLLocationManagerDelegate {
             self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
           })
           self.descriptionTextView.text = self.getDescription(index: uvIndex)
-          MBProgressHUD.hide(for: self.view, animated: true)
+          SVProgressHUD.dismiss()
         case .failure:
-          MBProgressHUD.hide(for: self.view, animated: true)
+          SVProgressHUD.dismiss()
           self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
           self.descriptionTextView.text = self.getDescription(index: -1)
           ZLogger.log(message: apiResponse.error?.localizedDescription ?? "", event: .error)
@@ -134,7 +133,7 @@ extension MainViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     self.present(PopupManager.errorPopup(message: "Impossible de vous localiser".localized), animated: true)
     self.descriptionTextView.text = self.getDescription(index: -1)
-    MBProgressHUD.hide(for: self.view, animated: true)
+    SVProgressHUD.dismiss()
     ZLogger.log(message: error.localizedDescription, event: .error)
   }
 }
