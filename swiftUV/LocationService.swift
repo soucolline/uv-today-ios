@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreLocation
+import ZLogger
 
 protocol LocationServiceDelegate: class {
-  func didUpdateLocation()
+  func didUpdateLocation(_ location: Location)
   func didFailUpdateLocation()
   
   func didAcceptLocationService()
@@ -48,7 +49,7 @@ class LocationService: NSObject {
       return
     }
     
-    self.locationManager.startMonitoringSignificantLocationChanges()
+    self.locationManager.requestLocation()
   }
   
 }
@@ -56,7 +57,25 @@ class LocationService: NSObject {
 extension LocationService: CLLocationManagerDelegate {
   
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    self.delegate?.didUpdateLocation()
+    guard let latitude = manager.location?.coordinate.latitude,
+      let longitude = manager.location?.coordinate.longitude else {
+        return
+    }
+    
+    let location = CLLocation(latitude: latitude, longitude: longitude)
+    let geoCoder = CLGeocoder()
+    geoCoder.reverseGeocodeLocation(location) { placemarks, error in
+      guard error == nil else {
+        self.delegate?.didFailUpdateLocation()
+        return
+      }
+      
+      let customLocation = Location(latitude: latitude, longitude: longitude, city: placemarks?.first?.locality ?? "Inconnue")
+      self.locationManager.stopUpdatingLocation()
+      self.delegate?.didUpdateLocation(customLocation)
+    }
+    
+    ZLogger.log(message: "location = \(location)", event: .info)
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

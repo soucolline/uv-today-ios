@@ -14,7 +14,7 @@ protocol UVViewDelegate: class {
   
   func onShowLoaderForLocationSearch()
   
-  func onUpdateLocationWithSuccess()
+  func onUpdateLocationWithSuccess(with cityName: String)
   func onUpdateLocationWithError()
   
   func onAcceptLocation()
@@ -28,6 +28,7 @@ protocol UVPresenter {
 class UVPresenterImpl: UVPresenter {
   
   weak var delegate: UVViewDelegate?
+  private var location: Location?
   
   let locationService: LocationService
   
@@ -46,9 +47,10 @@ class UVPresenterImpl: UVPresenter {
 
 extension UVPresenterImpl: LocationServiceDelegate {
   
-  func didUpdateLocation() {
+  func didUpdateLocation(_ location: Location) {
+    self.location = location
     self.delegate?.onDismissLoader()
-    self.delegate?.onUpdateLocationWithSuccess()
+    self.delegate?.onUpdateLocationWithSuccess(with: location.city)
   }
   
   func didFailUpdateLocation() {

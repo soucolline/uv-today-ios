@@ -11,6 +11,7 @@
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
 		EBB061492198960B0084E975 /* UVPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061482198960B0084E975 /* UVPresenterImpl.swift */; };
 		EBB0614C219897290084E975 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614B219897290084E975 /* LocationService.swift */; };
+		EBB0614E2198A6790084E975 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614D2198A6790084E975 /* Location.swift */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
@@ -55,6 +56,7 @@
 		EB055CB01FAE532700FE7A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		EBB061482198960B0084E975 /* UVPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVPresenterImpl.swift; sourceTree = "<group>"; };
 		EBB0614B219897290084E975 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		EBB0614D2198A6790084E975 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */,
 				EBCAA0401E7C30A200DC2E9D /* String.swift */,
 				EBDA888D1FAE5814009514AB /* Constants.swift */,
+				EBB0614D2198A6790084E975 /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */,
+				EBB0614E2198A6790084E975 /* Location.swift in Sources */,
 				EBB061492198960B0084E975 /* UVPresenterImpl.swift in Sources */,
 				EBB0614C219897290084E975 /* LocationService.swift in Sources */,
 				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,

@@ -52,20 +52,8 @@ class UVViewController: UIViewController {
     self.presenter.searchLocation()
   }
   
-  /*func searchLocation() {
-    if CLLocationManager.locationServicesEnabled() {
-      self.locationManager.delegate = self
-      self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-      SVProgressHUD.show(withStatus: "Téléchargement des données en cours".localized)
-      self.locationManager.requestWhenInUseAuthorization()
-      self.locationManager.requestLocation()
-    } else {
-      self.present(PopupManager.errorPopup(message: "Vous avez désactivé la location".localized), animated: true)
-    }
-  }*/
-  
   @objc func appReturnedFromBackground() {
-    //self.searchLocation()
+    self.presenter.searchLocation()
   }
   
   func getDescription(index: Int) -> String {
@@ -86,7 +74,7 @@ class UVViewController: UIViewController {
   }
   
   @objc func refresh() {
-    //self.searchLocation()
+    self.presenter.searchLocation()
     UIView.animate(withDuration: 0.5, animations: { () -> Void in
       self.refreshBtn.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
     })
@@ -162,12 +150,16 @@ extension  UVViewController: UVViewDelegate {
     }
   }
   
-  func onUpdateLocationWithSuccess() {
+  func onUpdateLocationWithSuccess(with cityName: String) {
+    self.cityLabel.text = "\("Ville".localized) : \(cityName.localized)"
     ZLogger.log(message: "Did receive location", event: .info)
   }
   
   func onUpdateLocationWithError() {
-    ZLogger.log(message: "Failed receiving location", event: .error)
+    DispatchQueue.main.async {
+      self.present(PopupManager.errorPopup(message: "Impossible de vous localiser".localized), animated: true)
+      self.descriptionTextView.text = self.getDescription(index: -1)
+    }
   }
   
   func onAcceptLocation() {
