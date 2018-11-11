@@ -11,8 +11,6 @@ target 'swiftUV' do
   pod 'SwiftyJSON', '~> 4.0.0-alpha.1'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'PopupDialog', '~> 0.9'
-  pod 'Fabric'
-  pod 'Crashlytics'
   pod 'ZLogger'
 
 end
