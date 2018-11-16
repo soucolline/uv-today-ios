@@ -17,12 +17,16 @@ protocol UVViewDelegate: class {
   func onUpdateLocationWithSuccess(with cityName: String)
   func onUpdateLocationWithError()
   
+  func onReceiveSuccess(index: Int)
+  func onShowError(message: String)
+  
   func onAcceptLocation()
   func onShowRefusedLocation()
 }
 
 protocol UVPresenter {
   func searchLocation()
+  func getUVIndex()
 }
 
 class UVPresenterImpl: UVPresenter {
@@ -30,17 +34,29 @@ class UVPresenterImpl: UVPresenter {
   weak var delegate: UVViewDelegate?
   private var location: Location?
   
-  let locationService: LocationService
+  private let locationService: LocationService
+  private let uvService: UVService
   
-  init(with delegate: UVViewDelegate, locationService: LocationService) {
+  init(with delegate: UVViewDelegate, locationService: LocationService, uvService: UVService) {
     self.delegate = delegate
     self.locationService = locationService
+    self.uvService = uvService
     self.locationService.delegate = self
   }
   
   func searchLocation() {
     self.delegate?.onShowLoaderForLocationSearch()
     self.locationService.searchLocation()
+  }
+  
+  func getUVIndex() {
+    guard let location = self.location else { return }
+    
+    self.uvService.getUVIndex(from: location, success: { forecast in
+      self.delegate?.onReceiveSuccess(index: forecast.currently.uvIndex)
+    }, failure: { error in
+      self.delegate?.onShowError(message: error.localizedDescription)
+    })
   }
   
 }

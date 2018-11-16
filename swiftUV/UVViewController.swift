@@ -21,7 +21,11 @@ class UVViewController: UIViewController {
   @IBOutlet weak var refreshBtn: UIImageView!
   
   lazy var presenter: UVPresenter = {
-    return UVPresenterImpl(with: self, locationService: LocationService(with: CLLocationManager()))
+    return UVPresenterImpl(
+      with: self,
+      locationService: LocationService(with: CLLocationManager()),
+      uvService: UVService()
+    )
   }()
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -152,6 +156,7 @@ extension  UVViewController: UVViewDelegate {
   
   func onUpdateLocationWithSuccess(with cityName: String) {
     self.cityLabel.text = "\("Ville".localized) : \(cityName.localized)"
+    self.presenter.getUVIndex()
     ZLogger.log(message: "Did receive location", event: .info)
   }
   
@@ -159,6 +164,16 @@ extension  UVViewController: UVViewDelegate {
     DispatchQueue.main.async {
       self.present(PopupManager.errorPopup(message: "Impossible de vous localiser".localized), animated: true)
       self.descriptionTextView.text = self.getDescription(index: -1)
+    }
+  }
+  
+  func onReceiveSuccess(index: Int) {
+    self.indexLabel.text = String(index)
+  }
+  
+  func onShowError(message: String) {
+    DispatchQueue.main.async {
+      self.present(PopupManager.errorPopup(message: message), animated: true)
     }
   }
   
