@@ -15,6 +15,7 @@
 		EBB0614E2198A6790084E975 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614D2198A6790084E975 /* Location.swift */; };
 		EBB06150219F67560084E975 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614F219F67560084E975 /* Forecast.swift */; };
 		EBB06152219F69210084E975 /* UVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB06151219F69210084E975 /* UVError.swift */; };
+		EBB06154219F6E030084E975 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB06153219F6E030084E975 /* Index.swift */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
@@ -35,9 +36,6 @@
 		EBF4B7771E79924700B7A616 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */; };
 		EBF4B7781E79924700B7A616 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */; };
 		EBF4B7791E79924700B7A616 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */; };
-		EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77B1E799BE500B7A616 /* Color.swift */; };
-		EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77E1E799CB500B7A616 /* UIColor.swift */; };
-		EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7801E79BFA200B7A616 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +61,7 @@
 		EBB0614D2198A6790084E975 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EBB0614F219F67560084E975 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		EBB06151219F69210084E975 /* UVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVError.swift; sourceTree = "<group>"; };
+		EBB06153219F6E030084E975 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,9 +90,6 @@
 		EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		EBF4B77B1E799BE500B7A616 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		EBF4B77E1E799CB500B7A616 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		EBF4B7801E79BFA200B7A616 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -254,13 +250,12 @@
 		EBF4B77A1E799BC600B7A616 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EBF4B77B1E799BE500B7A616 /* Color.swift */,
-				EBF4B7801E79BFA200B7A616 /* Api.swift */,
 				EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */,
 				EBCAA0401E7C30A200DC2E9D /* String.swift */,
 				EBDA888D1FAE5814009514AB /* Constants.swift */,
 				EBB0614D2198A6790084E975 /* Location.swift */,
 				EBB0614F219F67560084E975 /* Forecast.swift */,
+				EBB06153219F6E030084E975 /* Index.swift */,
 				EBB06151219F69210084E975 /* UVError.swift */,
 			);
 			name = Models;
@@ -269,7 +264,6 @@
 		EBF4B77D1E799CA600B7A616 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EBF4B77E1E799CB500B7A616 /* UIColor.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -510,15 +504,13 @@
 				EBB06152219F69210084E975 /* UVError.swift in Sources */,
 				EBB0614E2198A6790084E975 /* Location.swift in Sources */,
 				EBB061492198960B0084E975 /* UVPresenterImpl.swift in Sources */,
+				EBB06154219F6E030084E975 /* Index.swift in Sources */,
 				EBB0614C219897290084E975 /* LocationService.swift in Sources */,
-				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,
 				EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */,
 				EB5A521B219F618100898BEA /* UVService.swift in Sources */,
 				EBB06150219F67560084E975 /* Forecast.swift in Sources */,
 				EBF4B7621E79551B00B7A616 /* UVViewController.swift in Sources */,
 				EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */,
-				EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */,
-				EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */,
 				EBDA888E1FAE5814009514AB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,10 +6,10 @@
 //  Copyright © 2017 Thomas Guilleminot. All rights reserved.
 //
 
-import Foundation
 import PopupDialog
 
 class PopupManager {
+  
   static func errorPopup(message: String) -> PopupDialog {
     let title = "Erreur".localized
     let popup = PopupDialog(title: title, message: message, image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn)
@@ -18,4 +18,5 @@ class PopupManager {
     
     return popup
   }
+  
 }

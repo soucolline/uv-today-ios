@@ -6,13 +6,9 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
-import Foundation
-
 protocol UVViewDelegate: class {
   func onShowLoader()
   func onDismissLoader()
-  
-  func onShowLoaderForLocationSearch()
   
   func onUpdateLocationWithSuccess(with cityName: String)
   func onUpdateLocationWithError()
@@ -45,7 +41,7 @@ class UVPresenterImpl: UVPresenter {
   }
   
   func searchLocation() {
-    self.delegate?.onShowLoaderForLocationSearch()
+    self.delegate?.onShowLoader()
     self.locationService.searchLocation()
   }
   
@@ -53,8 +49,10 @@ class UVPresenterImpl: UVPresenter {
     guard let location = self.location else { return }
     
     self.uvService.getUVIndex(from: location, success: { forecast in
+      self.delegate?.onDismissLoader()
       self.delegate?.onReceiveSuccess(index: forecast.currently.uvIndex)
     }, failure: { error in
+      self.delegate?.onDismissLoader()
       self.delegate?.onShowError(message: error.localizedDescription)
     })
   }
@@ -65,8 +63,8 @@ extension UVPresenterImpl: LocationServiceDelegate {
   
   func didUpdateLocation(_ location: Location) {
     self.location = location
-    self.delegate?.onDismissLoader()
     self.delegate?.onUpdateLocationWithSuccess(with: location.city)
+    self.getUVIndex()
   }
   
   func didFailUpdateLocation() {
@@ -75,7 +73,6 @@ extension UVPresenterImpl: LocationServiceDelegate {
   }
   
   func didAcceptLocationService() {
-    self.delegate?.onDismissLoader()
     self.delegate?.onAcceptLocation()
   }
   

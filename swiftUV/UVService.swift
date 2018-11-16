@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import ZLogger
 
 class UVService {
   
@@ -25,8 +26,10 @@ class UVService {
         
         let forecast = try JSONDecoder().decode(Forecast.self, from: data)
         success(forecast)
+        ZLogger.log(message: "Retrieved index \(forecast.currently.uvIndex)", event: .info)
       } catch let error {
         failure(error)
+        ZLogger.log(message: error.localizedDescription, event: .error)
       }
     }
   }

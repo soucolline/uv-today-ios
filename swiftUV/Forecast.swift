@@ -14,6 +14,6 @@ struct Forecast: Codable {
 
 struct CurrentForecast: Codable {
   
-  let uvIndex: Int
+  let uvIndex: Index
   
 }

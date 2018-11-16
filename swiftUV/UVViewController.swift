@@ -8,8 +8,6 @@
 
 import UIKit
 import CoreLocation
-import Alamofire
-import SwiftyJSON
 import SVProgressHUD
 import ZLogger
 
@@ -32,49 +30,40 @@ class UVViewController: UIViewController {
     return .lightContent
   }
   
-  //let locationManager = CLLocationManager()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Update location when app return from background
-    NotificationCenter.default.addObserver(self, selector: #selector(appReturnedFromBackground), name:
-      UIApplication.willEnterForegroundNotification, object: nil)
     
-    // Add default backgroundColor
-    self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: 0))
-    // Show default values
-    self.cityLabel.text = "Ville".localized + " : -"
-    self.indexLabel.text = "-"
-    self.descriptionTextView.text = ""
+    self.registerNotifications()
+    self.setupUI()
     
     // Enable refesh on btn
     let tap = UITapGestureRecognizer(target: self, action: #selector(refresh))
     self.refreshBtn.addGestureRecognizer(tap)
     
-    //self.searchLocation()
-    
     self.presenter.searchLocation()
+  }
+  
+  private func registerNotifications() {
+    // Update location when app return from background
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(appReturnedFromBackground),
+      name: UIApplication.willEnterForegroundNotification,
+      object: nil
+    )
+  }
+  
+  func setupUI() {
+    // Add default backgroundColor
+    self.view.backgroundColor = Index(0).associatedColor
+    // Show default values
+    self.cityLabel.text = "Ville".localized + " : -"
+    self.indexLabel.text = "-"
+    self.descriptionTextView.text = ""
   }
   
   @objc func appReturnedFromBackground() {
     self.presenter.searchLocation()
-  }
-  
-  func getDescription(index: Int) -> String {
-    switch index {
-    case 0, 1, 2:
-      return K.i18n.lowUV.localized
-    case 3, 4, 5:
-      return K.i18n.middleUV.localized
-    case 6, 7:
-      return K.i18n.highUV.localized
-    case 8, 9, 10:
-      return K.i18n.veryHighUV.localized
-    case 11, 12, 13, 14:
-      return K.i18n.extremeUV.localized
-    default:
-      return K.i18n.error.localized
-    }
   }
   
   @objc func refresh() {
@@ -89,60 +78,9 @@ class UVViewController: UIViewController {
   
 }
 
-/*extension UVViewController: CLLocationManagerDelegate {
-  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    guard let latitude = manager.location?.coordinate.latitude,
-      let longitude = manager.location?.coordinate.longitude else {
-        return
-    }
-    
-    let location = CLLocation(latitude: latitude, longitude: longitude)
-    let geoCoder = CLGeocoder()
-    geoCoder.reverseGeocodeLocation(location, completionHandler: { placemarks, _ in
-      if let placemarkArray = placemarks, let placemark = placemarkArray.first {
-        self.cityLabel.text = "Ville".localized + " : \(placemark.locality ?? "Inconnue".localized)"
-      } else {
-        self.cityLabel.text = "Inconnue".localized
-      }
-    })
-    ZLogger.log(message: "location = \(location)", event: .info)
-    ZLogger.log(message: Api.UVFromLocation(latitude, longitude).url, event: .info)
-    
-    Alamofire.request(Api.UVFromLocation(latitude, longitude).url).validate().responseJSON { apiResponse in
-      switch apiResponse.result {
-        case .success:
-          let jsonResponse = JSON(apiResponse.value as Any)
-          let uvIndex = jsonResponse["currently"]["uvIndex"].intValue
-          self.indexLabel.text = "\(uvIndex)"
-          UIView.animate(withDuration: 1.0, animations: {
-            self.view.backgroundColor = UIColor.colorFromInteger(color: UIColor.colorFromIndex(index: uvIndex))
-          })
-          self.descriptionTextView.text = self.getDescription(index: uvIndex)
-          SVProgressHUD.dismiss()
-        case .failure:
-          SVProgressHUD.dismiss()
-          self.present(PopupManager.errorPopup(message: "Une erreur est survenue, veuillez relancer l'application".localized), animated: true)
-          self.descriptionTextView.text = self.getDescription(index: -1)
-          ZLogger.log(message: apiResponse.error?.localizedDescription ?? "", event: .error)
-      }
-    }
-  }
-  
-  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    self.present(PopupManager.errorPopup(message: "Impossible de vous localiser".localized), animated: true)
-    self.descriptionTextView.text = self.getDescription(index: -1)
-    SVProgressHUD.dismiss()
-    ZLogger.log(message: error.localizedDescription, event: .error)
-  }
-}*/
-
 extension  UVViewController: UVViewDelegate {
   
   func onShowLoader() {
-    
-  }
-  
-  func onShowLoaderForLocationSearch() {
     DispatchQueue.main.async {
       SVProgressHUD.show(withStatus: "Téléchargement des données en cours".localized)
     }
@@ -156,19 +94,22 @@ extension  UVViewController: UVViewDelegate {
   
   func onUpdateLocationWithSuccess(with cityName: String) {
     self.cityLabel.text = "\("Ville".localized) : \(cityName.localized)"
-    self.presenter.getUVIndex()
     ZLogger.log(message: "Did receive location", event: .info)
   }
   
   func onUpdateLocationWithError() {
     DispatchQueue.main.async {
       self.present(PopupManager.errorPopup(message: "Impossible de vous localiser".localized), animated: true)
-      self.descriptionTextView.text = self.getDescription(index: -1)
+      self.descriptionTextView.text = Index(-1).associatedDescription
     }
   }
   
   func onReceiveSuccess(index: Int) {
     self.indexLabel.text = String(index)
+    self.descriptionTextView.text = index.associatedDescription
+    UIView.animate(withDuration: 1.0, animations: {
+      self.view.backgroundColor = index.associatedColor
+    })
   }
   
   func onShowError(message: String) {

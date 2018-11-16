@@ -6,8 +6,6 @@
 //  Copyright © 2017 Thomas Guilleminot. All rights reserved.
 //
 
-import Foundation
-
 struct K {
   
   struct Api {
