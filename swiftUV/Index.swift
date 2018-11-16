@@ -27,17 +27,17 @@ extension Index {
   var associatedDescription: String {
     switch self {
     case 0, 1, 2:
-      return K.i18n.lowUV.localized
+      return "lowUV.desc".localized
     case 3, 4, 5:
-      return K.i18n.middleUV.localized
+      return "middleUV.desc".localized
     case 6, 7:
-      return K.i18n.highUV.localized
+      return "highUV.desc".localized
     case 8, 9, 10:
-      return K.i18n.veryHighUV.localized
+      return "veryHighUV.desc".localized
     case 11, 12, 13, 14:
-      return K.i18n.extremeUV.localized
+      return "extremeUV.desc".localized
     default:
-      return K.i18n.error.localized
+      return "error.desc".localized
     }
   }
   

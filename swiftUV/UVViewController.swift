@@ -57,7 +57,7 @@ class UVViewController: UIViewController {
     // Add default backgroundColor
     self.view.backgroundColor = Index(0).associatedColor
     // Show default values
-    self.cityLabel.text = "Ville".localized + " : -"
+    self.cityLabel.text = "app.label.city".localized + " : -"
     self.indexLabel.text = "-"
     self.descriptionTextView.text = ""
   }
@@ -82,7 +82,7 @@ extension  UVViewController: UVViewDelegate {
   
   func onShowLoader() {
     DispatchQueue.main.async {
-      SVProgressHUD.show(withStatus: "Téléchargement des données en cours".localized)
+      SVProgressHUD.show(withStatus: "app.message.downloading".localized)
     }
   }
   
@@ -93,13 +93,13 @@ extension  UVViewController: UVViewDelegate {
   }
   
   func onUpdateLocationWithSuccess(with cityName: String) {
-    self.cityLabel.text = "\("Ville".localized) : \(cityName.localized)"
+    self.cityLabel.text = "\("app.label.city".localized) : \(cityName)"
     ZLogger.log(message: "Did receive location", event: .info)
   }
   
   func onUpdateLocationWithError() {
     DispatchQueue.main.async {
-      self.present(PopupManager.errorPopup(message: "Impossible de vous localiser".localized), animated: true)
+      self.present(PopupManager.errorPopup(message: "app.error.couldNotLocalise".localized), animated: true)
       self.descriptionTextView.text = Index(-1).associatedDescription
     }
   }
@@ -124,7 +124,7 @@ extension  UVViewController: UVViewDelegate {
   
   func onShowRefusedLocation() {
     DispatchQueue.main.async {
-      self.present(PopupManager.errorPopup(message: "Vous avez désactivé la location".localized), animated: true)
+      self.present(PopupManager.errorPopup(message: "app.error.localisationDisabled".localized), animated: true)
     }
   }
   

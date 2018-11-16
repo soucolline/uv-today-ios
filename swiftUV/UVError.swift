@@ -13,7 +13,7 @@ enum UVError: Error {
   var localizedDescription: String {
     switch self {
     case .noData:
-      return "No data available"
+      return "app.error.noData".localized
     }
   }
   

@@ -6,13 +6,19 @@
   Copyright © 2017 Thomas Guilleminot. All rights reserved.
 */
 
-"Ville" = "City";
-"Téléchargement des données en cours" = "Fetching data";
-"Vous avez désactivé la location" = "You disabled location service";
-"Inconnue" = "Unknown";
-"error.desc" = "An error occured, please restart the app";
-"Impossible de vous localiser" = "Could not find your location";
-"Erreur" = "Error";
+// Labels
+"app.label.city" = "City";
+"app.label.unknown" = "Unknown";
+"app.label.error" = "Error";
+
+// Messages
+"app.message.downloading" = "Fetching data";
+
+// Errros
+"app.error.localisationDisabled" = "You disabled location service";
+"app.error.couldNotLocalise" = "Could not find your location";
+"app.error.noData" = "No data available";
+
 
 // Description
 
@@ -25,3 +31,5 @@
 "veryHighUV.desc" = "Minimize sun exposure between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. Bright surfaces, such as sand, water and snow, will increase UV exposure.";
 
 "extremeUV.desc" = "Try to avoid sun exposure between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. Bright surfaces, such as sand, water and snow, will increase UV exposure.";
+
+"error.desc" = "An error occured, please restart the app";
