@@ -7,7 +7,7 @@ target 'swiftUV' do
 
   # Pods for swiftUV
   pod 'Alamofire', '~> 4.7'
-  pod 'SwiftLint', '~> 0.27'
+  pod 'SwiftLint', '~> 0.28'
   pod 'SVProgressHUD', '~> 2.2'
   pod 'PopupDialog', '~> 0.9'
   pod 'ZLogger'
