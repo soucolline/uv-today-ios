@@ -7,6 +7,7 @@ PODS:
   - Quick (1.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftLint (0.28.0)
+  - Swinject (2.5.0)
   - ZLogger (1.0.0)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Quick
   - SVProgressHUD (~> 2.2)
   - SwiftLint (~> 0.28)
+  - Swinject (~> 2.5)
   - ZLogger
 
 SPEC REPOS:
@@ -27,6 +29,7 @@ SPEC REPOS:
     - Quick
     - SVProgressHUD
     - SwiftLint
+    - Swinject
     - ZLogger
 
 SPEC CHECKSUMS:
@@ -37,8 +40,9 @@ SPEC CHECKSUMS:
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 088cfacb75b45970017e62b7524d506776d60148
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   ZLogger: 10113443f92e2514b852883df4431e35360df0dc
 
-PODFILE CHECKSUM: 03c5d02606fdc7e15b1946498b5f62f82eb3d743
+PODFILE CHECKSUM: 55a3aed0769e5a42a0e2d34563299f655c5def26
 
 COCOAPODS: 1.5.3
