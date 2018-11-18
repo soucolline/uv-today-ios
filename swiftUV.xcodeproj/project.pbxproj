@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
+		EB5A521B219F618100898BEA /* UVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5A521A219F618100898BEA /* UVService.swift */; };
+		EBB061492198960B0084E975 /* UVPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061482198960B0084E975 /* UVPresenterImpl.swift */; };
+		EBB0614C219897290084E975 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614B219897290084E975 /* LocationService.swift */; };
+		EBB0614E2198A6790084E975 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614D2198A6790084E975 /* Location.swift */; };
+		EBB06150219F67560084E975 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614F219F67560084E975 /* Forecast.swift */; };
+		EBB06152219F69210084E975 /* UVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB06151219F69210084E975 /* UVError.swift */; };
+		EBB06154219F6E030084E975 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB06153219F6E030084E975 /* Index.swift */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
@@ -18,7 +25,7 @@
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
 		EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7581E7951D400B7A616 /* LaunchScreen.storyboard */; };
-		EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7611E79551B00B7A616 /* MainViewController.swift */; };
+		EBF4B7621E79551B00B7A616 /* UVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7611E79551B00B7A616 /* UVViewController.swift */; };
 		EBF4B7701E79924700B7A616 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7661E79924700B7A616 /* OpenSans-Bold.ttf */; };
 		EBF4B7711E79924700B7A616 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7671E79924700B7A616 /* OpenSans-BoldItalic.ttf */; };
 		EBF4B7721E79924700B7A616 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7681E79924700B7A616 /* OpenSans-ExtraBold.ttf */; };
@@ -29,9 +36,6 @@
 		EBF4B7771E79924700B7A616 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */; };
 		EBF4B7781E79924700B7A616 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */; };
 		EBF4B7791E79924700B7A616 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */; };
-		EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77B1E799BE500B7A616 /* Color.swift */; };
-		EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B77E1E799CB500B7A616 /* UIColor.swift */; };
-		EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4B7801E79BFA200B7A616 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB055CB01FAE532700FE7A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		EB5A521A219F618100898BEA /* UVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVService.swift; sourceTree = "<group>"; };
+		EBB061482198960B0084E975 /* UVPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVPresenterImpl.swift; sourceTree = "<group>"; };
+		EBB0614B219897290084E975 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		EBB0614D2198A6790084E975 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		EBB0614F219F67560084E975 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		EBB06151219F69210084E975 /* UVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVError.swift; sourceTree = "<group>"; };
+		EBB06153219F6E030084E975 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -68,7 +79,7 @@
 		EBF4B7561E7951D400B7A616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBF4B7591E7951D400B7A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBF4B75B1E7951D400B7A616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBF4B7611E79551B00B7A616 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EBF4B7611E79551B00B7A616 /* UVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVViewController.swift; sourceTree = "<group>"; };
 		EBF4B7661E79924700B7A616 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		EBF4B7671E79924700B7A616 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EBF4B7681E79924700B7A616 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -79,9 +90,6 @@
 		EBF4B76D1E79924700B7A616 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		EBF4B76E1E79924700B7A616 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		EBF4B76F1E79924700B7A616 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		EBF4B77B1E799BE500B7A616 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		EBF4B77E1E799CB500B7A616 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		EBF4B7801E79BFA200B7A616 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +131,31 @@
 				8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EBB061462198956B0084E975 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4B7611E79551B00B7A616 /* UVViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EBB06147219895700084E975 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				EBB061482198960B0084E975 /* UVPresenterImpl.swift */,
+			);
+			name = Presenters;
+			sourceTree = "<group>";
+		};
+		EBB0614A219897140084E975 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EBB0614B219897290084E975 /* LocationService.swift */,
+				EB5A521A219F618100898BEA /* UVService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		EBCAA0421E7C30CE00DC2E9D /* Translation */ = {
@@ -177,10 +210,12 @@
 		EBF4B7631E79917000B7A616 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				EBB061462198956B0084E975 /* Views */,
+				EBB06147219895700084E975 /* Presenters */,
+				EBB0614A219897140084E975 /* Services */,
 				EBF4B77D1E799CA600B7A616 /* Extensions */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
 				EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */,
-				EBF4B7611E79551B00B7A616 /* MainViewController.swift */,
 				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
 			);
 			name = app;
@@ -215,11 +250,13 @@
 		EBF4B77A1E799BC600B7A616 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EBF4B77B1E799BE500B7A616 /* Color.swift */,
-				EBF4B7801E79BFA200B7A616 /* Api.swift */,
 				EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */,
 				EBCAA0401E7C30A200DC2E9D /* String.swift */,
 				EBDA888D1FAE5814009514AB /* Constants.swift */,
+				EBB0614D2198A6790084E975 /* Location.swift */,
+				EBB0614F219F67560084E975 /* Forecast.swift */,
+				EBB06153219F6E030084E975 /* Index.swift */,
+				EBB06151219F69210084E975 /* UVError.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -227,7 +264,6 @@
 		EBF4B77D1E799CA600B7A616 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EBF4B77E1E799CB500B7A616 /* UIColor.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -380,7 +416,6 @@
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/ZLogger/ZLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -389,7 +424,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +463,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		FF2CBAE60D64C458AECA6782 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -465,12 +499,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF4B7501E7951D400B7A616 /* AppDelegate.swift in Sources */,
-				EBF4B77F1E799CB500B7A616 /* UIColor.swift in Sources */,
+				EBB06152219F69210084E975 /* UVError.swift in Sources */,
+				EBB0614E2198A6790084E975 /* Location.swift in Sources */,
+				EBB061492198960B0084E975 /* UVPresenterImpl.swift in Sources */,
+				EBB06154219F6E030084E975 /* Index.swift in Sources */,
+				EBB0614C219897290084E975 /* LocationService.swift in Sources */,
 				EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */,
-				EBF4B7621E79551B00B7A616 /* MainViewController.swift in Sources */,
+				EB5A521B219F618100898BEA /* UVService.swift in Sources */,
+				EBB06150219F67560084E975 /* Forecast.swift in Sources */,
+				EBF4B7621E79551B00B7A616 /* UVViewController.swift in Sources */,
 				EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */,
-				EBF4B7811E79BFA200B7A616 /* Api.swift in Sources */,
-				EBF4B77C1E799BE500B7A616 /* Color.swift in Sources */,
 				EBDA888E1FAE5814009514AB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

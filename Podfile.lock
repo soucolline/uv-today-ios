@@ -6,8 +6,7 @@ PODS:
     - DynamicBlurView (~> 3.0.1)
   - Quick (1.2.0)
   - SVProgressHUD (2.2.5)
-  - SwiftLint (0.27.0)
-  - SwiftyJSON (4.0.0-alpha.1)
+  - SwiftLint (0.28.0)
   - ZLogger (1.0.0)
 
 DEPENDENCIES:
@@ -16,8 +15,7 @@ DEPENDENCIES:
   - PopupDialog (~> 0.9)
   - Quick
   - SVProgressHUD (~> 2.2)
-  - SwiftLint (~> 0.27)
-  - SwiftyJSON (~> 4.0.0-alpha.1)
+  - SwiftLint (~> 0.28)
   - ZLogger
 
 SPEC REPOS:
@@ -29,7 +27,6 @@ SPEC REPOS:
     - Quick
     - SVProgressHUD
     - SwiftLint
-    - SwiftyJSON
     - ZLogger
 
 SPEC CHECKSUMS:
@@ -39,10 +36,9 @@ SPEC CHECKSUMS:
   PopupDialog: 03985b669c29802661c187513bf827340db1ae4d
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
-  SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
+  SwiftLint: 088cfacb75b45970017e62b7524d506776d60148
   ZLogger: 10113443f92e2514b852883df4431e35360df0dc
 
-PODFILE CHECKSUM: f45d8814748d24a2e1a3b4bcb90d2334e7ea65c7
+PODFILE CHECKSUM: 03c5d02606fdc7e15b1946498b5f62f82eb3d743
 
 COCOAPODS: 1.5.3
