@@ -21,6 +21,7 @@ protocol UVViewDelegate: class {
 }
 
 protocol UVPresenter {
+  func setView(view: UVViewDelegate)
   func searchLocation()
   func getUVIndex()
 }
@@ -33,11 +34,14 @@ class UVPresenterImpl: UVPresenter {
   private let locationService: LocationService
   private let uvService: UVService
   
-  init(with delegate: UVViewDelegate, locationService: LocationService, uvService: UVService) {
-    self.delegate = delegate
+  init(with locationService: LocationService, uvService: UVService) {
     self.locationService = locationService
     self.uvService = uvService
     self.locationService.delegate = self
+  }
+  
+  func setView(view: UVViewDelegate) {
+    self.delegate = view
   }
   
   func searchLocation() {
