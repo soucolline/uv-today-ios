@@ -18,13 +18,7 @@ class UVViewController: UIViewController {
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var refreshBtn: UIImageView!
   
-  lazy var presenter: UVPresenter = {
-    return UVPresenterImpl(
-      with: self,
-      locationService: LocationService(with: CLLocationManager()),
-      uvService: UVService()
-    )
-  }()
+  var presenter: UVPresenter = ((UIApplication.shared.delegate as? AppDelegate)?.container.resolve(UVPresenter.self))!
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -40,6 +34,7 @@ class UVViewController: UIViewController {
     let tap = UITapGestureRecognizer(target: self, action: #selector(refresh))
     self.refreshBtn.addGestureRecognizer(tap)
     
+    self.presenter.setView(view: self)
     self.presenter.searchLocation()
   }
   

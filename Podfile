@@ -11,6 +11,7 @@ target 'swiftUV' do
   pod 'SVProgressHUD', '~> 2.2'
   pod 'PopupDialog', '~> 0.9'
   pod 'ZLogger'
+  pod 'Swinject', '~> 2.5'
 
 end
 

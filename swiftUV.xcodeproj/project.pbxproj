@@ -16,6 +16,7 @@
 		EBB06150219F67560084E975 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0614F219F67560084E975 /* Forecast.swift */; };
 		EBB06152219F69210084E975 /* UVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB06151219F69210084E975 /* UVError.swift */; };
 		EBB06154219F6E030084E975 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB06153219F6E030084E975 /* Index.swift */; };
+		EBB0615621A1C8670084E975 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615521A1C8670084E975 /* AppComponents.swift */; };
 		EBCAA0361E7AD64400DC2E9D /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0351E7AD64400DC2E9D /* PopupManager.swift */; };
 		EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCAA0401E7C30A200DC2E9D /* String.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
@@ -62,6 +63,7 @@
 		EBB0614F219F67560084E975 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		EBB06151219F69210084E975 /* UVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVError.swift; sourceTree = "<group>"; };
 		EBB06153219F6E030084E975 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		EBB0615521A1C8670084E975 /* AppComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
 		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				EBF4B77D1E799CA600B7A616 /* Extensions */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
 				EBF4B74F1E7951D400B7A616 /* AppDelegate.swift */,
+				EBB0615521A1C8670084E975 /* AppComponents.swift */,
 				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
 			);
 			name = app;
@@ -416,6 +419,7 @@
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/ZLogger/ZLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -424,6 +428,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +513,7 @@
 				EB5A521B219F618100898BEA /* UVService.swift in Sources */,
 				EBB06150219F67560084E975 /* Forecast.swift in Sources */,
 				EBF4B7621E79551B00B7A616 /* UVViewController.swift in Sources */,
+				EBB0615621A1C8670084E975 /* AppComponents.swift in Sources */,
 				EBCAA0411E7C30A200DC2E9D /* String.swift in Sources */,
 				EBDA888E1FAE5814009514AB /* Constants.swift in Sources */,
 			);
