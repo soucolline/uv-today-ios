@@ -19,4 +19,5 @@ target 'swiftUVTests' do
   use_frameworks!
   pod 'Quick', '~> 1.3'
   pod 'Nimble', '~> 7.3'
+  pod 'Cuckoo', '~> 0.12'
 end

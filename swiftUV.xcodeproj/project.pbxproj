@@ -33,6 +33,8 @@
 		EBB061F421A1DCD60084E975 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB061EA21A1DCD50084E975 /* OpenSans-ExtraBold.ttf */; };
 		EBB061F521A1DCD60084E975 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB061EB21A1DCD50084E975 /* OpenSans-LightItalic.ttf */; };
 		EBB061F621A1DCD60084E975 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB061EC21A1DCD50084E975 /* OpenSans-Bold.ttf */; };
+		EBB061FB21A1DE930084E975 /* UVPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061FA21A1DE930084E975 /* UVPresenterTests.swift */; };
+		EBB061FD21A1E4010084E975 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061FC21A1E4010084E975 /* GeneratedMocks.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
@@ -80,6 +82,8 @@
 		EBB061EA21A1DCD50084E975 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "Resources/Fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		EBB061EB21A1DCD50084E975 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "Resources/Fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		EBB061EC21A1DCD50084E975 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Resources/Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		EBB061FA21A1DE930084E975 /* UVPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVPresenterTests.swift; sourceTree = "<group>"; };
+		EBB061FC21A1E4010084E975 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		EBC1904D1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 			children = (
 				EBDA88971FAE5C89009514AB /* Info.plist */,
 				EBB0615A21A1CF9A0084E975 /* IndexTests.swift */,
+				EBB061FA21A1DE930084E975 /* UVPresenterTests.swift */,
+				EBB061FC21A1E4010084E975 /* GeneratedMocks.swift */,
 			);
 			path = swiftUVTests;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				EBF4B74A1E7951D300B7A616 /* Resources */,
 				8DAFA6781280E0C278DF29AA /* [CP] Embed Pods Frameworks */,
 				EBC31C9F1FAF7FC6004DC13C /* SwiftLint */,
+				EBB061F721A1DDFA0084E975 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -436,11 +443,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
@@ -448,6 +457,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EBB061F721A1DDFA0084E975 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/swiftUVTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/swiftUV/app/Presenters/UVPresenterImpl.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/LocationService.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/UVService.swift\" \\\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		EBC31C9F1FAF7FC6004DC13C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -489,6 +515,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */,
+				EBB061FD21A1E4010084E975 /* GeneratedMocks.swift in Sources */,
+				EBB061FB21A1DE930084E975 /* UVPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
