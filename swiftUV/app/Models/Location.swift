@@ -13,3 +13,5 @@ struct Location {
   let city: String
   
 }
+
+extension Location: Equatable {}

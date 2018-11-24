@@ -20,7 +20,7 @@ protocol LocationServiceDelegate: class {
 
 class LocationService: NSObject {
   
-  var locationManager: CLLocationManager
+  private let locationManager: CLLocationManager
   weak var delegate: LocationServiceDelegate?
   
   init(with locationManager: CLLocationManager) {
