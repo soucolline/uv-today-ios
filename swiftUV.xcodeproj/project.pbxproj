@@ -299,7 +299,7 @@
 					EBDA88921FAE5C89009514AB = {
 						CreatedOnToolsVersion = 9.1;
 						DevelopmentTeam = XDX42S5M9N;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = EBF4B74B1E7951D300B7A616;
 					};
@@ -316,6 +316,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				fr,
@@ -378,7 +379,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
@@ -397,7 +398,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9724060F794018FE06B0FACD /* [CP] Embed Pods Frameworks */ = {
@@ -406,7 +407,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
@@ -417,7 +418,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBB061F721A1DDFA0084E975 /* ShellScript */ = {
@@ -570,7 +571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftUV.app/swiftUV";
 			};
@@ -600,7 +601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftUV.app/swiftUV";
 			};
@@ -724,14 +725,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.swiftUV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ff2f93fb-7946-4ffc-a9c8-b1a55133e36e";
 				PROVISIONING_PROFILE_SPECIFIER = SwiftUV_development;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -744,14 +745,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.swiftUV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f7c749cb-6205-4c81-895e-2b74e79d6421";
 				PROVISIONING_PROFILE_SPECIFIER = SwiftUV_distribution;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
