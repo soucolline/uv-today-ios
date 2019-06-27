@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
-		E9C726C522C563D50040E5BC /* APIExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726C422C563D50040E5BC /* APIExecutor.swift */; };
+		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
 		EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615A21A1CF9A0084E975 /* IndexTests.swift */; };
 		EBB061CA21A1DC790084E975 /* UVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061C921A1DC790084E975 /* UVViewController.swift */; };
 		EBB061CC21A1DC810084E975 /* UVPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061CB21A1DC810084E975 /* UVPresenterImpl.swift */; };
@@ -49,7 +49,7 @@
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
-		E9C726C422C563D50040E5BC /* APIExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIExecutor.swift; path = app/Services/APIExecutor.swift; sourceTree = "<group>"; };
+		E9C726CD22C577920040E5BC /* APIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = app/Workers/APIWorker.swift; sourceTree = "<group>"; };
 		EB055CB01FAE532700FE7A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		EBB0615A21A1CF9A0084E975 /* IndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
 		EBB061C921A1DC790084E975 /* UVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVViewController.swift; path = app/Views/UVViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +123,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E9C726CC22C576B30040E5BC /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				E9C726CD22C577920040E5BC /* APIWorker.swift */,
+			);
+			name = Workers;
+			sourceTree = "<group>";
+		};
 		EBB061462198956B0084E975 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +152,6 @@
 			children = (
 				EBB061CE21A1DC8B0084E975 /* LocationService.swift */,
 				EBB061CD21A1DC8B0084E975 /* UVService.swift */,
-				E9C726C422C563D50040E5BC /* APIExecutor.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -206,6 +213,7 @@
 				EBB061462198956B0084E975 /* Views */,
 				EBB06147219895700084E975 /* Presenters */,
 				EBB0614A219897140084E975 /* Services */,
+				E9C726CC22C576B30040E5BC /* Workers */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
 				EBB061DF21A1DCA60084E975 /* AppComponents.swift */,
 				EBB061E021A1DCA60084E975 /* AppDelegate.swift */,
@@ -491,6 +499,7 @@
 				EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */,
 				EBB061E221A1DCA60084E975 /* AppDelegate.swift in Sources */,
 				EBB061DB21A1DC980084E975 /* Location.swift in Sources */,
+				E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */,
 				EBB061CC21A1DC810084E975 /* UVPresenterImpl.swift in Sources */,
 				EBB061D021A1DC8B0084E975 /* LocationService.swift in Sources */,
 				EBB061D821A1DC980084E975 /* Constants.swift in Sources */,
@@ -498,7 +507,6 @@
 				EBB061DA21A1DC980084E975 /* UVError.swift in Sources */,
 				EBB061DE21A1DC980084E975 /* PopupManager.swift in Sources */,
 				EBB061DD21A1DC980084E975 /* Index.swift in Sources */,
-				E9C726C522C563D50040E5BC /* APIExecutor.swift in Sources */,
 				EBB061CA21A1DC790084E975 /* UVViewController.swift in Sources */,
 				EBB061E121A1DCA60084E975 /* AppComponents.swift in Sources */,
 			);

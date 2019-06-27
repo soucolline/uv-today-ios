@@ -14,9 +14,9 @@ protocol UVService {
 
 class UVServiceImpl: UVService {
 
-  private let apiExecutor: APIExecutor
+  private let apiExecutor: APIWorker
   
-  init(with apiExecutor: APIExecutor) {
+  init(with apiExecutor: APIWorker) {
     self.apiExecutor = apiExecutor
   }
   

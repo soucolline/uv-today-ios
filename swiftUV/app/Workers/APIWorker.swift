@@ -18,11 +18,11 @@ enum HTTPMethod: String {
   case delete = "DELETE"
 }
 
-protocol APIExecutor {
+protocol APIWorker {
   func request<T: TaskExecutable>(for type: T.Type, at url: URL, method: HTTPMethod, parameters: [String: Any], completion: @escaping (Result<T, UVError>) -> Void)
 }
 
-class APIExecutorImpl: APIExecutor {
+class APIWorkerImpl: APIWorker {
   
   private let session: URLSession
   

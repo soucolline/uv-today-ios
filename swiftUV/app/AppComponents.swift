@@ -27,16 +27,15 @@ class AppComponent {
     container.register(URLSessionConfiguration.self) { _ in
       return URLSessionConfiguration.default
     }
-    
-    container.register(APIExecutor.self) { resolver in
-        APIExecutorImpl(
+    container.register(APIWorker.self) { resolver in
+        APIWorkerImpl(
           with: resolver.resolve(URLSessionConfiguration.self)!
       )
     }
     
     container.register(UVService.self) { resolver in
       return UVServiceImpl(
-        with: resolver.resolve(APIExecutor.self)!
+        with: resolver.resolve(APIWorker.self)!
       )
     }
     
