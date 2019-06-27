@@ -313,10 +313,9 @@
 			};
 			buildConfigurationList = EBF4B7471E7951D300B7A616 /* Build configuration list for PBXProject "swiftUV" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				fr,
