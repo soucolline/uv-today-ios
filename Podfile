@@ -8,7 +8,6 @@ target 'swiftUV' do
   use_frameworks!
 
   # Pods for swiftUV
-  pod 'Alamofire', '~> 4.7'
   pod 'SwiftLint', '= 0.33'
   pod 'SVProgressHUD', '~> 2.2'
   pod 'PopupDialog', '= 1.1.0'
