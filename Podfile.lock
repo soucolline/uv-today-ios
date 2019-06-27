@@ -21,7 +21,7 @@ DEPENDENCIES:
   - ZLogger (= 1.0.2)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://cdn.cocoapods.org/:
     - Alamofire
     - Cuckoo
     - DynamicBlurView
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   ZLogger: 314a65eb636223e9ecb83080d00cfcdcb01e560c
 
-PODFILE CHECKSUM: c76bdc445982381fb7de0b0724eb143bda73bbbc
+PODFILE CHECKSUM: 6621abb3f4497ab9ea7a7f70b506ee0d0fc83946
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.2
