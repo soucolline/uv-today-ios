@@ -8,12 +8,21 @@
 
 enum UVError: Error {
   
+  case urlNotValid
   case noData
+  case couldNotDecodeJSON
+  case customError(String)
   
   var localizedDescription: String {
     switch self {
+    case .urlNotValid:
+      return "Url is invalid"
     case .noData:
       return "app.error.noData".localized
+    case .couldNotDecodeJSON:
+      return "Could not parse JSON"
+    case .customError(let message):
+      return message
     }
   }
   

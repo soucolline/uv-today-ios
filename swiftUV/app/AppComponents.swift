@@ -24,8 +24,20 @@ class AppComponent {
       )
     }
     
-    container.register(UVService.self) { _ in
-      return UVService()
+    container.register(URLSessionConfiguration.self) { _ in
+      return URLSessionConfiguration.default
+    }
+    
+    container.register(APIExecutor.self) { resolver in
+        APIExecutorImpl(
+          with: resolver.resolve(URLSessionConfiguration.self)!
+      )
+    }
+    
+    container.register(UVService.self) { resolver in
+      return UVServiceImpl(
+        with: resolver.resolve(APIExecutor.self)!
+      )
     }
     
     container.register(UVPresenter.self) { resolver in

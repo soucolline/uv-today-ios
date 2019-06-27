@@ -6,7 +6,7 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
-struct Forecast: Codable {
+struct Forecast: Codable, TaskExecutable {
   
   let currently: CurrentForecast
   

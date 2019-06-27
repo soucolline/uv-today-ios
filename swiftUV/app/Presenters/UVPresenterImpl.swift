@@ -52,13 +52,16 @@ class UVPresenterImpl: UVPresenter {
   func getUVIndex() {
     guard let location = self.location else { return }
     
-    self.uvService.getUVIndex(from: location, success: { forecast in
-      self.delegate?.onDismissLoader()
-      self.delegate?.onReceiveSuccess(index: forecast.currently.uvIndex)
-    }, failure: { error in
-      self.delegate?.onDismissLoader()
-      self.delegate?.onShowError(message: error.localizedDescription)
-    })
+    self.uvService.getUVIndex(from: location) { result in
+      switch result {
+      case .success(let forecast):
+        self.delegate?.onDismissLoader()
+        self.delegate?.onReceiveSuccess(index: forecast.currently.uvIndex)
+      case .failure(let error):
+        self.delegate?.onDismissLoader()
+        self.delegate?.onShowError(message: error.localizedDescription)
+      }
+    }
   }
   
 }
