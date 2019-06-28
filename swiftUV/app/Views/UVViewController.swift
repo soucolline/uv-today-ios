@@ -100,11 +100,13 @@ extension  UVViewController: UVViewDelegate {
   }
   
   func onReceiveSuccess(index: Int) {
-    self.indexLabel.text = String(index)
-    self.descriptionTextView.text = index.associatedDescription
-    UIView.animate(withDuration: 1.0, animations: {
-      self.view.backgroundColor = index.associatedColor
-    })
+    DispatchQueue.main.async {
+      self.indexLabel.text = String(index)
+      self.descriptionTextView.text = index.associatedDescription
+      UIView.animate(withDuration: 1.0, animations: {
+        self.view.backgroundColor = index.associatedColor
+      })
+    }
   }
   
   func onShowError(message: String) {
