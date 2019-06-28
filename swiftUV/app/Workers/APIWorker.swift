@@ -24,10 +24,10 @@ protocol APIWorker {
 
 class APIWorkerImpl: APIWorker {
   
-  private let session: URLSession
+  private let session: NetworkSession
   
-  init(with configuration: URLSessionConfiguration) {
-    self.session = URLSession(configuration: configuration)
+  init(with session: NetworkSession) {
+    self.session = session
   }
   
   func request<T: TaskExecutable>(for type: T.Type, at url: URL, method: HTTPMethod, parameters: [String: Any], completion: @escaping (Result<T, UVError>) -> Void) {
@@ -35,7 +35,7 @@ class APIWorkerImpl: APIWorker {
     request.httpMethod = method.rawValue
     request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
     
-    let dataTask = self.session.dataTask(with: url) { data, _, error in
+    self.session.loadData(from: url) { data, error in
       guard error == nil else {
         completion(.failure(.customError(error?.localizedDescription ?? "Unknown error")))
         return
@@ -53,7 +53,6 @@ class APIWorkerImpl: APIWorker {
         completion(.failure(.couldNotDecodeJSON))
       }
     }
-    dataTask.resume()
   }
   
 }

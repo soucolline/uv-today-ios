@@ -6,7 +6,7 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
-enum UVError: Error {
+enum UVError: Error, Equatable {
   
   case urlNotValid
   case noData

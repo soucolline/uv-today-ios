@@ -24,12 +24,13 @@ class AppComponent {
       )
     }
     
-    container.register(URLSessionConfiguration.self) { _ in
-      return URLSessionConfiguration.default
+    container.register(NetworkSession.self) { _ in
+      return URLSession(configuration: URLSessionConfiguration.default)
     }
+    
     container.register(APIWorker.self) { resolver in
         APIWorkerImpl(
-          with: resolver.resolve(URLSessionConfiguration.self)!
+          with: resolver.resolve(NetworkSession.self)!
       )
     }
     
