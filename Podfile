@@ -21,3 +21,10 @@ target 'swiftUVTests' do
   pod 'Nimble', '= 8.0.2'
   pod 'Cuckoo', '= 1.0.6'
 end
+
+plugin 'cocoapods-keys', {
+  :project => "swiftUV",
+  :keys => [
+  "DarkSkyApiKey"
+  ]}
+
