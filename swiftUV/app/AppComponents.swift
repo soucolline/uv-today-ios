@@ -25,7 +25,9 @@ class AppComponent {
     }
     
     container.register(NetworkSession.self) { _ in
-      return URLSession(configuration: URLSessionConfiguration.default)
+      let session = URLSessionConfiguration.default
+      session.timeoutIntervalForRequest = 10.0
+      return URLSession(configuration: session)
     }
     
     container.register(APIWorker.self) { resolver in
