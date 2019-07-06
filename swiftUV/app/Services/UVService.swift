@@ -10,7 +10,7 @@ import ZLogger
 import Keys
 
 protocol UVService {
-  func getUVIndex(from location: Location, completion: @escaping (Swift.Result<Forecast, UVError>) -> Void)
+  func getUVIndex(from location: Location, completion: @escaping (Result<Forecast, UVError>) -> Void)
 }
 
 class UVServiceImpl: UVService {
@@ -21,7 +21,7 @@ class UVServiceImpl: UVService {
     self.apiExecutor = apiExecutor
   }
   
-  func getUVIndex(from location: Location, completion: @escaping (Swift.Result<Forecast, UVError>) -> Void) {
+  func getUVIndex(from location: Location, completion: @escaping (Result<Forecast, UVError>) -> Void) {
     let url = URL(string: K.Api.baseURL + String(format: K.Api.Endpoints.getUV, arguments: [SwiftUVKeys().darkSkyApiKey, location.latitude, location.longitude]))!
     
     self.apiExecutor.request(for: Forecast.self, at: url, method: .get, parameters: [:], completion: { result in

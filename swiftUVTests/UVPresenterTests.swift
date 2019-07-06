@@ -99,7 +99,7 @@ class UVPresenterTests: XCTestCase {
   func testGetUVIndexSucceed() {
     let expectedLocation = Location(latitude: 10.0, longitude: 10.0, city: "Paris")
     let expectedForecast = Forecast(currently: CurrentForecast(uvIndex: 1))
-    let mockUVListenerCaptor = ArgumentCaptor<(Result<Forecast, Error>) -> Void>()
+    let mockUVListenerCaptor = ArgumentCaptor<(Result<Forecast, UVError>) -> Void>()
     
     stub(mockLocationService) { stub in
       when(stub).searchLocation().then {
@@ -130,7 +130,7 @@ class UVPresenterTests: XCTestCase {
   
   func testGetUVIndexFailure() {
     let expectedLocation = Location(latitude: 10.0, longitude: 10.0, city: "Paris")
-    let mockUVListenerCaptor = ArgumentCaptor<(Result<Forecast, Error>) -> Void>()
+    let mockUVListenerCaptor = ArgumentCaptor<(Result<Forecast, UVError>) -> Void>()
     
     stub(mockLocationService) { stub in
       when(stub).searchLocation().then {
