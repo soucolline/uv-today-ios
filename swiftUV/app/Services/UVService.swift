@@ -27,10 +27,10 @@ class UVServiceImpl: UVService {
     self.apiExecutor.request(for: Forecast.self, at: url, method: .get, parameters: [:], completion: { result in
       switch result {
       case .success(let forecast):
-        ZLogger.log(message: "Retrieved index \(forecast.currently.uvIndex)", event: .info)
+        ZLogger.info(message: "Retrieved index \(forecast.currently.uvIndex)")
         completion(.success(forecast))
       case .failure(let error):
-        ZLogger.log(message: error.localizedDescription, event: .error)
+        ZLogger.error(message: error.localizedDescription)
         completion(.failure(error))
       }
     })

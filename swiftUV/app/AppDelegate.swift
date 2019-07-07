@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       Client.shared = try Client(dsn: SwiftUVKeys().sentryDSN)
       try Client.shared?.startCrashHandler()
     } catch let error {
-      ZLogger.log(message: "Could not load Sentry ==> \(error.localizedDescription)", event: .error)
+      ZLogger.error(message: "Could not load Sentry ==> \(error.localizedDescription)")
     }
     
     #endif
