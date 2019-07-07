@@ -11,7 +11,7 @@ target 'swiftUV' do
   pod 'SwiftLint', '= 0.33'
   pod 'SVProgressHUD', '~> 2.2'
   pod 'PopupDialog', '= 1.1.0'
-  pod 'ZLogger', '= 1.0.2'
+  pod 'ZLogger', '= 1.1.0'
   pod 'Swinject', '= 2.6.2'
   pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '4.3.1'
 

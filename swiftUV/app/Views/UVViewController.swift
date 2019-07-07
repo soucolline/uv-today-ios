@@ -89,7 +89,7 @@ extension  UVViewController: UVViewDelegate {
   
   func onUpdateLocationWithSuccess(with cityName: String) {
     self.cityLabel.text = "\("app.label.city".localized) : \(cityName)"
-    ZLogger.log(message: "Did receive location", event: .info)
+    ZLogger.info(message: "Did receive location")
   }
   
   func onUpdateLocationWithError() {

@@ -75,7 +75,7 @@ extension LocationService: CLLocationManagerDelegate {
       self.delegate?.didUpdateLocation(customLocation)
     }
     
-    ZLogger.log(message: "location = \(location)", event: .info)
+    ZLogger.info(message: "location = \(location)")
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
