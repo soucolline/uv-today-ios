@@ -13,8 +13,7 @@ target 'swiftUV' do
   pod 'PopupDialog', '= 1.1.0'
   pod 'ZLogger', '= 1.1.0'
   pod 'Swinject', '= 2.6.2'
-  pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '4.3.1'
-
+  pod 'Bugsnag'
 end
 
 target 'swiftUVTests' do
@@ -27,6 +26,6 @@ plugin 'cocoapods-keys', {
   :project => "swiftUV",
   :keys => [
   "DarkSkyApiKey",
-  "SentryDSN"
+  "BugsnagApiKey"
 ]}
 

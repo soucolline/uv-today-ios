@@ -8,9 +8,9 @@
 
 import UIKit
 import Swinject
-import Sentry
 import ZLogger
 import Keys
+import Bugsnag
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,14 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     #if RELEASE
-    
-    do {
-      Client.shared = try Client(dsn: SwiftUVKeys().sentryDSN)
-      try Client.shared?.startCrashHandler()
-    } catch let error {
-      ZLogger.error(message: "Could not load Sentry ==> \(error.localizedDescription)")
-    }
-    
+    Bugsnag.start(withApiKey: SwiftUVKeys().bugsnagApiKey)
     #endif
     
     return true
