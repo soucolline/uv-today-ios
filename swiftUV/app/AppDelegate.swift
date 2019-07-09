@@ -11,6 +11,7 @@ import Swinject
 import Sentry
 import ZLogger
 import Keys
+import Bugsnag
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     #endif
+    
+    Bugsnag.start(withApiKey: SwiftUVKeys().bugsnagApiKey)
+    
     
     return true
   }
