@@ -89,7 +89,7 @@ extension  UVViewController: UVViewDelegate {
   
   func onUpdateLocationWithSuccess(with cityName: String) {
     self.cityLabel.text = "\("app.label.city".localized) : \(cityName)"
-    ZLogger.log(message: "Did receive location", event: .info)
+    ZLogger.info(message: "Did receive location")
   }
   
   func onUpdateLocationWithError() {
@@ -100,11 +100,13 @@ extension  UVViewController: UVViewDelegate {
   }
   
   func onReceiveSuccess(index: Int) {
-    self.indexLabel.text = String(index)
-    self.descriptionTextView.text = index.associatedDescription
-    UIView.animate(withDuration: 1.0, animations: {
-      self.view.backgroundColor = index.associatedColor
-    })
+    DispatchQueue.main.async {
+      self.indexLabel.text = String(index)
+      self.descriptionTextView.text = index.associatedDescription
+      UIView.animate(withDuration: 1.0, animations: {
+        self.view.backgroundColor = index.associatedColor
+      })
+    }
   }
   
   func onShowError(message: String) {

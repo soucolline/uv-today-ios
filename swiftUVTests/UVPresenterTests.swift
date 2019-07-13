@@ -42,7 +42,7 @@ class UVPresenterTests: XCTestCase {
     }
     
     stub(mockUVService) { stub in
-      when(stub).getUVIndex(from: any(Location.self), success: any(), failure: any()).thenDoNothing()
+      when(stub).getUVIndex(from: any(Location.self), completion: any()).thenDoNothing()
     }
     
     presenter = UVPresenterImpl(with: mockLocationService, uvService: mockUVService)
@@ -99,7 +99,7 @@ class UVPresenterTests: XCTestCase {
   func testGetUVIndexSucceed() {
     let expectedLocation = Location(latitude: 10.0, longitude: 10.0, city: "Paris")
     let expectedForecast = Forecast(currently: CurrentForecast(uvIndex: 1))
-    let mockUVListenerCaptor = ArgumentCaptor<(Forecast) -> Void>()
+    let mockUVListenerCaptor = ArgumentCaptor<(Result<Forecast, UVError>) -> Void>()
     
     stub(mockLocationService) { stub in
       when(stub).searchLocation().then {
@@ -115,9 +115,8 @@ class UVPresenterTests: XCTestCase {
     
     verify(mockUVService).getUVIndex(from: ParameterMatcher(matchesFunction: { location in
       location == expectedLocation
-    }), success: mockUVListenerCaptor.capture(), failure: any())
-    
-    mockUVListenerCaptor.value!(expectedForecast)
+    }), completion: mockUVListenerCaptor.capture())
+    mockUVListenerCaptor.value!(.success(expectedForecast))
     
     verify(mockUVView).onDismissLoader()
     verify(mockUVView).onReceiveSuccess(index: ParameterMatcher(matchesFunction: { index in
@@ -131,7 +130,7 @@ class UVPresenterTests: XCTestCase {
   
   func testGetUVIndexFailure() {
     let expectedLocation = Location(latitude: 10.0, longitude: 10.0, city: "Paris")
-    let mockUVListenerCaptor = ArgumentCaptor<(Error) -> Void>()
+    let mockUVListenerCaptor = ArgumentCaptor<(Result<Forecast, UVError>) -> Void>()
     
     stub(mockLocationService) { stub in
       when(stub).searchLocation().then {
@@ -147,9 +146,9 @@ class UVPresenterTests: XCTestCase {
     
     verify(mockUVService).getUVIndex(from: ParameterMatcher(matchesFunction: { location in
       location == expectedLocation
-    }), success: any(), failure: mockUVListenerCaptor.capture())
+    }), completion: mockUVListenerCaptor.capture())
     
-    mockUVListenerCaptor.value!(UVError.noData)
+    mockUVListenerCaptor.value!(.failure(UVError.noData))
     
     verify(mockUVView).onDismissLoader()
     verify(mockUVView).onShowError(message: anyString())

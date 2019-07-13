@@ -1,28 +1,30 @@
 PODS:
-  - Alamofire (4.7.3)
-  - Cuckoo (0.12.1)
+  - Bugsnag (5.22.2)
+  - Cuckoo (1.0.6)
   - DynamicBlurView (3.0.1)
-  - Nimble (8.0.1)
+  - Keys (1.0.1)
+  - Nimble (8.0.2)
   - PopupDialog (1.1.0):
     - DynamicBlurView (~> 3.0.1)
   - SVProgressHUD (2.2.5)
-  - SwiftLint (0.31.0)
-  - Swinject (2.6.0)
-  - ZLogger (1.0.2)
+  - SwiftLint (0.33.0)
+  - Swinject (2.6.2)
+  - ZLogger (1.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7)
-  - Cuckoo (= 0.12.1)
-  - Nimble (~> 8.0)
-  - PopupDialog (~> 1.1)
+  - Bugsnag
+  - Cuckoo (= 1.0.6)
+  - Keys (from `Pods/CocoaPodsKeys`)
+  - Nimble (= 8.0.2)
+  - PopupDialog (= 1.1.0)
   - SVProgressHUD (~> 2.2)
-  - SwiftLint (~> 0.31)
-  - Swinject (~> 2.6)
-  - ZLogger (= 1.0.2)
+  - SwiftLint (= 0.33)
+  - Swinject (= 2.6.2)
+  - ZLogger (= 1.1.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
+  https://cdn.cocoapods.org/:
+    - Bugsnag
     - Cuckoo
     - DynamicBlurView
     - Nimble
@@ -32,17 +34,22 @@ SPEC REPOS:
     - Swinject
     - ZLogger
 
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Cuckoo: 2f10364798baa4b0d4aacabfa475249cf29977bc
+  Bugsnag: 3e9e2b563f1e99ce447de123c65e851bd109fa9f
+  Cuckoo: 8074fc309159c4862665b83798f5ad03e061e8bd
   DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
   PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
-  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
-  ZLogger: 314a65eb636223e9ecb83080d00cfcdcb01e560c
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  ZLogger: d53f23ce00f0f94a97271495f9f2957e5255938f
 
-PODFILE CHECKSUM: c76bdc445982381fb7de0b0724eb143bda73bbbc
+PODFILE CHECKSUM: c50896bdbc3bbc8905559570c21f7b11700c47c1
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.3
