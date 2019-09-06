@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
+		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
 		E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CF22C577B80040E5BC /* NetworkSession.swift */; };
 		E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */; };
@@ -51,6 +52,7 @@
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9C726CD22C577920040E5BC /* APIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = app/Workers/APIWorker.swift; sourceTree = "<group>"; };
 		E9C726CF22C577B80040E5BC /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSession.swift; path = app/Workers/NetworkSession.swift; sourceTree = "<group>"; };
 		E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorkerTests.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				EBF4B7631E79917000B7A616 /* app */,
 				EBF4B7641E79918100B7A616 /* Resources */,
 				EBF4B7561E7951D400B7A616 /* Assets.xcassets */,
+				E9A116342322E96C004DC9FB /* Colors.xcassets */,
 				EBF4B7581E7951D400B7A616 /* LaunchScreen.storyboard */,
 				EBF4B75B1E7951D400B7A616 /* Info.plist */,
 			);
@@ -363,6 +366,7 @@
 				EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */,
 				EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */,
 				EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */,
+				E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */,
 				EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */,
 				EBB061EF21A1DCD60084E975 /* OpenSans-Semibold.ttf in Resources */,
 			);
