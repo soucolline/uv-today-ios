@@ -8,7 +8,6 @@
 
 import Foundation
 
-#warning("Write tests")
 final class URLFactory {
 
   private let apiKey: String

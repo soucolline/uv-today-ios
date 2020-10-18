@@ -23,7 +23,7 @@ class APIWorkerTests: XCTestCase {
   
   func testLoadDataSuccess() {
     let expectedURL = URL(string: "https://www.fake-url.com")!
-    let forecast = Forecast(currently: CurrentForecast(uvIndex: 1))
+    let forecast = Forecast(lat: 10.212, lon: 43.232, dateIso: "12154215", date: 1234566, value: 1)
     let forecastData = try! JSONEncoder().encode(forecast)
     
     stub(sessionMock) { stub in
@@ -37,7 +37,7 @@ class APIWorkerTests: XCTestCase {
         url == expectedURL
       }), completionHandler: any())
       
-      XCTAssertEqual(try! result.get().currently.uvIndex, 1)
+      XCTAssertEqual(try! Int(result.get().value.rounded()), 1)
     })
     
     verifyNoMoreInteractions(sessionMock)
