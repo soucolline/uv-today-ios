@@ -9,10 +9,10 @@
 struct K {
   
   struct Api {
-    static let baseURL = "https://api.darksky.net/forecast/"
+    static let baseURL = "https://api.openweathermap.org/data/2.5/"
     
     struct Endpoints {
-      static let getUV = "%@/%f,%f"
+      static let getUV = "uvi?lat=%f&lon=%f&appid=%@"
     }
     
   }

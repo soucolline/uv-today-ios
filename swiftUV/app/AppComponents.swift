@@ -8,6 +8,7 @@
 
 import Swinject
 import CoreLocation
+import Keys
 
 class AppComponent {
   
@@ -38,7 +39,8 @@ class AppComponent {
     
     container.register(UVService.self) { resolver in
       return UVServiceImpl(
-        with: resolver.resolve(APIWorker.self)!
+        with: resolver.resolve(APIWorker.self)!,
+        urlFactory: resolver.resolve(URLFactory.self)!
       )
     }
     
@@ -47,6 +49,10 @@ class AppComponent {
         with: resolver.resolve(LocationService.self)!,
         uvService: resolver.resolve(UVService.self)!
       )
+    }
+
+    container.register(URLFactory.self) { _ in
+      URLFactory(with: SwiftUVKeys().openWeatherMapApiKey)
     }
     
     return container

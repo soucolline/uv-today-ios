@@ -13,6 +13,7 @@
 		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
 		E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CF22C577B80040E5BC /* NetworkSession.swift */; };
 		E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */; };
+		E9F8B50C253C462B004CEDF2 /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F8B50B253C462B004CEDF2 /* URLFactory.swift */; };
 		EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615A21A1CF9A0084E975 /* IndexTests.swift */; };
 		EBB061CA21A1DC790084E975 /* UVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061C921A1DC790084E975 /* UVViewController.swift */; };
 		EBB061CC21A1DC810084E975 /* UVPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061CB21A1DC810084E975 /* UVPresenterImpl.swift */; };
@@ -56,6 +57,7 @@
 		E9C726CD22C577920040E5BC /* APIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = app/Workers/APIWorker.swift; sourceTree = "<group>"; };
 		E9C726CF22C577B80040E5BC /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSession.swift; path = app/Workers/NetworkSession.swift; sourceTree = "<group>"; };
 		E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorkerTests.swift; sourceTree = "<group>"; };
+		E9F8B50B253C462B004CEDF2 /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
 		EB055CB01FAE532700FE7A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		EBB0615A21A1CF9A0084E975 /* IndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
 		EBB061C921A1DC790084E975 /* UVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVViewController.swift; path = app/Views/UVViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 				E9C726CF22C577B80040E5BC /* NetworkSession.swift */,
 			);
 			name = Workers;
+			sourceTree = "<group>";
+		};
+		E9F8B50A253C4616004CEDF2 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				E9F8B50B253C462B004CEDF2 /* URLFactory.swift */,
+			);
+			name = Factories;
 			sourceTree = "<group>";
 		};
 		EBB061462198956B0084E975 /* Views */ = {
@@ -224,6 +234,7 @@
 				EBB0614A219897140084E975 /* Services */,
 				E9C726CC22C576B30040E5BC /* Workers */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
+				E9F8B50A253C4616004CEDF2 /* Factories */,
 				EBB061DF21A1DCA60084E975 /* AppComponents.swift */,
 				EBB061E021A1DCA60084E975 /* AppDelegate.swift */,
 				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
@@ -517,6 +528,7 @@
 				EBB061DB21A1DC980084E975 /* Location.swift in Sources */,
 				E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */,
 				EBB061CC21A1DC810084E975 /* UVPresenterImpl.swift in Sources */,
+				E9F8B50C253C462B004CEDF2 /* URLFactory.swift in Sources */,
 				E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */,
 				EBB061D021A1DC8B0084E975 /* LocationService.swift in Sources */,
 				EBB061D821A1DC980084E975 /* Constants.swift in Sources */,

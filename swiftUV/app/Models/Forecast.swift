@@ -7,13 +7,17 @@
 //
 
 struct Forecast: Codable, TaskExecutable {
-  
-  let currently: CurrentForecast
-  
-}
+  let lat: Double
+  let lon: Double
+  let dateIso: String
+  let date: Int
+  let value: Double
 
-struct CurrentForecast: Codable {
-  
-  let uvIndex: Index
-  
+  enum CodingKeys: String, CodingKey {
+    case lat
+    case lon
+    case dateIso = "date_iso"
+    case date
+    case value
+  }
 }

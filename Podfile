@@ -24,7 +24,7 @@ end
 plugin 'cocoapods-keys', {
   :project => "swiftUV",
   :keys => [
-  "DarkSkyApiKey",
+  "OpenWeatherMapApiKey",
   "BugsnagApiKey"
 ]}
 

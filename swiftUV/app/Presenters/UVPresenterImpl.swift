@@ -56,7 +56,7 @@ class UVPresenterImpl: UVPresenter {
       switch result {
       case .success(let forecast):
         self.delegate?.onDismissLoader()
-        self.delegate?.onReceiveSuccess(index: forecast.currently.uvIndex)
+        self.delegate?.onReceiveSuccess(index: Int(forecast.value.rounded()))
       case .failure(let error):
         self.delegate?.onDismissLoader()
         self.delegate?.onShowError(message: error.localizedDescription)
