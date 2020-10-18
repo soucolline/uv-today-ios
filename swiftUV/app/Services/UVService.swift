@@ -7,10 +7,10 @@
 //
 
 import ZLogger
-import Keys
+import Combine
 
 protocol UVService {
-  func getUVIndex(from location: Location, completion: @escaping (Result<Forecast, UVError>) -> Void)
+  func getUVIndex(from location: Location) -> AnyPublisher<Forecast, UVError>
 }
 
 class UVServiceImpl: UVService {
@@ -22,21 +22,14 @@ class UVServiceImpl: UVService {
     self.apiExecutor = apiExecutor
     self.urlFactory = urlFactory
   }
-  
-  func getUVIndex(from location: Location, completion: @escaping (Result<Forecast, UVError>) -> Void) {
+
+  func getUVIndex(from location: Location) -> AnyPublisher<Forecast, UVError> {
     let url = self.urlFactory.createUVURL(lat: location.latitude, lon: location.longitude)
 
     ZLogger.info(message: "\(url)")
-    
-    self.apiExecutor.request(for: Forecast.self, at: url, method: .get, parameters: [:], completion: { result in
-      switch result {
-      case .success(let forecast):
-        ZLogger.info(message: "Retrieved index \(forecast.value)")
-        completion(.success(forecast))
-      case .failure(let error):
-        ZLogger.error(message: error.localizedDescription)
-        completion(.failure(error))
-      }
-    })
+
+    return self.apiExecutor.request(for: Forecast.self, at: url, method: .get, parameters: [:])
+      .map(\.self)
+      .eraseToAnyPublisher()
   }
 }

@@ -6,6 +6,10 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
+import Combine
+import ZLogger
+import Bugsnag
+
 protocol UVViewDelegate: class {
   func onShowLoader()
   func onDismissLoader()
@@ -33,6 +37,8 @@ class UVPresenterImpl: UVPresenter {
   
   private let locationService: LocationService
   private let uvService: UVService
+
+  private var cancelable: AnyCancellable?
   
   init(with locationService: LocationService, uvService: UVService) {
     self.locationService = locationService
@@ -51,17 +57,22 @@ class UVPresenterImpl: UVPresenter {
   
   func getUVIndex() {
     guard let location = self.location else { return }
-    
-    self.uvService.getUVIndex(from: location) { result in
-      switch result {
-      case .success(let forecast):
+
+    self.cancelable = self.uvService.getUVIndex(from: location).sink(
+      receiveCompletion: { completion in
+        switch completion {
+          case .finished: break
+          case .failure(let error):
+            self.delegate?.onDismissLoader()
+            self.delegate?.onShowError(message: error.localizedDescription)
+        }
+      }, receiveValue: { value in
+        let value = Int(value.value.rounded())
+        ZLogger.info(message: "Did receive index with value : \(value)")
+
         self.delegate?.onDismissLoader()
-        self.delegate?.onReceiveSuccess(index: Int(forecast.value.rounded()))
-      case .failure(let error):
-        self.delegate?.onDismissLoader()
-        self.delegate?.onShowError(message: error.localizedDescription)
-      }
-    }
+        self.delegate?.onReceiveSuccess(index: value)
+      })
   }
   
 }
