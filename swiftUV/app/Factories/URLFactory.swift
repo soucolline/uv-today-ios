@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class URLFactory {
+class URLFactory {
 
   private let apiKey: String
 

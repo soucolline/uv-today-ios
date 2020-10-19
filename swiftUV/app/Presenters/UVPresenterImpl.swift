@@ -58,21 +58,19 @@ class UVPresenterImpl: UVPresenter {
   func getUVIndex() {
     guard let location = self.location else { return }
 
-    self.cancelable = self.uvService.getUVIndex(from: location).sink(
-      receiveCompletion: { completion in
-        switch completion {
-          case .finished: break
-          case .failure(let error):
-            self.delegate?.onDismissLoader()
-            self.delegate?.onShowError(message: error.localizedDescription)
-        }
-      }, receiveValue: { value in
-        let value = Int(value.value.rounded())
-        ZLogger.info(message: "Did receive index with value : \(value)")
+    self.cancelable = self.uvService.getUVIndex(from: location).sink { completion in
+      switch completion {
+        case .finished: break
+        case .failure(let error):
+          self.delegate?.onDismissLoader()
+          self.delegate?.onShowError(message: error.localizedDescription)
+      }
+    } receiveValue: { value in
+      ZLogger.info(message: "Did receive index with value : \(value)")
 
-        self.delegate?.onDismissLoader()
-        self.delegate?.onReceiveSuccess(index: value)
-      })
+      self.delegate?.onDismissLoader()
+      self.delegate?.onReceiveSuccess(index: value)
+    }
   }
   
 }

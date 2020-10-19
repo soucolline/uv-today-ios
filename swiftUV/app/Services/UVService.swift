@@ -10,7 +10,7 @@ import ZLogger
 import Combine
 
 protocol UVService {
-  func getUVIndex(from location: Location) -> AnyPublisher<Forecast, UVError>
+  func getUVIndex(from location: Location) -> AnyPublisher<Index, UVError>
 }
 
 class UVServiceImpl: UVService {
@@ -23,13 +23,15 @@ class UVServiceImpl: UVService {
     self.urlFactory = urlFactory
   }
 
-  func getUVIndex(from location: Location) -> AnyPublisher<Forecast, UVError> {
+  func getUVIndex(from location: Location) -> AnyPublisher<Index, UVError> {
     let url = self.urlFactory.createUVURL(lat: location.latitude, lon: location.longitude)
 
     ZLogger.info(message: "\(url)")
 
     return self.apiExecutor.request(for: Forecast.self, at: url, method: .get, parameters: [:])
-      .map(\.self)
+      .map { forecast in
+        Int(forecast.value.rounded())
+      }
       .eraseToAnyPublisher()
   }
 }
