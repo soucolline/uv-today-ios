@@ -16,6 +16,11 @@ class APIWorkerTests: XCTestCase {
   
   var sessionMock: MockNetworkSession!
   var apiWorker: APIWorker!
+
+  private let expectedURL = URL(string: "https://www.fake-url.com")!
+  private let expectedForecast = Forecast(lat: 10.212, lon: 43.232, dateIso: "12154215", date: 1234566, value: 1)
+
+  private var cancelable: AnyCancellable?
   
   override func setUp() {
     sessionMock = MockNetworkSession()
@@ -23,106 +28,92 @@ class APIWorkerTests: XCTestCase {
   }
   
   func testLoadDataSuccess() {
-    let expectedURL = URL(string: "https://www.fake-url.com")!
-    let forecast = Forecast(lat: 10.212, lon: 43.232, dateIso: "12154215", date: 1234566, value: 1)
-    let forecastData = try! JSONEncoder().encode(forecast)
+    let forecastData = try! JSONEncoder().encode(expectedForecast)
+    let expectedURLResponse = HTTPURLResponse(url: expectedURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
+    let expectedPublisher = Just((data: forecastData, response: expectedURLResponse as URLResponse)).setFailureType(to: URLError.self).eraseToAnyPublisher()
 
-//    stub(sessionMock) { stub in
-//      when(stub).loadData(from: any()).thenReturn(URLSession.DataTaskPublisher(request: URLRequest(url: expectedURL), session: URLSession(configuration: URLSessionConfiguration.default)))
-//    }
+    stub(sessionMock) { stub in
+      when(stub).loadData(from: any()).thenReturn(expectedPublisher)
+    }
 
-    
-//    stub(sessionMock) { stub in
-//      when(stub).loadData(from: any(), completionHandler: any()).then({ url, completionHandler in
-//        completionHandler(forecastData, nil)
-//      })
-//    }
-//
-//    apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:], completion: { result in
-//      verify(self.sessionMock).loadData(from: ParameterMatcher(matchesFunction: { url in
-//        url == expectedURL
-//      }), completionHandler: any())
-//
-//      XCTAssertEqual(try! Int(result.get().value.rounded()), 1)
-//    })
-    
+    cancelable = apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:]).sink { completion in
+      switch completion {
+        case .finished: break
+        case .failure: XCTFail("Should not trigger failure")
+      }
+    } receiveValue: { forecast in
+      XCTAssertEqual(forecast, self.expectedForecast)
+    }
+
+    verify(sessionMock).loadData(from: any())
     verifyNoMoreInteractions(sessionMock)
   }
 
-  
-//  func testLoadDataFailedCustomError() {
-//    let expectedURL = URL(string: "https://www.fake-url.com")!
-//
-//    stub(sessionMock) { stub in
-//      when(stub).loadData(from: any(), completionHandler: any()).then({ url, completionHandler in
-//        completionHandler(nil, UVError.couldNotDecodeJSON)
-//      })
-//    }
-//
-//    apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:], completion: { result in
-//      verify(self.sessionMock).loadData(from: ParameterMatcher(matchesFunction: { url in
-//        url == expectedURL
-//      }), completionHandler: any())
-//
-//      _ = result.mapError { error -> UVError in
-//        XCTAssertEqual(error, UVError.customError(error.localizedDescription))
-//
-//        return error
-//      }
-//    })
-//
-//    verifyNoMoreInteractions(sessionMock)
-//  }
-//
-//  func testLoadDataFailedNoData() {
-//    let expectedURL = URL(string: "https://www.fake-url.com")!
-//
-//    stub(sessionMock) { stub in
-//      when(stub).loadData(from: any(), completionHandler: any()).then({ url, completionHandler in
-//        completionHandler(nil, nil)
-//      })
-//    }
-//
-//    apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:], completion: { result in
-//      verify(self.sessionMock).loadData(from: ParameterMatcher(matchesFunction: { url in
-//        url == expectedURL
-//      }), completionHandler: any())
-//
-//      _ = result.mapError { error -> UVError in
-//        XCTAssertEqual(error, UVError.noData)
-//
-//        return error
-//      }
-//    })
-//
-//    verifyNoMoreInteractions(sessionMock)
-//  }
-//
-//  func testLoadDataFailedCouldNotDecodeJSON() {
-//    let expectedURL = URL(string: "https://www.fake-url.com")!
-//    let dataToFail = "///".data(using: .utf8)
-//
-//    stub(sessionMock) { stub in
-//      when(stub).loadData(from: any(), completionHandler: any()).then({ url, completionHandler in
-//        completionHandler(dataToFail, nil)
-//      })
-//    }
-//
-//    apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:], completion: { result in
-//      verify(self.sessionMock).loadData(from: ParameterMatcher(matchesFunction: { url in
-//        url == expectedURL
-//      }), completionHandler: any())
-//
-//      _ = result.mapError { error -> UVError in
-//        XCTAssertEqual(error, UVError.couldNotDecodeJSON)
-//
-//        return error
-//      }
-//    })
-//
-//    verifyNoMoreInteractions(sessionMock)
-//  }
+  func testLoadDataFailureNoResponse() {
+    let forecastData = try! JSONEncoder().encode(expectedForecast)
+    let expectedURLResponse = URLResponse()
+    let expectedPublisher = Just((data: forecastData, response: expectedURLResponse)).setFailureType(to: URLError.self).eraseToAnyPublisher()
 
+    stub(sessionMock) { stub in
+      when(stub).loadData(from: any()).thenReturn(expectedPublisher)
+    }
+
+    cancelable = apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:]).sink { completion in
+      switch completion {
+        case .finished: break
+        case .failure(let error): XCTAssertEqual(error, UVError.urlNotValid)
+      }
+    } receiveValue: { forecast in
+      XCTFail("Should not trigger success")
+    }
+
+    verify(sessionMock).loadData(from: any())
+    verifyNoMoreInteractions(sessionMock)
+  }
+
+  func testLoadDataFailure404() {
+    let forecastData = try! JSONEncoder().encode(expectedForecast)
+    let expectedURLResponse = HTTPURLResponse(url: expectedURL, statusCode: 404, httpVersion: nil, headerFields: nil)!
+    let expectedPublisher = Just((data: forecastData, response: expectedURLResponse as URLResponse)).setFailureType(to: URLError.self).eraseToAnyPublisher()
+
+    stub(sessionMock) { stub in
+      when(stub).loadData(from: any()).thenReturn(expectedPublisher)
+    }
+
+    cancelable = apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:]).sink { completion in
+      switch completion {
+        case .finished: break
+        case .failure(let error): XCTAssertEqual(error, UVError.noData("No data for HTTP Code 404"))
+      }
+    } receiveValue: { forecast in
+      XCTFail("Should not trigger success")
+    }
+
+    verify(sessionMock).loadData(from: any())
+    verifyNoMoreInteractions(sessionMock)
+  }
+
+  func testLoadDataFailureJSONDecode() {
+    let wrongData = "{id: 12}".data(using: .utf8)!
+    let expectedURLResponse = HTTPURLResponse(url: expectedURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
+    let expectedPublisher = Just((data: wrongData, response: expectedURLResponse as URLResponse)).setFailureType(to: URLError.self).eraseToAnyPublisher()
+
+    stub(sessionMock) { stub in
+      when(stub).loadData(from: any()).thenReturn(expectedPublisher)
+    }
+
+    cancelable = apiWorker.request(for: Forecast.self, at: expectedURL, method: .get, parameters: [:]).sink { completion in
+      switch completion {
+        case .finished: break
+        case .failure(let error): XCTAssertEqual(error, UVError.couldNotDecodeJSON)
+      }
+    } receiveValue: { forecast in
+      XCTFail("Should not trigger success")
+    }
+
+    verify(sessionMock).loadData(from: any())
+    verifyNoMoreInteractions(sessionMock)
+  }
   
 }
 

@@ -10,11 +10,11 @@ import Foundation
 import Combine
 
 protocol NetworkSession {
-  func loadData(from url: URL) -> URLSession.DataTaskPublisher
+  func loadData(from url: URL) -> AnyPublisher<(data: Data, response: URLResponse), URLError>
 }
 
 extension URLSession: NetworkSession {
-  func loadData(from url: URL) -> URLSession.DataTaskPublisher {
-    dataTaskPublisher(for: url)
+  func loadData(from url: URL) -> AnyPublisher<(data: Data, response: URLResponse), URLError> {
+    dataTaskPublisher(for: url).eraseToAnyPublisher()
   }
 }

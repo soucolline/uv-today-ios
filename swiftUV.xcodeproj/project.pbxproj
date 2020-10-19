@@ -10,7 +10,6 @@
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
 		E9833665253C966500EF7510 /* URLFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9833664253C966500EF7510 /* URLFactoryTests.swift */; };
-		E983368F253CF81B00EF7510 /* UVPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061FA21A1DE930084E975 /* UVPresenterTests.swift */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
 		E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CF22C577B80040E5BC /* NetworkSession.swift */; };
@@ -521,7 +520,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */,
-				E983368F253CF81B00EF7510 /* UVPresenterTests.swift in Sources */,
 				EBB061FD21A1E4010084E975 /* GeneratedMocks.swift in Sources */,
 				E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */,
 				E9FF14F6253D8F100098BE0C /* UVServiceTests.swift in Sources */,
