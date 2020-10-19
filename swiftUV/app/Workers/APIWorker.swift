@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-protocol TaskExecutable: Codable {}
+import Combine
 
 enum HTTPMethod: String {
   case get = "GET"
@@ -19,7 +18,7 @@ enum HTTPMethod: String {
 }
 
 protocol APIWorker {
-  func request<T: TaskExecutable>(for type: T.Type, at url: URL, method: HTTPMethod, parameters: [String: Any], completion: @escaping (Result<T, UVError>) -> Void)
+  func request<T: TaskExecutable>(for type: T.Type, at url: URL, method: HTTPMethod, parameters: [String: Any]) -> AnyPublisher<T, UVError>
 }
 
 class APIWorkerImpl: APIWorker {
@@ -29,30 +28,37 @@ class APIWorkerImpl: APIWorker {
   init(with session: NetworkSession) {
     self.session = session
   }
-  
-  func request<T: TaskExecutable>(for type: T.Type, at url: URL, method: HTTPMethod, parameters: [String: Any], completion: @escaping (Result<T, UVError>) -> Void) {
+
+  func request<T: TaskExecutable>(for type: T.Type, at url: URL, method: HTTPMethod, parameters: [String: Any]) -> AnyPublisher<T, UVError> {
     var request = URLRequest(url: url)
     request.httpMethod = method.rawValue
     request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
-    
-    self.session.loadData(from: url) { data, error in
-      guard error == nil else {
-        completion(.failure(.customError(error?.localizedDescription ?? "Unknown error")))
-        return
+
+    return self.session.loadData(from: url)
+      .tryMap { output in
+        guard let response = output.response as? HTTPURLResponse else {
+          throw UVError.urlNotValid
+        }
+
+        switch response.statusCode {
+          case 200:
+            return output.data
+          default:
+            throw UVError.noData("No data for HTTP Code \(response.statusCode)")
+        }
       }
-      
-      guard let jsonData = data else {
-        completion(.failure(.noData))
-        return
+      .decode(type: type, decoder: JSONDecoder())
+      .mapError { error in
+        switch error {
+          case is UVError:
+            return (error as? UVError) ?? .customError(error.localizedDescription)
+          case is Swift.DecodingError:
+            return .couldNotDecodeJSON
+          default:
+            return .customError(error.localizedDescription)
+        }
       }
-      
-      do {
-        let resources = try JSONDecoder().decode(type, from: jsonData)
-        completion(.success(resources))
-      } catch {
-        completion(.failure(.couldNotDecodeJSON))
-      }
-    }
+      .eraseToAnyPublisher()
   }
   
 }

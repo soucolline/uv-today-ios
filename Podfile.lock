@@ -1,33 +1,32 @@
 PODS:
   - Bugsnag (5.22.2)
-  - Cuckoo (1.0.6)
-  - DynamicBlurView (3.0.1)
+  - Cuckoo (1.4.1):
+    - Cuckoo/Swift (= 1.4.1)
+  - Cuckoo/Swift (1.4.1)
+  - DynamicBlurView (4.1.0)
   - Keys (1.0.1)
-  - Nimble (8.0.2)
-  - PopupDialog (1.1.0):
-    - DynamicBlurView (~> 3.0.1)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
   - SVProgressHUD (2.2.5)
-  - SwiftLint (0.33.0)
-  - Swinject (2.6.2)
+  - SwiftLint (0.40.3)
+  - Swinject (2.7.1)
   - ZLogger (1.1.0)
 
 DEPENDENCIES:
   - Bugsnag
-  - Cuckoo (= 1.0.6)
+  - Cuckoo (= 1.4.1)
   - Keys (from `Pods/CocoaPodsKeys`)
-  - Nimble (= 8.0.2)
-  - PopupDialog (= 1.1.0)
-  - SVProgressHUD (~> 2.2)
-  - SwiftLint (= 0.33)
-  - Swinject (= 2.6.2)
+  - PopupDialog (= 1.1.1)
+  - SVProgressHUD (= 2.2.5)
+  - SwiftLint (= 0.40.3)
+  - Swinject (= 2.7.1)
   - ZLogger (= 1.1.0)
 
 SPEC REPOS:
-  https://cdn.cocoapods.org/:
+  trunk:
     - Bugsnag
     - Cuckoo
     - DynamicBlurView
-    - Nimble
     - PopupDialog
     - SVProgressHUD
     - SwiftLint
@@ -40,16 +39,15 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bugsnag: 3e9e2b563f1e99ce447de123c65e851bd109fa9f
-  Cuckoo: 8074fc309159c4862665b83798f5ad03e061e8bd
-  DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
+  Cuckoo: 4625f7f54d9bb880123270e8969898d6c1d036b5
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
-  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
-  PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
-  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   ZLogger: d53f23ce00f0f94a97271495f9f2957e5255938f
 
-PODFILE CHECKSUM: c50896bdbc3bbc8905559570c21f7b11700c47c1
+PODFILE CHECKSUM: bba4372a364845d1400754335d38211d1722c20a
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.9.3

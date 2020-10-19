@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
+		E9833665253C966500EF7510 /* URLFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9833664253C966500EF7510 /* URLFactoryTests.swift */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
 		E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CF22C577B80040E5BC /* NetworkSession.swift */; };
 		E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */; };
+		E9FF14F6253D8F100098BE0C /* UVServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF14F5253D8F100098BE0C /* UVServiceTests.swift */; };
+		E9FF14FC253D90E70098BE0C /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF14FB253D90E70098BE0C /* URLFactory.swift */; };
+		E9FF1504253D9A8B0098BE0C /* TaskExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */; };
 		EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615A21A1CF9A0084E975 /* IndexTests.swift */; };
 		EBB061CA21A1DC790084E975 /* UVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061C921A1DC790084E975 /* UVViewController.swift */; };
 		EBB061CC21A1DC810084E975 /* UVPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061CB21A1DC810084E975 /* UVPresenterImpl.swift */; };
@@ -28,7 +32,6 @@
 		EBB061E121A1DCA60084E975 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061DF21A1DCA60084E975 /* AppComponents.swift */; };
 		EBB061E221A1DCA60084E975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061E021A1DCA60084E975 /* AppDelegate.swift */; };
 		EBB061EF21A1DCD60084E975 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB061E521A1DCD50084E975 /* OpenSans-Semibold.ttf */; };
-		EBB061FB21A1DE930084E975 /* UVPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061FA21A1DE930084E975 /* UVPresenterTests.swift */; };
 		EBB061FD21A1E4010084E975 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061FC21A1E4010084E975 /* GeneratedMocks.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBF4B7551E7951D400B7A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7531E7951D400B7A616 /* Main.storyboard */; };
@@ -52,10 +55,14 @@
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9833664253C966500EF7510 /* URLFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactoryTests.swift; sourceTree = "<group>"; };
 		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9C726CD22C577920040E5BC /* APIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = app/Workers/APIWorker.swift; sourceTree = "<group>"; };
 		E9C726CF22C577B80040E5BC /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSession.swift; path = app/Workers/NetworkSession.swift; sourceTree = "<group>"; };
 		E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorkerTests.swift; sourceTree = "<group>"; };
+		E9FF14F5253D8F100098BE0C /* UVServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVServiceTests.swift; sourceTree = "<group>"; };
+		E9FF14FB253D90E70098BE0C /* URLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLFactory.swift; path = app/Factories/URLFactory.swift; sourceTree = "<group>"; };
+		E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskExecutable.swift; path = app/Models/TaskExecutable.swift; sourceTree = "<group>"; };
 		EB055CB01FAE532700FE7A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		EBB0615A21A1CF9A0084E975 /* IndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
 		EBB061C921A1DC790084E975 /* UVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVViewController.swift; path = app/Views/UVViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +145,14 @@
 			name = Workers;
 			sourceTree = "<group>";
 		};
+		E9F8B50A253C4616004CEDF2 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				E9FF14FB253D90E70098BE0C /* URLFactory.swift */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
 		EBB061462198956B0084E975 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +192,9 @@
 				EBDA88971FAE5C89009514AB /* Info.plist */,
 				EBB0615A21A1CF9A0084E975 /* IndexTests.swift */,
 				EBB061FA21A1DE930084E975 /* UVPresenterTests.swift */,
+				E9FF14F5253D8F100098BE0C /* UVServiceTests.swift */,
 				E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */,
+				E9833664253C966500EF7510 /* URLFactoryTests.swift */,
 				EBB061FC21A1E4010084E975 /* GeneratedMocks.swift */,
 			);
 			path = swiftUVTests;
@@ -224,6 +241,7 @@
 				EBB0614A219897140084E975 /* Services */,
 				E9C726CC22C576B30040E5BC /* Workers */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
+				E9F8B50A253C4616004CEDF2 /* Factories */,
 				EBB061DF21A1DCA60084E975 /* AppComponents.swift */,
 				EBB061E021A1DCA60084E975 /* AppDelegate.swift */,
 				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
@@ -256,6 +274,7 @@
 				EBB061D621A1DC980084E975 /* Index.swift */,
 				EBB061D421A1DC980084E975 /* Location.swift */,
 				EBB061D721A1DC980084E975 /* PopupManager.swift */,
+				E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */,
 				EBB061D221A1DC980084E975 /* String.swift */,
 				EBB061D321A1DC980084E975 /* UVError.swift */,
 			);
@@ -313,7 +332,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Thomas Guilleminot";
 				TargetAttributes = {
 					EBDA88921FAE5C89009514AB = {
@@ -400,9 +419,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Keys-framework/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/Bugsnag/Bugsnag.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
-				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -410,9 +429,9 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bugsnag.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -430,15 +449,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
+				"${BUILT_PRODUCTS_DIR}/Keys-framework/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,7 +478,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/swiftUVTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/swiftUV/app/Presenters/UVPresenterImpl.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/LocationService.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/UVService.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Workers/NetworkSession.swift\" \\\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/swiftUVTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/swiftUV/app/Presenters/UVPresenterImpl.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/LocationService.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/UVService.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Workers/APIWorker.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Workers/NetworkSession.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Factories/URLFactory.swift\" \\\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		EBC31C9F1FAF7FC6004DC13C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -505,7 +522,8 @@
 				EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */,
 				EBB061FD21A1E4010084E975 /* GeneratedMocks.swift in Sources */,
 				E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */,
-				EBB061FB21A1DE930084E975 /* UVPresenterTests.swift in Sources */,
+				E9FF14F6253D8F100098BE0C /* UVServiceTests.swift in Sources */,
+				E9833665253C966500EF7510 /* URLFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,10 +533,12 @@
 			files = (
 				EBB061CF21A1DC8B0084E975 /* UVService.swift in Sources */,
 				EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */,
+				E9FF1504253D9A8B0098BE0C /* TaskExecutable.swift in Sources */,
 				EBB061E221A1DCA60084E975 /* AppDelegate.swift in Sources */,
 				EBB061DB21A1DC980084E975 /* Location.swift in Sources */,
 				E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */,
 				EBB061CC21A1DC810084E975 /* UVPresenterImpl.swift in Sources */,
+				E9FF14FC253D90E70098BE0C /* URLFactory.swift in Sources */,
 				E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */,
 				EBB061D021A1DC8B0084E975 /* LocationService.swift in Sources */,
 				EBB061D821A1DC980084E975 /* Constants.swift in Sources */,
@@ -594,7 +614,7 @@
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = swiftUVTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -625,7 +645,7 @@
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = swiftUVTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,6 +680,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -684,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -718,6 +739,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -736,7 +758,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -756,7 +778,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.swiftUV;
@@ -778,7 +800,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = XDX42S5M9N;
 				INFOPLIST_FILE = swiftUV/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zlatan.swiftUV;
