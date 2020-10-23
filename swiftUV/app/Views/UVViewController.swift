@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import SVProgressHUD
 import ZLogger
+import Resolver
 
 class UVViewController: UIViewController {
   
@@ -18,7 +19,7 @@ class UVViewController: UIViewController {
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var refreshBtn: UIImageView!
   
-  var presenter: UVPresenter = ((UIApplication.shared.delegate as? AppDelegate)?.container.resolve(UVPresenter.self))!
+  private let presenter = Resolver.resolve(UVPresenter.self)
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent

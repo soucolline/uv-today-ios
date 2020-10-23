@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 enum HTTPMethod: String {
   case get = "GET"

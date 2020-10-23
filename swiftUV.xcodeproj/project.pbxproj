@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
+		E96F2B682542D62C00C38427 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F2B672542D62C00C38427 /* AppComponents.swift */; };
 		E9833665253C966500EF7510 /* URLFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9833664253C966500EF7510 /* URLFactoryTests.swift */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
@@ -29,7 +30,6 @@
 		EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D521A1DC980084E975 /* Forecast.swift */; };
 		EBB061DD21A1DC980084E975 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D621A1DC980084E975 /* Index.swift */; };
 		EBB061DE21A1DC980084E975 /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D721A1DC980084E975 /* PopupManager.swift */; };
-		EBB061E121A1DCA60084E975 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061DF21A1DCA60084E975 /* AppComponents.swift */; };
 		EBB061E221A1DCA60084E975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061E021A1DCA60084E975 /* AppDelegate.swift */; };
 		EBB061EF21A1DCD60084E975 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB061E521A1DCD50084E975 /* OpenSans-Semibold.ttf */; };
 		EBB061FD21A1E4010084E975 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061FC21A1E4010084E975 /* GeneratedMocks.swift */; };
@@ -55,6 +55,7 @@
 		59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftUV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
+		E96F2B672542D62C00C38427 /* AppComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppComponents.swift; path = app/AppComponents.swift; sourceTree = "<group>"; };
 		E9833664253C966500EF7510 /* URLFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactoryTests.swift; sourceTree = "<group>"; };
 		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9C726CD22C577920040E5BC /* APIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = app/Workers/APIWorker.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		EBB061D521A1DC980084E975 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forecast.swift; path = app/Models/Forecast.swift; sourceTree = "<group>"; };
 		EBB061D621A1DC980084E975 /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Index.swift; path = app/Models/Index.swift; sourceTree = "<group>"; };
 		EBB061D721A1DC980084E975 /* PopupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupManager.swift; path = app/Models/PopupManager.swift; sourceTree = "<group>"; };
-		EBB061DF21A1DCA60084E975 /* AppComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppComponents.swift; path = app/AppComponents.swift; sourceTree = "<group>"; };
 		EBB061E021A1DCA60084E975 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = app/AppDelegate.swift; sourceTree = "<group>"; };
 		EBB061E521A1DCD50084E975 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "Resources/Fonts/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		EBB061FA21A1DE930084E975 /* UVPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVPresenterTests.swift; sourceTree = "<group>"; };
@@ -242,8 +242,8 @@
 				E9C726CC22C576B30040E5BC /* Workers */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
 				E9F8B50A253C4616004CEDF2 /* Factories */,
-				EBB061DF21A1DCA60084E975 /* AppComponents.swift */,
 				EBB061E021A1DCA60084E975 /* AppDelegate.swift */,
+				E96F2B672542D62C00C38427 /* AppComponents.swift */,
 				EBF4B7531E7951D400B7A616 /* Main.storyboard */,
 			);
 			name = app;
@@ -423,8 +423,8 @@
 				"${BUILT_PRODUCTS_DIR}/Bugsnag/Bugsnag.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/ZLogger/ZLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -433,8 +433,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bugsnag.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Resolver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,12 +542,12 @@
 				E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */,
 				EBB061D021A1DC8B0084E975 /* LocationService.swift in Sources */,
 				EBB061D821A1DC980084E975 /* Constants.swift in Sources */,
+				E96F2B682542D62C00C38427 /* AppComponents.swift in Sources */,
 				EBB061D921A1DC980084E975 /* String.swift in Sources */,
 				EBB061DA21A1DC980084E975 /* UVError.swift in Sources */,
 				EBB061DE21A1DC980084E975 /* PopupManager.swift in Sources */,
 				EBB061DD21A1DC980084E975 /* Index.swift in Sources */,
 				EBB061CA21A1DC790084E975 /* UVViewController.swift in Sources */,
-				EBB061E121A1DCA60084E975 /* AppComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

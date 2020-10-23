@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swinject
 import ZLogger
 import Keys
 import Bugsnag
@@ -16,8 +15,7 @@ import Bugsnag
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-  var container: Container = AppComponent().getContainer()
-  
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     #if RELEASE

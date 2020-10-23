@@ -7,9 +7,9 @@ PODS:
   - Keys (1.0.1)
   - PopupDialog (1.1.1):
     - DynamicBlurView (~> 4.0)
+  - Resolver (1.1.4)
   - SVProgressHUD (2.2.5)
   - SwiftLint (0.40.3)
-  - Swinject (2.7.1)
   - ZLogger (1.1.0)
 
 DEPENDENCIES:
@@ -17,9 +17,9 @@ DEPENDENCIES:
   - Cuckoo (= 1.4.1)
   - Keys (from `Pods/CocoaPodsKeys`)
   - PopupDialog (= 1.1.1)
+  - Resolver (= 1.1.4)
   - SVProgressHUD (= 2.2.5)
   - SwiftLint (= 0.40.3)
-  - Swinject (= 2.7.1)
   - ZLogger (= 1.1.0)
 
 SPEC REPOS:
@@ -28,9 +28,9 @@ SPEC REPOS:
     - Cuckoo
     - DynamicBlurView
     - PopupDialog
+    - Resolver
     - SVProgressHUD
     - SwiftLint
-    - Swinject
     - ZLogger
 
 EXTERNAL SOURCES:
@@ -43,11 +43,11 @@ SPEC CHECKSUMS:
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  Resolver: 1f4c046255cbadfa97094692e16e940d4329779f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
-  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   ZLogger: d53f23ce00f0f94a97271495f9f2957e5255938f
 
-PODFILE CHECKSUM: bba4372a364845d1400754335d38211d1722c20a
+PODFILE CHECKSUM: 62844e60223001920a4aad7d84874f7a720af3f9
 
 COCOAPODS: 1.9.3

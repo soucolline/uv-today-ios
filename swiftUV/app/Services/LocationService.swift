@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import ZLogger
+import Resolver
 
 protocol LocationServiceDelegate: class {
   func didUpdateLocation(_ location: Location)
@@ -23,7 +24,7 @@ class LocationService: NSObject {
   private let locationManager: CLLocationManager
   weak var delegate: LocationServiceDelegate?
   
-  init(with locationManager: CLLocationManager) {
+  init(locationManager: CLLocationManager) {
     self.locationManager = locationManager
     super.init()
     self.requestAuthorization()
