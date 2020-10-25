@@ -8,6 +8,7 @@
 
 import ZLogger
 import Combine
+import Resolver
 
 protocol UVService {
   func getUVIndex(from location: Location) -> AnyPublisher<Index, UVError>
@@ -18,7 +19,7 @@ class UVServiceImpl: UVService {
   private let apiExecutor: APIWorker
   private let urlFactory: URLFactory
   
-  init(with apiExecutor: APIWorker, urlFactory: URLFactory) {
+  init(apiExecutor: APIWorker, urlFactory: URLFactory) {
     self.apiExecutor = apiExecutor
     self.urlFactory = urlFactory
   }

@@ -1,61 +1,65 @@
 //
-//  AppComponents.swift
+//  AppComponent+Injection.swift
 //  swiftUV
 //
-//  Created by Zlatan on 18/11/2018.
-//  Copyright © 2018 Thomas Guilleminot. All rights reserved.
+//  Created by Thomas Guilleminot on 23/10/2020.
+//  Copyright © 2020 Thomas Guilleminot. All rights reserved.
 //
 
-import Swinject
-import CoreLocation
+import Foundation
+import Resolver
 import Keys
+import CoreLocation
 
-class AppComponent {
-  
-  func getContainer() -> Container {
-    let container = Container()
-    
-    container.register(CLLocationManager.self) { _ in
-      return CLLocationManager()
-    }
-    
-    container.register(LocationService.self) { resolver in
-      return LocationService(
-        with: resolver.resolve(CLLocationManager.self)!
-      )
-    }
-    
-    container.register(NetworkSession.self) { _ in
+extension Resolver: ResolverRegistering {
+  public static func registerAllServices() {
+    registerNetworkModule()
+    registerServiceModule()
+    registerPresenterModule()
+    registerAppModule()
+    registerLocationModule()
+  }
+}
+
+extension Resolver {
+  public static func registerNetworkModule() {
+    register(NetworkSession.self) {
       let session = URLSessionConfiguration.default
       session.timeoutIntervalForRequest = 10.0
       return URLSession(configuration: session)
     }
-    
-    container.register(APIWorker.self) { resolver in
-        APIWorkerImpl(
-          with: resolver.resolve(NetworkSession.self)!
-      )
-    }
-    
-    container.register(UVService.self) { resolver in
-      return UVServiceImpl(
-        with: resolver.resolve(APIWorker.self)!,
-        urlFactory: resolver.resolve(URLFactory.self)!
-      )
-    }
-    
-    container.register(UVPresenter.self) { resolver in
-      return UVPresenterImpl(
-        with: resolver.resolve(LocationService.self)!,
-        uvService: resolver.resolve(UVService.self)!
-      )
-    }
 
-    container.register(URLFactory.self) { _ in
-      URLFactory(with: SwiftUVKeys().openWeatherMapApiKey)
-    }
-    
-    return container
+    register(APIWorker.self) { APIWorkerImpl(with: resolve(NetworkSession.self)) }
   }
-  
+}
+
+extension Resolver {
+  public static func registerServiceModule() {
+    register(UVService.self) {
+      UVServiceImpl(apiExecutor: resolve(APIWorker.self), urlFactory: resolve(URLFactory.self))
+    }
+  }
+}
+
+extension Resolver {
+  public static func registerPresenterModule() {
+    register(UVPresenter.self) {
+      UVPresenterImpl(locationService: resolve(LocationService.self), uvService: resolve(UVService.self))
+    }
+  }
+}
+
+extension Resolver {
+  public static func registerLocationModule() {
+    register(CLLocationManager.self) { CLLocationManager() }
+    register(LocationService.self) {
+      LocationService(locationManager: resolve(CLLocationManager.self))
+    }
+  }
+}
+
+extension Resolver {
+  public static func registerAppModule() {
+    register(URLFactory.self) { URLFactory(with: SwiftUVKeys().openWeatherMapApiKey) }
+  }
 }

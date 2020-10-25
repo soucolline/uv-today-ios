@@ -28,7 +28,7 @@ class UVServiceTests: XCTestCase {
     self.mockApiWorker = MockAPIWorker()
     self.mockURLFactory = MockURLFactory(with: "123456")
 
-    self.uvService = UVServiceImpl(with: mockApiWorker, urlFactory: mockURLFactory)
+    self.uvService = UVServiceImpl(apiExecutor: mockApiWorker, urlFactory: mockURLFactory)
   }
 
   func testGetUVSuccess() {

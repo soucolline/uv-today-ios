@@ -9,6 +9,7 @@
 import Combine
 import ZLogger
 import Bugsnag
+import Resolver
 
 protocol UVViewDelegate: class {
   func onShowLoader()
@@ -40,7 +41,7 @@ class UVPresenterImpl: UVPresenter {
 
   private var cancelable: AnyCancellable?
   
-  init(with locationService: LocationService, uvService: UVService) {
+  init(locationService: LocationService, uvService: UVService) {
     self.locationService = locationService
     self.uvService = uvService
     self.locationService.delegate = self

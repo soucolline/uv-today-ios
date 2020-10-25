@@ -12,7 +12,7 @@ target 'swiftUV' do
   pod 'SVProgressHUD', '= 2.2.5'
   pod 'PopupDialog', '= 1.1.1'
   pod 'ZLogger', '= 1.1.0'
-  pod 'Swinject', '= 2.7.1'
+  pod 'Resolver', '=1.1.4'
   pod 'Bugsnag'
 end
 
