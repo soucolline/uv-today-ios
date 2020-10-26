@@ -470,7 +470,7 @@
 		};
 		EBB061F721A1DDFA0084E975 /* Cuckoo */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -482,13 +482,13 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/swiftUVTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PODS_ROOT}/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/swiftUV/app/Presenters/UVPresenterImpl.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/LocationService.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Services/UVService.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Workers/APIWorker.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Workers/NetworkSession.swift\" \\\n\"$INPUT_DIR/swiftUV/app/Factories/URLFactory.swift\" \\\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		EBC31C9F1FAF7FC6004DC13C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
