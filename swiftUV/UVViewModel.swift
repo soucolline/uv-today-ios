@@ -14,12 +14,14 @@ class UVViewModel: ObservableObject {
 
   @Published var cityLabel = "Loading"
   @Published var index: Index = 0
+  @Published var showLoading = false
+  @Published var showErrorPopup = false
+  @Published var errorText = ""
 
   private let locationService: LocationService
   private let uvService: UVService
 
   private var location: Location?
-  weak var delegate: UVViewDelegate?
   private var cancelable: AnyCancellable?
 
   init(locationService: LocationService, uvService: UVService) {
@@ -27,11 +29,16 @@ class UVViewModel: ObservableObject {
     self.uvService = uvService
 
     self.locationService.delegate = self
+
+    self.showLoading = true
     self.locationService.searchLocation()
   }
 
   func getUVIndex() {
-    guard let location = self.location else { return }
+    guard let location = self.location else {
+      self.locationService.searchLocation()
+      return
+    }
 
     self.cancelable = self.uvService.getUVIndex(from: location)
       .receive(on: DispatchQueue.main)
@@ -39,16 +46,22 @@ class UVViewModel: ObservableObject {
         switch completion {
           case .finished: break
           case .failure(let error):
-            self.delegate?.onDismissLoader()
-            self.delegate?.onShowError(message: error.localizedDescription)
+            self.showLoading = false
+            self.showErrorPopup = true
+            self.errorText = error.localizedDescription
         }
       } receiveValue: { value in
         ZLogger.info(message: "Did receive index with value : \(value)")
         self.index = value
-
-        self.delegate?.onDismissLoader()
-        self.delegate?.onReceiveSuccess(index: value)
+        self.showLoading = false
       }
+  }
+
+  private func showError(message: String) {
+    self.showLoading = false
+    self.showErrorPopup = true
+    self.errorText = message
+    self.index = Index(-1)
   }
 
 }
@@ -63,17 +76,16 @@ extension UVViewModel: LocationServiceDelegate {
   }
 
   func didFailUpdateLocation() {
-//    self.delegate?.onDismissLoader()
-//    self.delegate?.onUpdateLocationWithError()
+    self.showError(message: "app.error.couldNotLocalise".localized)
   }
 
   func didAcceptLocationService() {
-//    self.delegate?.onAcceptLocation()
+    self.showLoading = true
+    self.locationService.searchLocation()
   }
 
   func didRefuseLocationService() {
-//    self.delegate?.onDismissLoader()
-//    self.delegate?.onShowRefusedLocation()
+    self.showError(message: "app.error.localisationDisabled".localized)
   }
   
 }

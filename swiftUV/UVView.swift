@@ -9,6 +9,7 @@
 import SwiftUI
 import CoreLocation
 import Resolver
+import ExytePopupView
 
 struct UVView: View {
 
@@ -56,6 +57,41 @@ struct UVView: View {
           .foregroundColor(.white)
           .font(.custom("OpenSans", size: 12))
       }
+    }
+    .blur(radius: self.viewModel.showLoading ? 3 : 0)
+    .popup(isPresented: self.$viewModel.showLoading, animation: .easeIn(duration: 0.2)) {
+      VStack {
+        if #available(iOS 14.0, *) {
+          ProgressView()
+            .progressViewStyle(CircularProgressViewStyle(tint: .gray))
+            .padding(.bottom, 5)
+          Text("Retrieving position")
+            .foregroundColor(.gray)
+
+        } else {
+          Text("Retrieving position")
+            .foregroundColor(.gray)
+        }
+      }
+      .frame(width: 200, height: 100)
+      .background(Color.white)
+      .cornerRadius(20)
+      .padding(20)
+    }
+    .blur(radius: self.viewModel.showErrorPopup ? 3 : 0)
+    .popup(isPresented: self.$viewModel.showErrorPopup) {
+      VStack {
+        Text(self.viewModel.errorText)
+          .foregroundColor(.gray)
+          .padding(.bottom, 20)
+        Button("Retry") {
+          self.viewModel.getUVIndex()
+        }
+      }
+      .padding(20)
+      .background(Color.white)
+      .cornerRadius(20)
+
     }
   }
 }
