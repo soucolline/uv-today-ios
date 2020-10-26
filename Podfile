@@ -9,10 +9,8 @@ target 'swiftUV' do
 
   # Pods for swiftUV
   pod 'SwiftLint', '= 0.40.3'
-  pod 'SVProgressHUD', '= 2.2.5'
-  pod 'PopupDialog', '= 1.1.1'
   pod 'ZLogger', '= 1.1.0'
-  pod 'Resolver', '=1.1.4'
+  pod 'Resolver', '= 1.1.4'
   pod 'ExytePopupView', '= 0.0.10'
   pod 'Bugsnag'
 end

@@ -94,7 +94,6 @@ struct UVView: View {
       .padding(20)
       .background(Color.white)
       .cornerRadius(20)
-
     }
   }
 }

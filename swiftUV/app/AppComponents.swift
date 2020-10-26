@@ -17,7 +17,6 @@ extension Resolver: ResolverRegistering {
     registerViewModelModule()
     registerNetworkModule()
     registerServiceModule()
-    registerPresenterModule()
     registerAppModule()
     registerLocationModule()
   }
@@ -58,14 +57,6 @@ extension Resolver {
   public static func registerServiceModule() {
     register(UVService.self) {
       UVServiceImpl(apiExecutor: resolve(APIWorker.self), urlFactory: resolve(URLFactory.self))
-    }
-  }
-}
-
-extension Resolver {
-  public static func registerPresenterModule() {
-    register(UVPresenter.self) {
-      UVPresenterImpl(locationService: resolve(LocationService.self), uvService: resolve(UVService.self))
     }
   }
 }
