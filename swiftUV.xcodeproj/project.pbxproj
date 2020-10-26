@@ -14,6 +14,9 @@
 		E99CA1222546D75100DBA09F /* UVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CA1212546D75100DBA09F /* UVView.swift */; };
 		E99CA1322546D83000DBA09F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CA1312546D83000DBA09F /* SceneDelegate.swift */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
+		E9AF71AA2546E554003DF774 /* UVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF71A92546E554003DF774 /* UVViewModel.swift */; };
+		E9AF71AE2546E704003DF774 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF71AD2546E704003DF774 /* ViewFactory.swift */; };
+		E9AF71B82546E74B003DF774 /* UVViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF71B72546E74B003DF774 /* UVViewFactory.swift */; };
 		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
 		E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CF22C577B80040E5BC /* NetworkSession.swift */; };
 		E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */; };
@@ -62,6 +65,9 @@
 		E99CA1212546D75100DBA09F /* UVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVView.swift; sourceTree = "<group>"; };
 		E99CA1312546D83000DBA09F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E9AF71A92546E554003DF774 /* UVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVViewModel.swift; sourceTree = "<group>"; };
+		E9AF71AD2546E704003DF774 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		E9AF71B72546E74B003DF774 /* UVViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVViewFactory.swift; sourceTree = "<group>"; };
 		E9C726CD22C577920040E5BC /* APIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = app/Workers/APIWorker.swift; sourceTree = "<group>"; };
 		E9C726CF22C577B80040E5BC /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSession.swift; path = app/Workers/NetworkSession.swift; sourceTree = "<group>"; };
 		E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorkerTests.swift; sourceTree = "<group>"; };
@@ -162,6 +168,8 @@
 			children = (
 				EBB061C921A1DC790084E975 /* UVViewController.swift */,
 				E99CA1212546D75100DBA09F /* UVView.swift */,
+				E9AF71B72546E74B003DF774 /* UVViewFactory.swift */,
+				E9AF71AD2546E704003DF774 /* ViewFactory.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				EBB061CB21A1DC810084E975 /* UVPresenterImpl.swift */,
+				E9AF71A92546E554003DF774 /* UVViewModel.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -540,10 +549,12 @@
 				EBB061CF21A1DC8B0084E975 /* UVService.swift in Sources */,
 				EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */,
 				E9FF1504253D9A8B0098BE0C /* TaskExecutable.swift in Sources */,
+				E9AF71AA2546E554003DF774 /* UVViewModel.swift in Sources */,
 				EBB061E221A1DCA60084E975 /* AppDelegate.swift in Sources */,
 				EBB061DB21A1DC980084E975 /* Location.swift in Sources */,
 				E99CA1222546D75100DBA09F /* UVView.swift in Sources */,
 				E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */,
+				E9AF71B82546E74B003DF774 /* UVViewFactory.swift in Sources */,
 				EBB061CC21A1DC810084E975 /* UVPresenterImpl.swift in Sources */,
 				E9FF14FC253D90E70098BE0C /* URLFactory.swift in Sources */,
 				E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */,
@@ -555,6 +566,7 @@
 				EBB061DE21A1DC980084E975 /* PopupManager.swift in Sources */,
 				E99CA1322546D83000DBA09F /* SceneDelegate.swift in Sources */,
 				EBB061DD21A1DC980084E975 /* Index.swift in Sources */,
+				E9AF71AE2546E704003DF774 /* ViewFactory.swift in Sources */,
 				EBB061CA21A1DC790084E975 /* UVViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

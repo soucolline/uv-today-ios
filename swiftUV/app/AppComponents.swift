@@ -13,11 +13,32 @@ import CoreLocation
 
 extension Resolver: ResolverRegistering {
   public static func registerAllServices() {
+    registerViewModule()
+    registerViewModelModule()
     registerNetworkModule()
     registerServiceModule()
     registerPresenterModule()
     registerAppModule()
     registerLocationModule()
+  }
+}
+
+extension Resolver {
+  public static func registerViewModule() {
+    register(UVViewFactory.self) {
+      UVViewFactory(with: resolve(UVViewModel.self))
+    }
+  }
+}
+
+extension Resolver {
+  public static func registerViewModelModule() {
+    register(UVViewModel.self) {
+      UVViewModel(
+        locationService: resolve(LocationService.self),
+        uvService: resolve(UVService.self)
+      )
+    }
   }
 }
 
