@@ -30,6 +30,10 @@ class UVViewModel: ObservableObject {
 
     self.locationService.delegate = self
 
+    self.searchLocation()
+  }
+
+  func searchLocation() {
     self.showLoading = true
     self.locationService.searchLocation()
   }
@@ -80,8 +84,7 @@ extension UVViewModel: LocationServiceDelegate {
   }
 
   func didAcceptLocationService() {
-    self.showLoading = true
-    self.locationService.searchLocation()
+    self.searchLocation()
   }
 
   func didRefuseLocationService() {

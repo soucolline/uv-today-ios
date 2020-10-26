@@ -31,6 +31,9 @@ struct UVView: View {
             .font(Font.title.weight(Font.Weight.thin))
             .foregroundColor(.white)
             .padding(.trailing, 20)
+            .onTapGesture {
+              self.viewModel.searchLocation()
+            }
         }
 
         HStack {
