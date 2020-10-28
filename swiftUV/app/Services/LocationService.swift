@@ -23,6 +23,8 @@ class LocationService: NSObject {
   
   private let locationManager: CLLocationManager
   weak var delegate: LocationServiceDelegate?
+
+  private var authorizationStatus = CLAuthorizationStatus.notDetermined
   
   init(locationManager: CLLocationManager) {
     self.locationManager = locationManager
@@ -42,10 +44,10 @@ class LocationService: NSObject {
       return
     }
     
-    guard CLLocationManager.authorizationStatus() != .notDetermined else { return }
+    guard self.authorizationStatus != .notDetermined else { return }
     
-    guard CLLocationManager.authorizationStatus() == .authorizedAlways ||
-          CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
+    guard self.authorizationStatus == .authorizedAlways ||
+            self.authorizationStatus == .authorizedWhenInUse else {
       self.delegate?.didRefuseLocationService()
       return
     }
@@ -56,8 +58,10 @@ class LocationService: NSObject {
 }
 
 extension LocationService: CLLocationManagerDelegate {
-  
+
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    self.locationManager.stopUpdatingLocation()
+
     guard let latitude = manager.location?.coordinate.latitude,
       let longitude = manager.location?.coordinate.longitude else {
         return
@@ -72,7 +76,6 @@ extension LocationService: CLLocationManagerDelegate {
       }
       
       let customLocation = Location(latitude: latitude, longitude: longitude, city: placemarks?.first?.locality ?? "app.label.unknown")
-      self.locationManager.stopUpdatingLocation()
       self.delegate?.didUpdateLocation(customLocation)
     }
     
@@ -82,14 +85,16 @@ extension LocationService: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     self.delegate?.didFailUpdateLocation()
   }
-  
-  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-    switch status {
-    case .authorizedAlways, .authorizedWhenInUse:
-      self.delegate?.didAcceptLocationService()
-    case .denied, .restricted:
-      self.delegate?.didRefuseLocationService()
-    default: ()
+
+  func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    self.authorizationStatus = manager.authorizationStatus
+
+    switch manager.authorizationStatus {
+      case .authorizedAlways, .authorizedWhenInUse:
+        self.delegate?.didAcceptLocationService()
+      case .denied, .restricted:
+        self.delegate?.didRefuseLocationService()
+      default: ()
     }
   }
   

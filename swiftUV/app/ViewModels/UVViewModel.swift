@@ -38,7 +38,7 @@ class UVViewModel: ObservableObject {
 
   func getUVIndex() {
     guard let location = self.location else {
-      self.locationService.searchLocation()
+      self.searchLocation()
       return
     }
 
