@@ -29,8 +29,6 @@ class UVViewModel: ObservableObject {
     self.uvService = uvService
 
     self.locationService.delegate = self
-
-    self.searchLocation()
   }
 
   func searchLocation() {
@@ -40,7 +38,7 @@ class UVViewModel: ObservableObject {
 
   func getUVIndex() {
     guard let location = self.location else {
-      self.locationService.searchLocation()
+      self.searchLocation()
       return
     }
 
