@@ -44,6 +44,7 @@ struct UVView: View {
             .padding(.leading, 20)
             .lineLimit(1)
             .minimumScaleFactor(0.2)
+            .redacted(reason: self.viewModel.showLoading ? .placeholder : [])
           Spacer()
         }
 
@@ -52,6 +53,7 @@ struct UVView: View {
         Text(String(self.viewModel.index))
           .foregroundColor(.white)
           .font(.custom("OpenSans-Semibold", size: 80))
+          .redacted(reason: self.viewModel.showLoading ? .placeholder : [])
 
         Spacer()
 
@@ -59,27 +61,8 @@ struct UVView: View {
           .padding(20)
           .foregroundColor(.white)
           .font(.custom("OpenSans", size: 12))
+          .redacted(reason: self.viewModel.showLoading ? .placeholder : [])
       }
-    }
-    .blur(radius: self.viewModel.showLoading ? 3 : 0)
-    .popup(isPresented: self.$viewModel.showLoading, animation: .easeIn(duration: 0.2)) {
-      VStack {
-        if #available(iOS 14.0, *) {
-          ProgressView()
-            .progressViewStyle(CircularProgressViewStyle(tint: .gray))
-            .padding(.bottom, 5)
-          Text("Retrieving position")
-            .foregroundColor(.gray)
-
-        } else {
-          Text("Retrieving position")
-            .foregroundColor(.gray)
-        }
-      }
-      .frame(width: 200, height: 100)
-      .background(Color.white)
-      .cornerRadius(20)
-      .padding(20)
     }
     .blur(radius: self.viewModel.showErrorPopup ? 3 : 0)
     .popup(isPresented: self.$viewModel.showErrorPopup) {
@@ -94,6 +77,9 @@ struct UVView: View {
       .padding(20)
       .background(Color.white)
       .cornerRadius(20)
+    }
+    .onAppear {
+      self.viewModel.getUVIndex()
     }
   }
 }

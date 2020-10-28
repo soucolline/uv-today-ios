@@ -29,8 +29,6 @@ class UVViewModel: ObservableObject {
     self.uvService = uvService
 
     self.locationService.delegate = self
-
-    self.searchLocation()
   }
 
   func searchLocation() {
