@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swinject
 import ZLogger
 import Keys
 import Bugsnag
@@ -16,8 +15,7 @@ import Bugsnag
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-  var container: Container = AppComponent().getContainer()
-  
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     #if RELEASE
@@ -25,6 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     #endif
     
     return true
+  }
+
+  func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+    UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+  }
+
+  func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    
   }
   
   func applicationWillResignActive(_ application: UIApplication) {

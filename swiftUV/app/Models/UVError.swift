@@ -9,7 +9,7 @@
 enum UVError: Error, Equatable {
   
   case urlNotValid
-  case noData
+  case noData(String)
   case couldNotDecodeJSON
   case customError(String)
   
@@ -17,8 +17,8 @@ enum UVError: Error, Equatable {
     switch self {
     case .urlNotValid:
       return "Url is invalid"
-    case .noData:
-      return "app.error.noData".localized
+    case .noData(let message):
+      return message
     case .couldNotDecodeJSON:
       return "Could not parse JSON"
     case .customError(let message):
