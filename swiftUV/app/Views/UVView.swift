@@ -41,7 +41,7 @@ struct UVView: View {
             .padding(.top, 33)
             .font(.system(size: 38, weight: .bold, design: .rounded))
             .foregroundColor(.white)
-            .padding(.leading, 20)
+            .padding(.horizontal, 20)
             .lineLimit(1)
             .minimumScaleFactor(0.2)
             .redacted(reason: self.viewModel.showLoading ? .placeholder : [])
