@@ -70,3 +70,4 @@ swiftUVTests/GeneratedMocks.swift
 
 # Secrets
 .env.default
+.DS_Store
