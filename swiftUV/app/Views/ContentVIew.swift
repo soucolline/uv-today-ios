@@ -16,16 +16,35 @@ struct AppState: Equatable {
 }
 
 enum AppAction: Equatable {
-  
+  case getUVRequest
+  case getUVResponse(Result<Forecast, UVClient.Failure>)
 }
 
 struct AppEnvironment {
-  
+  var uvClient: UVClient
+  var dispatchQueue: AnySchedulerOf<DispatchQueue>
 }
 
 let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
   switch action {
-  
+  case .getUVRequest:
+    state.weatherRequestInFlight = true
+    
+    return environment.uvClient
+      .fetchUVIndex(UVClientRequest(lat: 48.8566, long: 2.3522))
+      .receive(on: DispatchQueue.main)
+      .catchToEffect()
+      .map { .getUVResponse($0) }
+
+  case .getUVResponse(.success(let forecast)):
+    state.weatherRequestInFlight = false
+    state.uvIndex = Int(forecast.value)
+    return .none
+    
+  case .getUVResponse(.failure(let error)):
+    state.weatherRequestInFlight = false
+    state.uvIndex = -1
+    return .none
   }
 }
 
@@ -50,7 +69,7 @@ struct ContentView: View {
               .foregroundColor(.white)
               .padding(.trailing, 20)
               .onTapGesture {
-                //self.viewModel.searchLocation()
+                viewStore.send(.getUVRequest)
               }
           }
 
@@ -113,7 +132,10 @@ struct ContentView_Previews: PreviewProvider {
           weatherRequestInFlight: false
         ),
         reducer: appReducer,
-        environment: AppEnvironment()
+        environment: AppEnvironment(
+          uvClient: .mock,
+          dispatchQueue: DispatchQueue.test.eraseToAnyScheduler()
+        )
       )
     )
   }

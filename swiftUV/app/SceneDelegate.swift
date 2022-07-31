@@ -28,7 +28,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
           store: Store(
             initialState: AppState(),
             reducer: appReducer,
-            environment: AppEnvironment()
+            environment: AppEnvironment(
+              uvClient: .live,
+              dispatchQueue: .main
+            )
           )
         )
       )
