@@ -18,7 +18,9 @@ struct UVClientRequest {
 struct UVClient {
   var fetchUVIndex: (UVClientRequest) -> Effect<Forecast, Failure>
   
-  struct Failure: Error, Equatable {}
+  struct Failure: Error, Equatable {
+    let errorDescription: String
+  }
 }
 
 extension UVClient {
@@ -31,7 +33,7 @@ extension UVClient {
       return URLSession.shared.dataTaskPublisher(for: request.url!)
         .map { data, _ in data }
         .decode(type: Forecast.self, decoder: JSONDecoder())
-        .mapError { _ in Failure() }
+        .mapError { error in Failure(errorDescription: error.localizedDescription) }
         .eraseToEffect()
     }
   )
@@ -41,7 +43,7 @@ extension UVClient {
 extension UVClient {
   static let mock = Self(
     fetchUVIndex: { _ in
-        Effect(value: Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5))
+      Effect(value: Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5))
     }
   )
 }

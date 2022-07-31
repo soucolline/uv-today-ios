@@ -13,11 +13,14 @@ struct AppState: Equatable {
   var uvIndex: Index = 0
   var cityName = ""
   var weatherRequestInFlight = false
+  var shouldShowErrorPopup = false
+  var errorText = ""
 }
 
 enum AppAction: Equatable {
   case getUVRequest
   case getUVResponse(Result<Forecast, UVClient.Failure>)
+  case dismissErrorPopup
 }
 
 struct AppEnvironment {
@@ -43,7 +46,13 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     
   case .getUVResponse(.failure(let error)):
     state.weatherRequestInFlight = false
-    state.uvIndex = -1
+    state.shouldShowErrorPopup = true
+    state.errorText = error.errorDescription
+    state.uvIndex = 0
+    return .none
+    
+  case .dismissErrorPopup:
+    state.shouldShowErrorPopup = false
     return .none
   }
 }
@@ -101,24 +110,27 @@ struct ContentView: View {
             .redacted(reason: viewStore.weatherRequestInFlight ? .placeholder : [])
         }
       }
+      .blur(radius: viewStore.shouldShowErrorPopup ? 3 : 0)
+      .popup(isPresented: viewStore.binding(
+        get: \.shouldShowErrorPopup,
+        send: .dismissErrorPopup
+      )) {
+        VStack {
+          Text(viewStore.errorText)
+            .foregroundColor(.gray)
+            .padding(.bottom, 20)
+          Button("Retry") {
+            viewStore.send(.getUVRequest)
+          }
+        }
+        .padding(20)
+        .background(Color.white)
+        .cornerRadius(20)
+      }
+      .onAppear {
+        viewStore.send(.getUVRequest)
+      }
     }
-    //.blur(radius: self.viewModel.showErrorPopup ? 3 : 0)
-//    .popup(isPresented: self.$viewModel.showErrorPopup) {
-//      VStack {
-//        Text(self.viewModel.errorText)
-//          .foregroundColor(.gray)
-//          .padding(.bottom, 20)
-//        Button("Retry") {
-//          self.viewModel.getUVIndex()
-//        }
-//      }
-//      .padding(20)
-//      .background(Color.white)
-//      .cornerRadius(20)
-//    }
-//    .onAppear {
-//      self.viewModel.getUVIndex()
-//    }
   }
 }
 
