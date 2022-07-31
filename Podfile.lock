@@ -1,8 +1,8 @@
 PODS:
   - Bugsnag (5.22.2)
-  - Cuckoo (1.4.1):
-    - Cuckoo/Swift (= 1.4.1)
-  - Cuckoo/Swift (1.4.1)
+  - Cuckoo (1.8.1):
+    - Cuckoo/Swift (= 1.8.1)
+  - Cuckoo/Swift (1.8.1)
   - ExytePopupView (0.0.10)
   - Keys (1.0.1)
   - Resolver (1.1.4)
@@ -11,7 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Bugsnag
-  - Cuckoo (= 1.4.1)
+  - Cuckoo (= 1.8.1)
   - ExytePopupView (= 0.0.10)
   - Keys (from `Pods/CocoaPodsKeys`)
   - Resolver (= 1.1.4)
@@ -33,13 +33,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bugsnag: 3e9e2b563f1e99ce447de123c65e851bd109fa9f
-  Cuckoo: 4625f7f54d9bb880123270e8969898d6c1d036b5
+  Cuckoo: be1dc6cac793247a0873348e3343bd232577d162
   ExytePopupView: 14a98f924a7201bc5492e2a961da11045b17eca8
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Resolver: 1f4c046255cbadfa97094692e16e940d4329779f
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   ZLogger: d53f23ce00f0f94a97271495f9f2957e5255938f
 
-PODFILE CHECKSUM: f40c331718a023a0e25457206562975d769fd478
+PODFILE CHECKSUM: cc53e40230c03fe8b2452966c220911712fb992d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3

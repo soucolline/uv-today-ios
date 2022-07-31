@@ -17,7 +17,7 @@ end
 
 target 'swiftUVTests' do
   use_frameworks!
-  pod 'Cuckoo', '= 1.4.1'
+  pod 'Cuckoo', '= 1.8.1'
 end
 
 plugin 'cocoapods-keys', {
