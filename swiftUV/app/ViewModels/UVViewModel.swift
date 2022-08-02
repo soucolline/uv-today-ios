@@ -72,7 +72,7 @@ extension UVViewModel: LocationServiceDelegate {
 
   func didUpdateLocation(_ location: Location) {
     self.location = location
-    self.cityLabel = location.city
+    self.cityLabel = ""//location.city
 
     self.getUVIndex()
   }

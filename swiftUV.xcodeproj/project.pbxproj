@@ -24,6 +24,8 @@
 		E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CF22C577B80040E5BC /* NetworkSession.swift */; };
 		E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */; };
 		E9E29EC02896CD7C000DE660 /* UVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EBF2896CD7C000DE660 /* UVClient.swift */; };
+		E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */; };
+		E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EC52896E346000DE660 /* LocationReducer.swift */; };
 		E9FF14F6253D8F100098BE0C /* UVServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF14F5253D8F100098BE0C /* UVServiceTests.swift */; };
 		E9FF14FC253D90E70098BE0C /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF14FB253D90E70098BE0C /* URLFactory.swift */; };
 		E9FF1504253D9A8B0098BE0C /* TaskExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */; };
@@ -37,7 +39,6 @@
 		EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D521A1DC980084E975 /* Forecast.swift */; };
 		EBB061DD21A1DC980084E975 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D621A1DC980084E975 /* Index.swift */; };
 		EBB061E221A1DCA60084E975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061E021A1DCA60084E975 /* AppDelegate.swift */; };
-		EBB061EF21A1DCD60084E975 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB061E521A1DCD50084E975 /* OpenSans-Semibold.ttf */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
 		EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7581E7951D400B7A616 /* LaunchScreen.storyboard */; };
@@ -73,6 +74,7 @@
 		E9C726CF22C577B80040E5BC /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSession.swift; path = app/Workers/NetworkSession.swift; sourceTree = "<group>"; };
 		E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorkerTests.swift; sourceTree = "<group>"; };
 		E9E29EBF2896CD7C000DE660 /* UVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UVClient.swift; path = app/Views/UVClient.swift; sourceTree = "<group>"; };
+		E9E29EC52896E346000DE660 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationReducer.swift; path = app/Views/LocationReducer.swift; sourceTree = "<group>"; };
 		E9FF14F5253D8F100098BE0C /* UVServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVServiceTests.swift; sourceTree = "<group>"; };
 		E9FF14FB253D90E70098BE0C /* URLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLFactory.swift; path = app/Factories/URLFactory.swift; sourceTree = "<group>"; };
 		E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskExecutable.swift; path = app/Models/TaskExecutable.swift; sourceTree = "<group>"; };
@@ -86,7 +88,6 @@
 		EBB061D521A1DC980084E975 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forecast.swift; path = app/Models/Forecast.swift; sourceTree = "<group>"; };
 		EBB061D621A1DC980084E975 /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Index.swift; path = app/Models/Index.swift; sourceTree = "<group>"; };
 		EBB061E021A1DCA60084E975 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = app/AppDelegate.swift; sourceTree = "<group>"; };
-		EBB061E521A1DCD50084E975 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "Resources/Fonts/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBCAA0461E7C30F000DC2E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */,
 				E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */,
 				6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */,
 			);
@@ -163,6 +165,7 @@
 			children = (
 				E9805F2E254731EF009E196C /* UVView.swift */,
 				E931727E2896C5E1003EC842 /* ContentVIew.swift */,
+				E9E29EC52896E346000DE660 /* LocationReducer.swift */,
 				E9E29EBF2896CD7C000DE660 /* UVClient.swift */,
 				E9805F2F254731EF009E196C /* UVViewFactory.swift */,
 				E9805F30254731EF009E196C /* ViewFactory.swift */,
@@ -261,17 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				EBCAA0421E7C30CE00DC2E9D /* Translation */,
-				EBF4B7651E79919100B7A616 /* Fonts */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		EBF4B7651E79919100B7A616 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				EBB061E521A1DCD50084E975 /* OpenSans-Semibold.ttf */,
-			);
-			name = Fonts;
 			sourceTree = "<group>";
 		};
 		EBF4B77A1E799BC600B7A616 /* Models */ = {
@@ -330,6 +324,7 @@
 			name = swiftUV;
 			packageProductDependencies = (
 				E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */,
+				E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */,
 			);
 			productName = swiftUV;
 			productReference = EBF4B74C1E7951D400B7A616 /* swiftUV.app */;
@@ -372,6 +367,7 @@
 			mainGroup = EBF4B7431E7951D300B7A616;
 			packageReferences = (
 				E9A22D3B2896C7A3006DC054 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				E9E29EC22896E0A7000DE660 /* XCRemoteSwiftPackageReference "composable-core-location" */,
 			);
 			productRefGroup = EBF4B74D1E7951D400B7A616 /* Products */;
 			projectDirPath = "";
@@ -399,7 +395,6 @@
 				EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */,
 				EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */,
 				E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */,
-				EBB061EF21A1DCD60084E975 /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +555,7 @@
 				EBB061DA21A1DC980084E975 /* UVError.swift in Sources */,
 				E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */,
 				EBB061DD21A1DC980084E975 /* Index.swift in Sources */,
+				E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,7 +865,15 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = exactVersion;
-				version = 0.9.0;
+				version = 0.38.3;
+			};
+		};
+		E9E29EC22896E0A7000DE660 /* XCRemoteSwiftPackageReference "composable-core-location" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/composable-core-location";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -879,6 +883,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9A22D3B2896C7A3006DC054 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9E29EC22896E0A7000DE660 /* XCRemoteSwiftPackageReference "composable-core-location" */;
+			productName = ComposableCoreLocation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

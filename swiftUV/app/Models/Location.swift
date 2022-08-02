@@ -7,11 +7,8 @@
 //
 
 struct Location {
-  
   let latitude: Double
   let longitude: Double
-  let city: String
-  
 }
 
 extension Location: Equatable {}

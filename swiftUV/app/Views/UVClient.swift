@@ -9,6 +9,7 @@
 import ComposableArchitecture
 import Foundation
 import Keys
+import CoreLocation
 
 struct UVClientRequest {
   let lat: Double
@@ -17,6 +18,7 @@ struct UVClientRequest {
 
 struct UVClient {
   var fetchUVIndex: (UVClientRequest) -> Effect<Forecast, Failure>
+  var fetchCityName: (Location) -> Effect<String, Failure>
   
   struct Failure: Error, Equatable {
     let errorDescription: String
@@ -35,6 +37,21 @@ extension UVClient {
         .decode(type: Forecast.self, decoder: JSONDecoder())
         .mapError { error in Failure(errorDescription: error.localizedDescription) }
         .eraseToEffect()
+    },
+    fetchCityName: { location in
+      Effect.future { callback in
+        let geocoder = CLGeocoder()
+        let clLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        geocoder.reverseGeocodeLocation(clLocation) { placemarks, error in
+          guard error == nil else {
+            callback(.failure(Failure(errorDescription: error!.localizedDescription)))
+            return
+          }
+          
+          let cityName = placemarks?.first?.locality ?? "Unknown"
+          callback(.success(cityName))
+        }
+      }
     }
   )
 }
@@ -44,6 +61,9 @@ extension UVClient {
   static let mock = Self(
     fetchUVIndex: { _ in
       Effect(value: Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5))
+    },
+    fetchCityName: { _ in
+      Effect(value: "Gueugnon")
     }
   )
 }

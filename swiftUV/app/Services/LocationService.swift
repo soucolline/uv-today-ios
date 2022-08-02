@@ -75,7 +75,7 @@ extension LocationService: CLLocationManagerDelegate {
         return
       }
       
-      let customLocation = Location(latitude: latitude, longitude: longitude, city: placemarks?.first?.locality ?? "app.label.unknown")
+      let customLocation = Location(latitude: latitude, longitude: longitude)
       self.delegate?.didUpdateLocation(customLocation)
     }
     
