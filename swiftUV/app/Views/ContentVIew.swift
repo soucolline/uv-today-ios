@@ -195,22 +195,8 @@ struct ContentView: View {
             .redacted(reason: viewStore.weatherRequestInFlight ? .placeholder : [])
         }
       }
-      .blur(radius: viewStore.shouldShowErrorPopup ? 3 : 0)
-      .popup(isPresented: viewStore.binding(
-        get: \.shouldShowErrorPopup,
-        send: .dismissErrorPopup
-      )) {
-        VStack {
-          Text(viewStore.errorText)
-            .foregroundColor(.gray)
-            .padding(.bottom, 20)
-          Button("Retry") {
-            viewStore.send(.getUVRequest)
-          }
-        }
-        .padding(20)
-        .background(Color.white)
-        .cornerRadius(20)
+      .alert(isPresented: viewStore.binding(get: \.shouldShowErrorPopup, send: .dismissErrorPopup)) {
+        Alert(title: Text("app.label.error"), message: Text(viewStore.errorText))
       }
       .onAppear {
         viewStore.send(.onAppear)
@@ -218,7 +204,6 @@ struct ContentView: View {
     }
   }
 }
-
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView(
