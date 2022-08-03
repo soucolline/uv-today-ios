@@ -15,7 +15,6 @@ let locationManagerReducer = Reducer<AppState, AppAction, AppEnvironment> { stat
   switch action {
   case .locationManager(.didChangeAuthorization(.authorizedAlways)),
       .locationManager(.didChangeAuthorization(.authorizedWhenInUse)):
-    state.isLocationPermissionGranted = true
     if state.isRequestingCurrentLocation {
       return environment.locationManager
         .requestLocation()
@@ -28,6 +27,7 @@ let locationManagerReducer = Reducer<AppState, AppAction, AppEnvironment> { stat
       state.errorText = "app.error.localisationDisabled".localized
       state.shouldShowErrorPopup = true
       state.isRequestingCurrentLocation = false
+      state.isLocationRefused = true
     }
     return .none
   case let .locationManager(.didUpdateLocations(locations)):

@@ -20,7 +20,7 @@ struct AppState: Equatable {
 
   var userLocation: Location?
   var isRequestingCurrentLocation = false
-  var isLocationPermissionGranted = false
+  var isLocationRefused = false
 }
 
 enum AppAction: Equatable {
@@ -45,6 +45,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     state.weatherRequestInFlight = true
     state.getCityNameRequestInFlight = true
     state.isRequestingCurrentLocation = true
+    state.isLocationRefused = false
     
     switch environment.locationManager.authorizationStatus() {
     case .notDetermined:
@@ -74,6 +75,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     case .restricted, .denied:
       state.shouldShowErrorPopup = true
       state.errorText = "app.error.localisationDisabled".localized
+      state.isLocationRefused = true
       return .none
     
     @unknown default:
@@ -157,15 +159,18 @@ struct ContentView: View {
         VStack {
           HStack {
             Spacer()
-            Image(systemName: "arrow.clockwise")
-              .resizable()
-              .frame(width: 20, height: 20, alignment: .center)
-              .font(Font.title.weight(Font.Weight.thin))
-              .foregroundColor(.white)
-              .padding(.trailing, 20)
-              .onTapGesture {
-                viewStore.send(.getUVRequest)
-              }
+            
+            Button {
+              viewStore.send(.getUVRequest)
+            } label: {
+              Image(systemName: "arrow.clockwise")
+                .resizable()
+                .frame(width: 20, height: 20, alignment: .center)
+                .font(Font.title.weight(Font.Weight.thin))
+                .foregroundColor(.white)
+                .padding(.trailing, 20)
+            }
+            .disabled(viewStore.isLocationRefused)
           }
 
           HStack {
@@ -188,6 +193,19 @@ struct ContentView: View {
             .redacted(reason: viewStore.weatherRequestInFlight ? .placeholder : [])
 
           Spacer()
+          
+          if viewStore.isLocationRefused {
+            Button {
+              UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            } label: {
+              Label("app.error.openSettings".localized, systemImage: "location")
+            }
+            .foregroundColor(.black)
+            .padding(20)
+            .background(Color.white)
+            .cornerRadius(8)
+          }
+          
           Text(viewStore.uvIndex.associatedDescription)
             .padding(20)
             .foregroundColor(.white)
@@ -198,12 +216,13 @@ struct ContentView: View {
       .alert(isPresented: viewStore.binding(get: \.shouldShowErrorPopup, send: .dismissErrorPopup)) {
         Alert(title: Text("app.label.error"), message: Text(viewStore.errorText))
       }
-      .onAppear {
+      .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
         viewStore.send(.onAppear)
       }
     }
   }
 }
+
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView(
