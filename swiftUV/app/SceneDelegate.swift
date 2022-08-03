@@ -9,7 +9,6 @@
 import ComposableArchitecture
 import Foundation
 import SwiftUI
-import Resolver
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

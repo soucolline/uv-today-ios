@@ -6,9 +6,7 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
-struct Location {
+struct Location: Equatable {
   let latitude: Double
   let longitude: Double
 }
-
-extension Location: Equatable {}

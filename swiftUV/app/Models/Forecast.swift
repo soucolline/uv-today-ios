@@ -6,7 +6,7 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
-struct Forecast: Codable, TaskExecutable, Equatable {
+struct Forecast: Codable, Equatable {
   let lat: Double
   let lon: Double
   let dateIso: String

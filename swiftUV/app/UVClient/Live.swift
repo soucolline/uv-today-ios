@@ -1,35 +1,21 @@
 //
-//  WeatherClient.swift
+//  Live.swift
 //  swiftUV
 //
-//  Created by Thomas Guilleminot on 31/07/2022.
+//  Created by Thomas Guilleminot on 03/08/2022.
 //  Copyright © 2022 Thomas Guilleminot. All rights reserved.
 //
 
-import ComposableArchitecture
 import Foundation
-import Keys
+import ComposableArchitecture
 import CoreLocation
-
-struct UVClientRequest {
-  let lat: Double
-  let long: Double
-}
-
-struct UVClient {
-  var fetchUVIndex: (UVClientRequest) -> Effect<Forecast, Failure>
-  var fetchCityName: (Location) -> Effect<String, Failure>
-  
-  struct Failure: Error, Equatable {
-    let errorDescription: String
-  }
-}
+import Keys
 
 extension UVClient {
   static let live = UVClient(
     fetchUVIndex: { request in
       var request = URLRequest(url: URL(string: K.Api.baseURL + String(format: K.Api.Endpoints.getUV, arguments: [request.lat, request.long, SwiftUVKeys().openWeatherMapApiKey]))!)
-      request.httpMethod = HTTPMethod.get.rawValue
+      request.httpMethod = "GET"
       request.httpBody = try? JSONSerialization.data(withJSONObject: [:], options: [])
       
       return URLSession.shared.dataTaskPublisher(for: request.url!)
@@ -55,16 +41,3 @@ extension UVClient {
     }
   )
 }
-
-#if DEBUG
-extension UVClient {
-  static let mock = Self(
-    fetchUVIndex: { _ in
-      Effect(value: Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5))
-    },
-    fetchCityName: { _ in
-      Effect(value: "Gueugnon")
-    }
-  )
-}
-#endif

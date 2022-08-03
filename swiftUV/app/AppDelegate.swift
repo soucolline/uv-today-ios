@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ZLogger
 import Keys
 import Bugsnag
 

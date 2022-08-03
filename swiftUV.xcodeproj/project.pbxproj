@@ -10,31 +10,22 @@
 		5F98968E285F31ECA77CF6F1 /* Pods_swiftUVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBB7043C945108FD94D44AF /* Pods_swiftUVTests.framework */; };
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
 		E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931727E2896C5E1003EC842 /* ContentVIew.swift */; };
-		E96F2B682542D62C00C38427 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96F2B672542D62C00C38427 /* AppComponents.swift */; };
-		E9805F31254731EF009E196C /* UVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9805F2E254731EF009E196C /* UVView.swift */; };
-		E9805F32254731EF009E196C /* UVViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9805F2F254731EF009E196C /* UVViewFactory.swift */; };
-		E9805F33254731EF009E196C /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9805F30254731EF009E196C /* ViewFactory.swift */; };
-		E9805F37254731F9009E196C /* UVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9805F36254731F9009E196C /* UVViewModel.swift */; };
+		E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E0289B0C7000B8C968 /* AppReducer.swift */; };
+		E938D4E7289B0DCD00B8C968 /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E6289B0DCD00B8C968 /* Live.swift */; };
+		E938D4E9289B0E0000B8C968 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E8289B0E0000B8C968 /* Mock.swift */; };
 		E9805F3B25473206009E196C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9805F3A25473206009E196C /* SceneDelegate.swift */; };
 		E9805F4525473302009E196C /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9805F4425473302009E196C /* GeneratedMocks.swift */; };
 		E9833665253C966500EF7510 /* URLFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9833664253C966500EF7510 /* URLFactoryTests.swift */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */; };
-		E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CD22C577920040E5BC /* APIWorker.swift */; };
-		E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726CF22C577B80040E5BC /* NetworkSession.swift */; };
 		E9C726D222C5786C0040E5BC /* APIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */; };
 		E9E29EC02896CD7C000DE660 /* UVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EBF2896CD7C000DE660 /* UVClient.swift */; };
 		E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */; };
 		E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EC52896E346000DE660 /* LocationReducer.swift */; };
 		E9FF14F6253D8F100098BE0C /* UVServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF14F5253D8F100098BE0C /* UVServiceTests.swift */; };
-		E9FF14FC253D90E70098BE0C /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF14FB253D90E70098BE0C /* URLFactory.swift */; };
-		E9FF1504253D9A8B0098BE0C /* TaskExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */; };
 		EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615A21A1CF9A0084E975 /* IndexTests.swift */; };
-		EBB061CF21A1DC8B0084E975 /* UVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061CD21A1DC8B0084E975 /* UVService.swift */; };
-		EBB061D021A1DC8B0084E975 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061CE21A1DC8B0084E975 /* LocationService.swift */; };
 		EBB061D821A1DC980084E975 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D121A1DC980084E975 /* Constants.swift */; };
 		EBB061D921A1DC980084E975 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D221A1DC980084E975 /* String.swift */; };
-		EBB061DA21A1DC980084E975 /* UVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D321A1DC980084E975 /* UVError.swift */; };
 		EBB061DB21A1DC980084E975 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D421A1DC980084E975 /* Location.swift */; };
 		EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D521A1DC980084E975 /* Forecast.swift */; };
 		EBB061DD21A1DC980084E975 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D621A1DC980084E975 /* Index.swift */; };
@@ -61,29 +52,20 @@
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		8B91A999F78A3A6A33A70B5A /* Pods-swiftUVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUVTests/Pods-swiftUVTests.release.xcconfig"; sourceTree = "<group>"; };
 		E931727E2896C5E1003EC842 /* ContentVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVIew.swift; path = app/Views/ContentVIew.swift; sourceTree = "<group>"; };
-		E96F2B672542D62C00C38427 /* AppComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppComponents.swift; path = app/AppComponents.swift; sourceTree = "<group>"; };
-		E9805F2E254731EF009E196C /* UVView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVView.swift; path = app/Views/UVView.swift; sourceTree = "<group>"; };
-		E9805F2F254731EF009E196C /* UVViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVViewFactory.swift; path = app/Views/UVViewFactory.swift; sourceTree = "<group>"; };
-		E9805F30254731EF009E196C /* ViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewFactory.swift; path = app/Views/ViewFactory.swift; sourceTree = "<group>"; };
-		E9805F36254731F9009E196C /* UVViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVViewModel.swift; path = app/ViewModels/UVViewModel.swift; sourceTree = "<group>"; };
+		E938D4E0289B0C7000B8C968 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = app/Views/AppReducer.swift; sourceTree = "<group>"; };
+		E938D4E6289B0DCD00B8C968 /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
+		E938D4E8289B0E0000B8C968 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		E9805F3A25473206009E196C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = app/SceneDelegate.swift; sourceTree = "<group>"; };
 		E9805F4425473302009E196C /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		E9833664253C966500EF7510 /* URLFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactoryTests.swift; sourceTree = "<group>"; };
 		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		E9C726CD22C577920040E5BC /* APIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIWorker.swift; path = app/Workers/APIWorker.swift; sourceTree = "<group>"; };
-		E9C726CF22C577B80040E5BC /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSession.swift; path = app/Workers/NetworkSession.swift; sourceTree = "<group>"; };
 		E9C726D122C5786C0040E5BC /* APIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorkerTests.swift; sourceTree = "<group>"; };
-		E9E29EBF2896CD7C000DE660 /* UVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UVClient.swift; path = app/Views/UVClient.swift; sourceTree = "<group>"; };
+		E9E29EBF2896CD7C000DE660 /* UVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVClient.swift; sourceTree = "<group>"; };
 		E9E29EC52896E346000DE660 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationReducer.swift; path = app/Views/LocationReducer.swift; sourceTree = "<group>"; };
 		E9FF14F5253D8F100098BE0C /* UVServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVServiceTests.swift; sourceTree = "<group>"; };
-		E9FF14FB253D90E70098BE0C /* URLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLFactory.swift; path = app/Factories/URLFactory.swift; sourceTree = "<group>"; };
-		E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskExecutable.swift; path = app/Models/TaskExecutable.swift; sourceTree = "<group>"; };
 		EBB0615A21A1CF9A0084E975 /* IndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
-		EBB061CD21A1DC8B0084E975 /* UVService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVService.swift; path = app/Services/UVService.swift; sourceTree = "<group>"; };
-		EBB061CE21A1DC8B0084E975 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = app/Services/LocationService.swift; sourceTree = "<group>"; };
 		EBB061D121A1DC980084E975 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = app/Models/Constants.swift; sourceTree = "<group>"; };
 		EBB061D221A1DC980084E975 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = app/Models/String.swift; sourceTree = "<group>"; };
-		EBB061D321A1DC980084E975 /* UVError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UVError.swift; path = app/Models/UVError.swift; sourceTree = "<group>"; };
 		EBB061D421A1DC980084E975 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = app/Models/Location.swift; sourceTree = "<group>"; };
 		EBB061D521A1DC980084E975 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forecast.swift; path = app/Models/Forecast.swift; sourceTree = "<group>"; };
 		EBB061D621A1DC980084E975 /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Index.swift; path = app/Models/Index.swift; sourceTree = "<group>"; };
@@ -143,51 +125,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E9C726CC22C576B30040E5BC /* Workers */ = {
+		E938D4E5289B0D0500B8C968 /* UVClient */ = {
 			isa = PBXGroup;
 			children = (
-				E9C726CD22C577920040E5BC /* APIWorker.swift */,
-				E9C726CF22C577B80040E5BC /* NetworkSession.swift */,
+				E9E29EBF2896CD7C000DE660 /* UVClient.swift */,
+				E938D4E6289B0DCD00B8C968 /* Live.swift */,
+				E938D4E8289B0E0000B8C968 /* Mock.swift */,
 			);
-			name = Workers;
-			sourceTree = "<group>";
-		};
-		E9F8B50A253C4616004CEDF2 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				E9FF14FB253D90E70098BE0C /* URLFactory.swift */,
-			);
-			name = Factories;
+			name = UVClient;
+			path = app/UVClient;
 			sourceTree = "<group>";
 		};
 		EBB061462198956B0084E975 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E9805F2E254731EF009E196C /* UVView.swift */,
 				E931727E2896C5E1003EC842 /* ContentVIew.swift */,
+				E938D4E0289B0C7000B8C968 /* AppReducer.swift */,
 				E9E29EC52896E346000DE660 /* LocationReducer.swift */,
-				E9E29EBF2896CD7C000DE660 /* UVClient.swift */,
-				E9805F2F254731EF009E196C /* UVViewFactory.swift */,
-				E9805F30254731EF009E196C /* ViewFactory.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		EBB06147219895700084E975 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				E9805F36254731F9009E196C /* UVViewModel.swift */,
-			);
-			name = ViewModels;
-			sourceTree = "<group>";
-		};
-		EBB0614A219897140084E975 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				EBB061CE21A1DC8B0084E975 /* LocationService.swift */,
-				EBB061CD21A1DC8B0084E975 /* UVService.swift */,
-			);
-			name = Services;
 			sourceTree = "<group>";
 		};
 		EBCAA0421E7C30CE00DC2E9D /* Translation */ = {
@@ -247,15 +203,11 @@
 		EBF4B7631E79917000B7A616 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				E938D4E5289B0D0500B8C968 /* UVClient */,
 				EBB061462198956B0084E975 /* Views */,
-				EBB06147219895700084E975 /* ViewModels */,
-				EBB0614A219897140084E975 /* Services */,
-				E9C726CC22C576B30040E5BC /* Workers */,
 				EBF4B77A1E799BC600B7A616 /* Models */,
-				E9F8B50A253C4616004CEDF2 /* Factories */,
 				EBB061E021A1DCA60084E975 /* AppDelegate.swift */,
 				E9805F3A25473206009E196C /* SceneDelegate.swift */,
-				E96F2B672542D62C00C38427 /* AppComponents.swift */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -275,9 +227,7 @@
 				EBB061D521A1DC980084E975 /* Forecast.swift */,
 				EBB061D621A1DC980084E975 /* Index.swift */,
 				EBB061D421A1DC980084E975 /* Location.swift */,
-				E9FF1503253D9A8B0098BE0C /* TaskExecutable.swift */,
 				EBB061D221A1DC980084E975 /* String.swift */,
-				EBB061D321A1DC980084E975 /* UVError.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -428,17 +378,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-swiftUV/Pods-swiftUV-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Keys-framework/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/Bugsnag/Bugsnag.framework",
-				"${BUILT_PRODUCTS_DIR}/ExytePopupView/ExytePopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework",
-				"${BUILT_PRODUCTS_DIR}/ZLogger/ZLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bugsnag.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExytePopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Resolver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -534,25 +478,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB061CF21A1DC8B0084E975 /* UVService.swift in Sources */,
-				E9805F31254731EF009E196C /* UVView.swift in Sources */,
 				E9E29EC02896CD7C000DE660 /* UVClient.swift in Sources */,
 				EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */,
-				E9FF1504253D9A8B0098BE0C /* TaskExecutable.swift in Sources */,
+				E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */,
+				E938D4E7289B0DCD00B8C968 /* Live.swift in Sources */,
+				E938D4E9289B0E0000B8C968 /* Mock.swift in Sources */,
 				EBB061E221A1DCA60084E975 /* AppDelegate.swift in Sources */,
-				E9805F32254731EF009E196C /* UVViewFactory.swift in Sources */,
 				EBB061DB21A1DC980084E975 /* Location.swift in Sources */,
-				E9C726CE22C577920040E5BC /* APIWorker.swift in Sources */,
-				E9FF14FC253D90E70098BE0C /* URLFactory.swift in Sources */,
-				E9C726D022C577B80040E5BC /* NetworkSession.swift in Sources */,
-				E9805F37254731F9009E196C /* UVViewModel.swift in Sources */,
-				EBB061D021A1DC8B0084E975 /* LocationService.swift in Sources */,
 				EBB061D821A1DC980084E975 /* Constants.swift in Sources */,
-				E96F2B682542D62C00C38427 /* AppComponents.swift in Sources */,
 				EBB061D921A1DC980084E975 /* String.swift in Sources */,
-				E9805F33254731EF009E196C /* ViewFactory.swift in Sources */,
 				E9805F3B25473206009E196C /* SceneDelegate.swift in Sources */,
-				EBB061DA21A1DC980084E975 /* UVError.swift in Sources */,
 				E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */,
 				EBB061DD21A1DC980084E975 /* Index.swift in Sources */,
 				E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */,
