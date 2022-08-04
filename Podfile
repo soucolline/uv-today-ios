@@ -9,12 +9,6 @@ target 'swiftUV' do
 
   # Pods for swiftUV
   pod 'SwiftLint', '= 0.48.0'
-  pod 'Bugsnag'
-end
-
-target 'swiftUVTests' do
-  use_frameworks!
-  pod 'Cuckoo', '= 1.8.1'
 end
 
 plugin 'cocoapods-keys', {

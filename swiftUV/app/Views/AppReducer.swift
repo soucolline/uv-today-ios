@@ -93,7 +93,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     
     return environment.uvClient
       .fetchUVIndex(UVClientRequest(lat: location.latitude, long: location.longitude))
-      .receive(on: DispatchQueue.main)
+      .receive(on: environment.dispatchQueue)
       .catchToEffect()
       .map { .getUVResponse($0) }
 
@@ -108,7 +108,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     
     return environment.uvClient
       .fetchCityName(location)
-      .receive(on: DispatchQueue.main)
+      .receive(on: environment.dispatchQueue)
       .catchToEffect()
       .map { .getCityNameResponse($0) }
     

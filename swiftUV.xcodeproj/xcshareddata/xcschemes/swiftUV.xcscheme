@@ -48,16 +48,6 @@
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBDA88921FAE5C89009514AB"
-               BuildableName = "swiftUVTests.xctest"
-               BlueprintName = "swiftUVTests"
-               ReferencedContainer = "container:swiftUV.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
