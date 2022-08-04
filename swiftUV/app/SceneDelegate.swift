@@ -6,9 +6,9 @@
 //  Copyright © 2020 Thomas Guilleminot. All rights reserved.
 //
 
+import ComposableArchitecture
 import Foundation
 import SwiftUI
-import Resolver
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,7 +22,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Use a UIHostingController as window root view controller.
     if let windowScene = scene as? UIWindowScene {
       let window = UIWindow(windowScene: windowScene)
-      window.rootViewController = UIHostingController(rootView: Resolver.resolve(UVViewFactory.self).make())
+      window.rootViewController = UIHostingController(
+        rootView: ContentView(
+          store: Store(
+            initialState: AppState(),
+            reducer: appReducer,
+            environment: AppEnvironment(
+              uvClient: .live,
+              dispatchQueue: .main,
+              locationManager: .live
+            )
+          )
+        )
+      )
       self.window = window
       window.makeKeyAndVisible()
     }

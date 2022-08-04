@@ -17,12 +17,7 @@ extension Index {
     case 0: return UIColor.systemBlue
     case 1, 2: return UIColor.systemGreen
     case 3, 4, 5: return UIColor.systemYellow
-    case 6, 7:
-        if #available(iOS 11.0, *) {
-            return UIColor(named: "LightRed")!
-        } else {
-            return UIColor.systemRed
-        }
+    case 6, 7: return UIColor(named: "LightRed")!
     case 8, 9, 10: return UIColor.systemRed
     case 11, 12, 13, 14: return UIColor.systemPurple
     default : return UIColor.black
