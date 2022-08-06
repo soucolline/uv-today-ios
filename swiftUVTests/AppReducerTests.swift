@@ -27,7 +27,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: mainQueue.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -63,7 +63,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: UVClient(fetchUVIndex: { _ in return Effect(error: UVClient.Failure(errorDescription: "test"))}, fetchCityName: { _ in fatalError()}),
         dispatchQueue: mainQueue.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -92,7 +92,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: DispatchQueue.main.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -116,7 +116,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: mainQueue.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -144,7 +144,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -165,7 +165,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -187,7 +187,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -207,7 +207,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
@@ -227,7 +227,7 @@ class AppReducerTests: XCTestCase {
       environment: AppEnvironment(
         uvClient: .mock,
         dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .live
+        locationManager: .failing
       )
     )
     
