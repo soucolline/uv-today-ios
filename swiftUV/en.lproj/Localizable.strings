@@ -11,13 +11,11 @@
 "app.label.unknown" = "Unknown";
 "app.label.error" = "Error";
 
-// Messages
-"app.message.downloading" = "Fetching data";
-
 // Errros
 "app.error.localisationDisabled" = "You disabled location service";
 "app.error.couldNotLocalise" = "Could not find your location";
 "app.error.noData" = "No data available";
+"app.error.openSettings" = "Authorize location in settings";
 
 
 // Description

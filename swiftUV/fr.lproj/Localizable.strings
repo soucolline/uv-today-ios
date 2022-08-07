@@ -10,9 +10,7 @@
 "app.label.city" = "Ville";
 "app.label.unknown" = "Inconnue";
 "app.label.error" = "Erreur";
-
-// Messages
-"app.message.downloading" = "Téléchargement des données en cours";
+"app.error.openSettings" = "Authorisez la localisation dans les paramètres";
 
 // Errors
 "app.error.localisationDisabled" = "Vous avez désactivé la location";

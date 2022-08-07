@@ -8,16 +8,7 @@ target 'swiftUV' do
   use_frameworks!
 
   # Pods for swiftUV
-  pod 'SwiftLint', '= 0.40.3'
-  pod 'ZLogger', '= 1.1.0'
-  pod 'Resolver', '= 1.1.4'
-  pod 'ExytePopupView', '= 0.0.10'
-  pod 'Bugsnag'
-end
-
-target 'swiftUVTests' do
-  use_frameworks!
-  pod 'Cuckoo', '= 1.4.1'
+  pod 'SwiftLint', '= 0.48.0'
 end
 
 plugin 'cocoapods-keys', {
