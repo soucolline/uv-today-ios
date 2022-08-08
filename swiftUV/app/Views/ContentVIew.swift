@@ -78,7 +78,7 @@ struct ContentView: View {
             .redacted(reason: viewStore.weatherRequestInFlight ? .placeholder : [])
         }
       }
-      .alert(isPresented: viewStore.binding(get: \.shouldShowErrorPopup, send: .dismissErrorPopup)) {
+      .alert(isPresented: viewStore.binding(\.$shouldShowErrorPopup)) {
         Alert(title: Text("app.label.error"), message: Text(viewStore.errorText))
       }
       .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in

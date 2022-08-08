@@ -14,15 +14,16 @@ struct AppState: Equatable {
   var cityName = "loading"
   var weatherRequestInFlight = false
   var getCityNameRequestInFlight = false
-  var shouldShowErrorPopup = false
   var errorText = ""
 
   var userLocation: Location?
   var isRequestingCurrentLocation = false
   var isLocationRefused = false
+  
+  @BindableState var shouldShowErrorPopup = false
 }
 
-enum AppAction: Equatable {
+enum AppAction: Equatable, BindableAction {
   case getUVRequest
   case getUVResponse(Result<Forecast, UVClient.Failure>)
   case getCityNameResponse(Result<String, UVClient.Failure>)
@@ -30,6 +31,7 @@ enum AppAction: Equatable {
 
   case onAppear
   case locationManager(LocationManager.Action)
+  case binding(BindingAction<AppState>)
 }
 
 struct AppEnvironment {
@@ -133,6 +135,13 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     state.shouldShowErrorPopup = false
     return .none
     
+  case .binding(\.$shouldShowErrorPopup):
+    state.shouldShowErrorPopup = false
+    return .none
+    
+  case .binding:
+    return .none
+    
   case .locationManager:
     return .none
   }
@@ -142,3 +151,5 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     locationManagerReducer
     .pullback(state: \.self, action: /AppAction.self, environment: { $0 })
 )
+.binding()
+.debug()

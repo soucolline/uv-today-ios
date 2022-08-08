@@ -20,4 +20,11 @@ extension UVClient {
     }
   )
 }
+
+extension UVClient {
+  static let unimplemented = Self(
+    fetchUVIndex: { _ in .unimplemented("\(Self.self).fetchUVIndex)")},
+    fetchCityName: { _ in .unimplemented("\(Self.self).fetchCityName")}
+  )
+}
 #endif

@@ -15,7 +15,6 @@ import XCTest
 class AppReducerTests: XCTestCase {
   
   func testGetUVRequestSuccess() {
-    let mainQueue = DispatchQueue.test
     let expectedForecast = Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
     let store = TestStore(
       initialState:
@@ -24,26 +23,22 @@ class AppReducerTests: XCTestCase {
           userLocation: Location(latitude: 12.0, longitude: 13.0)
         ),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: mainQueue.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
+    
+    store.environment.uvClient.fetchUVIndex = { _ in Effect(value: Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)) }
+    store.environment.uvClient.fetchCityName = { _ in Effect(value: "Gueugnon") }
+    store.environment.dispatchQueue = .immediate
     
     store.send(.getUVRequest) {
       $0.weatherRequestInFlight = true
       $0.getCityNameRequestInFlight = true
     }
     
-    mainQueue.advance()
-    
     store.receive(.getUVResponse(.success(expectedForecast))) {
       $0.weatherRequestInFlight = false
       $0.uvIndex = 5
     }
-    
-    mainQueue.advance()
     
     store.receive(.getCityNameResponse(.success("Gueugnon"))) {
       $0.getCityNameRequestInFlight = false
@@ -52,7 +47,6 @@ class AppReducerTests: XCTestCase {
   }
   
   func testGetUVRequestFailure() {
-    let mainQueue = DispatchQueue.test
     let store = TestStore(
       initialState:
         AppState(
@@ -60,19 +54,16 @@ class AppReducerTests: XCTestCase {
           userLocation: Location(latitude: 12.0, longitude: 13.0)
         ),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: UVClient(fetchUVIndex: { _ in return Effect(error: UVClient.Failure(errorDescription: "test"))}, fetchCityName: { _ in fatalError()}),
-        dispatchQueue: mainQueue.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
+    
+    store.environment.uvClient.fetchUVIndex = { _ in Effect(error: UVClient.Failure(errorDescription: "test")) }
+    store.environment.dispatchQueue = .immediate
     
     store.send(.getUVRequest) {
       $0.weatherRequestInFlight = true
       $0.getCityNameRequestInFlight = true
     }
-    
-    mainQueue.advance()
     
     store.receive(.getUVResponse(.failure(UVClient.Failure(errorDescription: "test")))) {
       $0.weatherRequestInFlight = false
@@ -89,11 +80,7 @@ class AppReducerTests: XCTestCase {
           getCityNameRequestInFlight: true
         ),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: DispatchQueue.main.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
     
     store.send(.getUVRequest) {
@@ -104,7 +91,6 @@ class AppReducerTests: XCTestCase {
   }
   
   func testGetUVResponseSuccess() {
-    let mainQueue = DispatchQueue.test
     let expectedForecast = Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
     let store = TestStore(
       initialState:
@@ -113,19 +99,16 @@ class AppReducerTests: XCTestCase {
           userLocation: Location(latitude: 12.0, longitude: 13.0)
         ),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: mainQueue.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
+    
+    store.environment.uvClient.fetchCityName = { _ in Effect(value: "Gueugnon") }
+    store.environment.dispatchQueue = .immediate
     
     store.send(.getUVResponse(.success(expectedForecast))) {
       $0.weatherRequestInFlight = false
       $0.uvIndex = 5
     }
-    
-    mainQueue.advance()
     
     store.receive(.getCityNameResponse(.success("Gueugnon"))) {
       $0.cityName = "Gueugnon"
@@ -141,11 +124,7 @@ class AppReducerTests: XCTestCase {
           getCityNameRequestInFlight: true
         ),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
     
     store.send(.getUVResponse(.success(expectedForecast))) {
@@ -162,11 +141,7 @@ class AppReducerTests: XCTestCase {
           getCityNameRequestInFlight: true
         ),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
     
     store.send(.getUVResponse(.failure(UVClient.Failure(errorDescription: "test")))) {
@@ -179,16 +154,9 @@ class AppReducerTests: XCTestCase {
   
   func testGetCityNameResponseSuccess() {
     let store = TestStore(
-      initialState:
-        AppState(
-          getCityNameRequestInFlight: true
-        ),
+      initialState: .init(),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
     
     store.send(.getCityNameResponse(.success("Gueugnon"))) {
@@ -199,16 +167,9 @@ class AppReducerTests: XCTestCase {
   
   func testGetCityNameResponseFailure() {
     let store = TestStore(
-      initialState:
-        AppState(
-          getCityNameRequestInFlight: true
-        ),
+      initialState: .init(),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
     
     store.send(.getCityNameResponse(.failure(UVClient.Failure(errorDescription: "test")))) {
@@ -224,15 +185,18 @@ class AppReducerTests: XCTestCase {
           shouldShowErrorPopup: true
         ),
       reducer: appReducer,
-      environment: AppEnvironment(
-        uvClient: .mock,
-        dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
-        locationManager: .failing
-      )
+      environment: .unimplemented
     )
     
     store.send(.dismissErrorPopup) {
       $0.shouldShowErrorPopup = false
     }
   }
+}
+extension AppEnvironment {
+  static let unimplemented = Self(
+    uvClient: .unimplemented,
+    dispatchQueue: .unimplemented,
+    locationManager: .failing
+  )
 }
