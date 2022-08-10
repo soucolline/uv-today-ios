@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/combine-schedulers",
       "state" : {
-        "revision" : "0ba3a562716efabb585ccb169450c5389107286b",
-        "version" : "0.6.0"
+        "revision" : "f7c8277f05f27a5bfb2f6ecccb0bad126ffcf472",
+        "version" : "0.7.0"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-composable-architecture",
       "state" : {
-        "revision" : "0a38f2c860a64a005afeb8a6fe186eb2818c9a3f",
-        "version" : "0.38.3"
+        "revision" : "108e3a536fcebb16c4f247ef92c2d7326baf9fe3",
+        "version" : "0.39.0"
       }
     },
     {

@@ -18,6 +18,7 @@ struct AppState: Equatable {
 
   var userLocation: Location?
   var isRequestingCurrentLocation = false
+  var hasAlreadyRequestLocation = false
   var isLocationRefused = false
   
   @BindableState var shouldShowErrorPopup = false
@@ -25,18 +26,17 @@ struct AppState: Equatable {
 
 enum AppAction: Equatable, BindableAction {
   case getUVRequest
-  case getUVResponse(Result<Forecast, UVClient.Failure>)
-  case getCityNameResponse(Result<String, UVClient.Failure>)
-  case dismissErrorPopup
+  case getUVResponse(TaskResult<Forecast>)
+  case getCityNameResponse(TaskResult<String>)
 
   case onAppear
+  case onDisappear
   case locationManager(LocationManager.Action)
   case binding(BindingAction<AppState>)
 }
 
 struct AppEnvironment {
   var uvClient: UVClient
-  var dispatchQueue: AnySchedulerOf<DispatchQueue>
   var locationManager: LocationManager
 }
 
@@ -50,8 +50,6 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     
     switch environment.locationManager.authorizationStatus() {
     case .notDetermined:
-      state.isRequestingCurrentLocation = true
-      
       return .merge(
           environment.locationManager
             .delegate()
@@ -83,6 +81,10 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
       return .none
     }
     
+  case .onDisappear:
+    state.hasAlreadyRequestLocation = false
+    return .none
+    
   case .getUVRequest:
     state.weatherRequestInFlight = true
     state.getCityNameRequestInFlight = true
@@ -93,31 +95,27 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
       return .none
     }
     
-    return environment.uvClient
-      .fetchUVIndex(UVClientRequest(lat: location.latitude, long: location.longitude))
-      .receive(on: environment.dispatchQueue)
-      .catchToEffect()
-      .map { .getUVResponse($0) }
+    return .run { send in
+      async let fetchUV: Void = send(
+        .getUVResponse(TaskResult { try await environment.uvClient.fetchUVIndex(UVClientRequest(lat: location.latitude, long: location.longitude)) })
+      )
+      
+      async let fetchCityName: Void = send(
+        .getCityNameResponse(TaskResult { try await environment.uvClient.fetchCityName(location) })
+      )
+      
+      _ = await [fetchUV, fetchCityName]
+    }
 
   case .getUVResponse(.success(let forecast)):
     state.weatherRequestInFlight = false
     state.uvIndex = Int(forecast.value)
-    
-    guard let location = state.userLocation else {
-      state.cityName = "app.label.unknown".localized
-      return .none
-    }
-    
-    return environment.uvClient
-      .fetchCityName(location)
-      .receive(on: environment.dispatchQueue)
-      .catchToEffect()
-      .map { .getCityNameResponse($0) }
+    return .none
     
   case .getUVResponse(.failure(let error)):
     state.weatherRequestInFlight = false
     state.shouldShowErrorPopup = true
-    state.errorText = error.errorDescription
+    state.errorText = error.localizedDescription
     state.uvIndex = 0
     return .none
       
@@ -129,10 +127,6 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
   case .getCityNameResponse(.failure(let error)):
     state.getCityNameRequestInFlight = false
     state.cityName = "app.label.unknown".localized
-    return .none
-    
-  case .dismissErrorPopup:
-    state.shouldShowErrorPopup = false
     return .none
     
   case .binding(\.$shouldShowErrorPopup):

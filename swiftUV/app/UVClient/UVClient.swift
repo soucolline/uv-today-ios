@@ -14,8 +14,8 @@ struct UVClientRequest {
 }
 
 struct UVClient {
-  var fetchUVIndex: (UVClientRequest) -> Effect<Forecast, Failure>
-  var fetchCityName: (Location) -> Effect<String, Failure>
+  var fetchUVIndex: @Sendable (UVClientRequest) async throws -> Forecast
+  var fetchCityName: @Sendable (Location) async throws -> String
   
   struct Failure: Error, Equatable {
     let errorDescription: String

@@ -8,23 +8,24 @@
 
 import Foundation
 import ComposableArchitecture
+import XCTestDynamicOverlay
 
 #if DEBUG
 extension UVClient {
   static let mock = Self(
     fetchUVIndex: { _ in
-      Effect(value: Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5))
+      Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
     },
     fetchCityName: { _ in
-      Effect(value: "Gueugnon")
+      "Gueugnon"
     }
   )
 }
 
 extension UVClient {
   static let unimplemented = Self(
-    fetchUVIndex: { _ in .unimplemented("\(Self.self).fetchUVIndex)")},
-    fetchCityName: { _ in .unimplemented("\(Self.self).fetchCityName")}
+    fetchUVIndex: XCTUnimplemented("\(Self.self).fetchUVIndex)"),
+    fetchCityName: XCTUnimplemented("\(Self.self).fetchCityName")
   )
 }
 #endif

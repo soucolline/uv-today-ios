@@ -17,7 +17,7 @@ struct ContentView: View {
     WithViewStore(self.store) { viewStore in
       ZStack {
         Rectangle()
-          .animation(Animation.easeIn(duration: 1.0))
+          .animation(.easeIn(duration: 0.5), value: viewStore.uvIndex.associatedColor)
           .foregroundColor(Color(viewStore.uvIndex.associatedColor))
           .edgesIgnoringSafeArea(.all)
 
@@ -84,6 +84,9 @@ struct ContentView: View {
       .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
         viewStore.send(.onAppear)
       }
+      .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+        viewStore.send(.onDisappear)
+      }
     }
   }
 }
@@ -102,7 +105,6 @@ struct ContentView_Previews: PreviewProvider {
         reducer: appReducer,
         environment: AppEnvironment(
           uvClient: .mock,
-          dispatchQueue: DispatchQueue.test.eraseToAnyScheduler(),
           locationManager: .live
         )
       )

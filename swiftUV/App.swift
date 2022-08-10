@@ -23,7 +23,6 @@ struct SwiftUVApp: App {
           reducer: appReducer,
           environment: AppEnvironment(
             uvClient: .live,
-            dispatchQueue: .main,
             locationManager: .live
           )
         )
