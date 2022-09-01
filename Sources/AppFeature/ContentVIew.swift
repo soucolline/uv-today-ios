@@ -10,10 +10,14 @@ import ComposableArchitecture
 import ComposableCoreLocation
 import SwiftUI
 
-struct ContentView: View {
+public struct ContentView: View {
   let store: Store<AppState, AppAction>
   
-  var body: some View {
+  public init(store: Store<AppState, AppAction>) {
+    self.store = store
+  }
+  
+  public var body: some View {
     WithViewStore(self.store) { viewStore in
       ZStack {
         Rectangle()

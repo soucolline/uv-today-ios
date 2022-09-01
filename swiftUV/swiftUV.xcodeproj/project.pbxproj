@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931727E2896C5E1003EC842 /* ContentVIew.swift */; };
-		E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E0289B0C7000B8C968 /* AppReducer.swift */; };
 		E989314D28C14F2C00F973FD /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = E989314C28C14F2C00F973FD /* Models */; };
 		E989314F28C14F3300F973FD /* UVClient in Frameworks */ = {isa = PBXBuildFile; productRef = E989314E28C14F3300F973FD /* UVClient */; };
+		E989315128C1541700F973FD /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E989315028C1541700F973FD /* AppFeature */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */; };
 		E9AF349C289C4FE600C0F763 /* AppReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF349B289C4FE600C0F763 /* AppReducerTests.swift */; };
 		E9AF349F289C58DD00C0F763 /* Bugsnag in Frameworks */ = {isa = PBXBuildFile; productRef = E9AF349E289C58DD00C0F763 /* Bugsnag */; };
 		E9AF34A3289C606D00C0F763 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF34A2289C606D00C0F763 /* App.swift */; };
 		E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */; };
-		E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EC52896E346000DE660 /* LocationReducer.swift */; };
 		EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615A21A1CF9A0084E975 /* IndexTests.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
@@ -35,13 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E931727E2896C5E1003EC842 /* ContentVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVIew.swift; path = app/Views/ContentVIew.swift; sourceTree = "<group>"; };
-		E938D4E0289B0C7000B8C968 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = app/Views/AppReducer.swift; sourceTree = "<group>"; };
 		E9720BB828C140E200771EC4 /* uv-today-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "uv-today-ios"; path = ..; sourceTree = "<group>"; };
 		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9AF349B289C4FE600C0F763 /* AppReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducerTests.swift; sourceTree = "<group>"; };
 		E9AF34A2289C606D00C0F763 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		E9E29EC52896E346000DE660 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationReducer.swift; path = app/Views/LocationReducer.swift; sourceTree = "<group>"; };
 		EBB0615A21A1CF9A0084E975 /* IndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -68,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */,
+				E989315128C1541700F973FD /* AppFeature in Frameworks */,
 				E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */,
 				E989314D28C14F2C00F973FD /* Models in Frameworks */,
 				E9AF349F289C58DD00C0F763 /* Bugsnag in Frameworks */,
@@ -83,16 +79,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EBB061462198956B0084E975 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E931727E2896C5E1003EC842 /* ContentVIew.swift */,
-				E938D4E0289B0C7000B8C968 /* AppReducer.swift */,
-				E9E29EC52896E346000DE660 /* LocationReducer.swift */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		EBCAA0421E7C30CE00DC2E9D /* Translation */ = {
@@ -149,7 +135,6 @@
 		EBF4B7631E79917000B7A616 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				EBB061462198956B0084E975 /* Views */,
 				E9AF34A2289C606D00C0F763 /* App.swift */,
 			);
 			name = app;
@@ -204,6 +189,7 @@
 				E9AF349E289C58DD00C0F763 /* Bugsnag */,
 				E989314C28C14F2C00F973FD /* Models */,
 				E989314E28C14F3300F973FD /* UVClient */,
+				E989315028C1541700F973FD /* AppFeature */,
 			);
 			productName = swiftUV;
 			productReference = EBF4B74C1E7951D400B7A616 /* swiftUV.app */;
@@ -309,10 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */,
 				E9AF34A3289C606D00C0F763 /* App.swift in Sources */,
-				E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */,
-				E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +634,10 @@
 		E989314E28C14F3300F973FD /* UVClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UVClient;
+		};
+		E989315028C1541700F973FD /* AppFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFeature;
 		};
 		E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

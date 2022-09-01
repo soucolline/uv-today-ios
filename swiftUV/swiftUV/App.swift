@@ -6,6 +6,7 @@
 //  Copyright © 2022 Thomas Guilleminot. All rights reserved.
 //
 
+import AppFeature
 import SwiftUI
 import ComposableArchitecture
 import Bugsnag

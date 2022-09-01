@@ -11,22 +11,46 @@ import ComposableCoreLocation
 import Models
 import UVClient
 
-struct AppState: Equatable {
-  var uvIndex: Index = 0
-  var cityName = "loading"
-  var weatherRequestInFlight = false
-  var getCityNameRequestInFlight = false
-  var errorText = ""
+public struct AppState: Equatable {
+  var uvIndex: Index
+  var cityName: String
+  var weatherRequestInFlight: Bool
+  var getCityNameRequestInFlight: Bool
+  var errorText: String
 
   var userLocation: Models.Location?
-  var isRequestingCurrentLocation = false
-  var hasAlreadyRequestLocation = false
-  var isLocationRefused = false
+  var isRequestingCurrentLocation: Bool
+  var hasAlreadyRequestLocation: Bool
+  var isLocationRefused: Bool
   
   @BindableState var shouldShowErrorPopup = false
+  
+  public init(
+    uvIndex: Index = 0,
+    cityName: String = "loading",
+    weatherRequestInFlight: Bool = false,
+    getCityNameRequestInFlight: Bool = false,
+    errorText: String = "",
+
+    userLocation: Models.Location? = nil,
+    isRequestingCurrentLocation: Bool = false,
+    hasAlreadyRequestLocation: Bool = false,
+    isLocationRefused: Bool = false
+  ) {
+    self.uvIndex = uvIndex
+    self.cityName = cityName
+    self.weatherRequestInFlight = weatherRequestInFlight
+    self.getCityNameRequestInFlight = getCityNameRequestInFlight
+    self.errorText = errorText
+
+    self.userLocation = userLocation
+    self.isRequestingCurrentLocation = isRequestingCurrentLocation
+    self.hasAlreadyRequestLocation = hasAlreadyRequestLocation
+    self.isLocationRefused = isLocationRefused
+  }
 }
 
-enum AppAction: Equatable, BindableAction {
+public enum AppAction: Equatable, BindableAction {
   case getUVRequest
   case getUVResponse(TaskResult<Forecast>)
   case getCityNameResponse(TaskResult<String>)
@@ -37,12 +61,17 @@ enum AppAction: Equatable, BindableAction {
   case binding(BindingAction<AppState>)
 }
 
-struct AppEnvironment {
-  var uvClient: UVClient
-  var locationManager: LocationManager
+public struct AppEnvironment {
+  public var uvClient: UVClient
+  public var locationManager: LocationManager
+  
+  public init(uvClient: UVClient, locationManager: LocationManager) {
+    self.uvClient = uvClient
+    self.locationManager = locationManager
+  }
 }
 
-let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
+public let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
   switch action {
   case .onAppear:
     state.weatherRequestInFlight = true
