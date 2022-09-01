@@ -11,9 +11,16 @@ let package = Package(
       .library(name: "UVClient", targets: ["UVClient"])
     ],
     dependencies: [
+      .package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "0.39.1")
     ],
     targets: [
       .target(name: "Models"),
-      .target(name: "UVClient")
+      .target(
+        name: "UVClient",
+        dependencies: [
+          "Models",
+          .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+        ]
+      )
     ]
 )

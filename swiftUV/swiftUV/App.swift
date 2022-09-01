@@ -9,7 +9,6 @@
 import SwiftUI
 import ComposableArchitecture
 import Bugsnag
-import Keys
 
 @main
 struct SwiftUVApp: App {
