@@ -9,6 +9,7 @@
 import ComposableArchitecture
 import ComposableCoreLocation
 import Foundation
+import Models
 
 let locationManagerReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, _ in
   switch action {
@@ -19,7 +20,7 @@ let locationManagerReducer = Reducer<AppState, AppAction, AppEnvironment> { stat
     
     state.isRequestingCurrentLocation = false
     guard let location = locations.first else { return .none }
-    state.userLocation = Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    state.userLocation = Models.Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     state.hasAlreadyRequestLocation = true
     return .task { .getUVRequest }
 

@@ -12,6 +12,7 @@
 		E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E0289B0C7000B8C968 /* AppReducer.swift */; };
 		E938D4E7289B0DCD00B8C968 /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E6289B0DCD00B8C968 /* Live.swift */; };
 		E938D4E9289B0E0000B8C968 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E8289B0E0000B8C968 /* Mock.swift */; };
+		E967004028C142010071FDB3 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = E967003F28C142010071FDB3 /* Models */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */; };
 		E9AF349C289C4FE600C0F763 /* AppReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF349B289C4FE600C0F763 /* AppReducerTests.swift */; };
@@ -21,11 +22,6 @@
 		E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */; };
 		E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EC52896E346000DE660 /* LocationReducer.swift */; };
 		EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615A21A1CF9A0084E975 /* IndexTests.swift */; };
-		EBB061D821A1DC980084E975 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D121A1DC980084E975 /* Constants.swift */; };
-		EBB061D921A1DC980084E975 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D221A1DC980084E975 /* String.swift */; };
-		EBB061DB21A1DC980084E975 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D421A1DC980084E975 /* Location.swift */; };
-		EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D521A1DC980084E975 /* Forecast.swift */; };
-		EBB061DD21A1DC980084E975 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB061D621A1DC980084E975 /* Index.swift */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
 		EBF4B7571E7951D400B7A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7561E7951D400B7A616 /* Assets.xcassets */; };
 		EBF4B75A1E7951D400B7A616 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4B7581E7951D400B7A616 /* LaunchScreen.storyboard */; };
@@ -49,17 +45,13 @@
 		E938D4E0289B0C7000B8C968 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = app/Views/AppReducer.swift; sourceTree = "<group>"; };
 		E938D4E6289B0DCD00B8C968 /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
 		E938D4E8289B0E0000B8C968 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		E9720BB828C140E200771EC4 /* uv-today-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "uv-today-ios"; path = ..; sourceTree = "<group>"; };
 		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9AF349B289C4FE600C0F763 /* AppReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducerTests.swift; sourceTree = "<group>"; };
 		E9AF34A2289C606D00C0F763 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		E9E29EBF2896CD7C000DE660 /* UVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVClient.swift; sourceTree = "<group>"; };
 		E9E29EC52896E346000DE660 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationReducer.swift; path = app/Views/LocationReducer.swift; sourceTree = "<group>"; };
 		EBB0615A21A1CF9A0084E975 /* IndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
-		EBB061D121A1DC980084E975 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = app/Models/Constants.swift; sourceTree = "<group>"; };
-		EBB061D221A1DC980084E975 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = app/Models/String.swift; sourceTree = "<group>"; };
-		EBB061D421A1DC980084E975 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = app/Models/Location.swift; sourceTree = "<group>"; };
-		EBB061D521A1DC980084E975 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forecast.swift; path = app/Models/Forecast.swift; sourceTree = "<group>"; };
-		EBB061D621A1DC980084E975 /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Index.swift; path = app/Models/Index.swift; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EBC1904F1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBCAA0461E7C30F000DC2E9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -84,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E967004028C142010071FDB3 /* Models in Frameworks */,
 				E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */,
 				E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */,
 				E9AF349F289C58DD00C0F763 /* Bugsnag in Frameworks */,
@@ -153,6 +146,7 @@
 		EBF4B7431E7951D300B7A616 = {
 			isa = PBXGroup;
 			children = (
+				E9720BB828C140E200771EC4 /* uv-today-ios */,
 				EBF4B74E1E7951D400B7A616 /* swiftUV */,
 				EBDA88941FAE5C89009514AB /* swiftUVTests */,
 				EBF4B74D1E7951D400B7A616 /* Products */,
@@ -205,11 +199,6 @@
 		EBF4B77A1E799BC600B7A616 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EBB061D121A1DC980084E975 /* Constants.swift */,
-				EBB061D521A1DC980084E975 /* Forecast.swift */,
-				EBB061D621A1DC980084E975 /* Index.swift */,
-				EBB061D421A1DC980084E975 /* Location.swift */,
-				EBB061D221A1DC980084E975 /* String.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -257,6 +246,7 @@
 				E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */,
 				E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */,
 				E9AF349E289C58DD00C0F763 /* Bugsnag */,
+				E967003F28C142010071FDB3 /* Models */,
 			);
 			productName = swiftUV;
 			productReference = EBF4B74C1E7951D400B7A616 /* swiftUV.app */;
@@ -399,16 +389,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E29EC02896CD7C000DE660 /* UVClient.swift in Sources */,
-				EBB061DC21A1DC980084E975 /* Forecast.swift in Sources */,
 				E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */,
 				E938D4E7289B0DCD00B8C968 /* Live.swift in Sources */,
 				E938D4E9289B0E0000B8C968 /* Mock.swift in Sources */,
 				E9AF34A3289C606D00C0F763 /* App.swift in Sources */,
-				EBB061DB21A1DC980084E975 /* Location.swift in Sources */,
-				EBB061D821A1DC980084E975 /* Constants.swift in Sources */,
-				EBB061D921A1DC980084E975 /* String.swift in Sources */,
 				E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */,
-				EBB061DD21A1DC980084E975 /* Index.swift in Sources */,
 				E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,6 +728,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E967003F28C142010071FDB3 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
 		E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E9A22D3B2896C7A3006DC054 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

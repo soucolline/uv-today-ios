@@ -8,11 +8,11 @@
 
 import UIKit
 
-typealias Index = Int
+public typealias Index = Int
 
 extension Index {
   
-    var associatedColor: UIColor {
+  public var associatedColor: UIColor {
     switch self {
     case 0: return UIColor.systemBlue
     case 1, 2: return UIColor.systemGreen
@@ -24,7 +24,7 @@ extension Index {
     }
   }
   
-  var associatedDescription: String {
+  public var associatedDescription: String {
     switch self {
     case 0, 1, 2:
       return "lowUV.desc".localized

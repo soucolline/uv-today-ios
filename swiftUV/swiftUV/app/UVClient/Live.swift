@@ -10,6 +10,7 @@ import Foundation
 import ComposableArchitecture
 import CoreLocation
 import Keys
+import Models
 
 extension UVClient {
   static let live = UVClient(

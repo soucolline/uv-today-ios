@@ -8,6 +8,7 @@
 
 import ComposableArchitecture
 import ComposableCoreLocation
+import Models
 
 struct AppState: Equatable {
   var uvIndex: Index = 0
@@ -16,7 +17,7 @@ struct AppState: Equatable {
   var getCityNameRequestInFlight = false
   var errorText = ""
 
-  var userLocation: Location?
+  var userLocation: Models.Location?
   var isRequestingCurrentLocation = false
   var hasAlreadyRequestLocation = false
   var isLocationRefused = false

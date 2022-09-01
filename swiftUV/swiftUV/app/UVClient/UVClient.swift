@@ -7,6 +7,7 @@
 //
 
 import ComposableArchitecture
+import Models
 
 struct UVClientRequest {
   let lat: Double

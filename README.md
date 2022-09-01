@@ -1,2 +1,3 @@
-# SwiftUV
-Swift app to get current UV index depending on location
+# uv-today-ios
+
+A description of this package.

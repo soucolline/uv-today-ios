@@ -9,6 +9,7 @@
 import Foundation
 import ComposableArchitecture
 import XCTestDynamicOverlay
+import Models
 
 #if DEBUG
 extension UVClient {
