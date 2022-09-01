@@ -10,15 +10,13 @@
 		6538403F53A4E29309F2F084 /* Pods_swiftUV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AC0D333DE20DF5F86F5B5C /* Pods_swiftUV.framework */; };
 		E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931727E2896C5E1003EC842 /* ContentVIew.swift */; };
 		E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E0289B0C7000B8C968 /* AppReducer.swift */; };
-		E938D4E7289B0DCD00B8C968 /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E6289B0DCD00B8C968 /* Live.swift */; };
-		E938D4E9289B0E0000B8C968 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938D4E8289B0E0000B8C968 /* Mock.swift */; };
 		E967004028C142010071FDB3 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = E967003F28C142010071FDB3 /* Models */; };
 		E9A116352322E96C004DC9FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A116342322E96C004DC9FB /* Colors.xcassets */; };
 		E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E9A22D3C2896C7A3006DC054 /* ComposableArchitecture */; };
+		E9A259B828C145F20092218A /* UVClient in Frameworks */ = {isa = PBXBuildFile; productRef = E9A259B728C145F20092218A /* UVClient */; };
 		E9AF349C289C4FE600C0F763 /* AppReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF349B289C4FE600C0F763 /* AppReducerTests.swift */; };
 		E9AF349F289C58DD00C0F763 /* Bugsnag in Frameworks */ = {isa = PBXBuildFile; productRef = E9AF349E289C58DD00C0F763 /* Bugsnag */; };
 		E9AF34A3289C606D00C0F763 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF34A2289C606D00C0F763 /* App.swift */; };
-		E9E29EC02896CD7C000DE660 /* UVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EBF2896CD7C000DE660 /* UVClient.swift */; };
 		E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */; };
 		E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E29EC52896E346000DE660 /* LocationReducer.swift */; };
 		EBB0615B21A1CF9A0084E975 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB0615A21A1CF9A0084E975 /* IndexTests.swift */; };
@@ -43,13 +41,10 @@
 		84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftUV.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftUV/Pods-swiftUV.release.xcconfig"; sourceTree = "<group>"; };
 		E931727E2896C5E1003EC842 /* ContentVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentVIew.swift; path = app/Views/ContentVIew.swift; sourceTree = "<group>"; };
 		E938D4E0289B0C7000B8C968 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = app/Views/AppReducer.swift; sourceTree = "<group>"; };
-		E938D4E6289B0DCD00B8C968 /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
-		E938D4E8289B0E0000B8C968 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		E9720BB828C140E200771EC4 /* uv-today-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "uv-today-ios"; path = ..; sourceTree = "<group>"; };
 		E9A116342322E96C004DC9FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9AF349B289C4FE600C0F763 /* AppReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducerTests.swift; sourceTree = "<group>"; };
 		E9AF34A2289C606D00C0F763 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		E9E29EBF2896CD7C000DE660 /* UVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVClient.swift; sourceTree = "<group>"; };
 		E9E29EC52896E346000DE660 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationReducer.swift; path = app/Views/LocationReducer.swift; sourceTree = "<group>"; };
 		EBB0615A21A1CF9A0084E975 /* IndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
 		EBC1904E1E8EEAB600B9F2EC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -76,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A259B828C145F20092218A /* UVClient in Frameworks */,
 				E967004028C142010071FDB3 /* Models in Frameworks */,
 				E9E29EC42896E0A7000DE660 /* ComposableCoreLocation in Frameworks */,
 				E9A22D3D2896C7A3006DC054 /* ComposableArchitecture in Frameworks */,
@@ -102,17 +98,6 @@
 				84B83E859B0ADFAB9D8946E1 /* Pods-swiftUV.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E938D4E5289B0D0500B8C968 /* UVClient */ = {
-			isa = PBXGroup;
-			children = (
-				E9E29EBF2896CD7C000DE660 /* UVClient.swift */,
-				E938D4E6289B0DCD00B8C968 /* Live.swift */,
-				E938D4E8289B0E0000B8C968 /* Mock.swift */,
-			);
-			name = UVClient;
-			path = app/UVClient;
 			sourceTree = "<group>";
 		};
 		EBB061462198956B0084E975 /* Views */ = {
@@ -180,9 +165,7 @@
 		EBF4B7631E79917000B7A616 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				E938D4E5289B0D0500B8C968 /* UVClient */,
 				EBB061462198956B0084E975 /* Views */,
-				EBF4B77A1E799BC600B7A616 /* Models */,
 				E9AF34A2289C606D00C0F763 /* App.swift */,
 			);
 			name = app;
@@ -194,13 +177,6 @@
 				EBCAA0421E7C30CE00DC2E9D /* Translation */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		EBF4B77A1E799BC600B7A616 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +223,7 @@
 				E9E29EC32896E0A7000DE660 /* ComposableCoreLocation */,
 				E9AF349E289C58DD00C0F763 /* Bugsnag */,
 				E967003F28C142010071FDB3 /* Models */,
+				E9A259B728C145F20092218A /* UVClient */,
 			);
 			productName = swiftUV;
 			productReference = EBF4B74C1E7951D400B7A616 /* swiftUV.app */;
@@ -388,10 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E29EC02896CD7C000DE660 /* UVClient.swift in Sources */,
 				E938D4E1289B0C7000B8C968 /* AppReducer.swift in Sources */,
-				E938D4E7289B0DCD00B8C968 /* Live.swift in Sources */,
-				E938D4E9289B0E0000B8C968 /* Mock.swift in Sources */,
 				E9AF34A3289C606D00C0F763 /* App.swift in Sources */,
 				E931727F2896C5E1003EC842 /* ContentVIew.swift in Sources */,
 				E9E29EC62896E346000DE660 /* LocationReducer.swift in Sources */,
@@ -736,6 +710,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9A22D3B2896C7A3006DC054 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		E9A259B728C145F20092218A /* UVClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UVClient;
 		};
 		E9AF349E289C58DD00C0F763 /* Bugsnag */ = {
 			isa = XCSwiftPackageProductDependency;

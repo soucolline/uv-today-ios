@@ -7,11 +7,13 @@ let package = Package(
     name: "uv-today-ios",
     platforms: [.iOS(.v15)],
     products: [
-      .library(name: "Models", targets: ["Models"])
+      .library(name: "Models", targets: ["Models"]),
+      .library(name: "UVClient", targets: ["UVClient"])
     ],
     dependencies: [
     ],
     targets: [
-      .target(name: "Models")
+      .target(name: "Models"),
+      .target(name: "UVClient")
     ]
 )

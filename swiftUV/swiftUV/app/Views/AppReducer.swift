@@ -9,6 +9,7 @@
 import ComposableArchitecture
 import ComposableCoreLocation
 import Models
+import UVClient
 
 struct AppState: Equatable {
   var uvIndex: Index = 0

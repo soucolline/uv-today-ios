@@ -34,7 +34,7 @@ struct SwiftUVApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         #if RELEASE
-        Bugsnag.start(withApiKey: SwiftUVKeys().bugsnagApiKey)
+        Bugsnag.start(withApiKey: "b6ee27da8e2f6e0b9641e9c2f2fc6d41")
         #endif
         return true
     }
