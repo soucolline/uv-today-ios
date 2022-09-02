@@ -101,7 +101,7 @@ struct ContentView_Previews: PreviewProvider {
     ContentView(
       store: Store(
         initialState: AppState(
-          uvIndex: 1,
+          uvIndex: 6,
           cityName: "Gueugnon",
           weatherRequestInFlight: false,
           getCityNameRequestInFlight: false

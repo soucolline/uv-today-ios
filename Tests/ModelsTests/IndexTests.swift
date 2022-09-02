@@ -7,8 +7,7 @@
 //
 
 import XCTest
-
-@testable import swiftUV
+import Models
 
 class IndexTests: XCTestCase {
   
@@ -18,7 +17,7 @@ class IndexTests: XCTestCase {
       case 0: XCTAssertEqual(index.associatedColor, UIColor.systemBlue)
       case 1, 2: XCTAssertEqual(index.associatedColor, UIColor.systemGreen)
       case 3, 4, 5: XCTAssertEqual(index.associatedColor, UIColor.systemYellow)
-      case 6, 7: XCTAssertEqual(index.associatedColor, UIColor(named: "LightRed")!)
+      case 6, 7: XCTAssertEqual(index.associatedColor, UIColor(red: 0.906, green: 0.373, blue: 0.184, alpha: 1))
       case 8, 9, 10: XCTAssertEqual(index.associatedColor, UIColor.systemRed)
       case 11, 12, 13, 14: XCTAssertEqual(index.associatedColor, UIColor.systemPurple)
       default : XCTAssertEqual(index.associatedColor, UIColor.black)

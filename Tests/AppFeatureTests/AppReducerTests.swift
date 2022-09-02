@@ -9,8 +9,8 @@
 import Foundation
 import ComposableArchitecture
 import XCTest
-
-@testable import swiftUV
+import AppFeature
+import Models
 
 @MainActor
 class AppReducerTests: XCTestCase {

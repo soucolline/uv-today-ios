@@ -12,18 +12,18 @@ import Models
 import UVClient
 
 public struct AppState: Equatable {
-  var uvIndex: Index
-  var cityName: String
-  var weatherRequestInFlight: Bool
-  var getCityNameRequestInFlight: Bool
-  var errorText: String
+  public var uvIndex: Index
+  public var cityName: String
+  public var weatherRequestInFlight: Bool
+  public var getCityNameRequestInFlight: Bool
+  public var errorText: String
 
-  var userLocation: Models.Location?
-  var isRequestingCurrentLocation: Bool
-  var hasAlreadyRequestLocation: Bool
-  var isLocationRefused: Bool
+  public var userLocation: Models.Location?
+  public var isRequestingCurrentLocation: Bool
+  public var hasAlreadyRequestLocation: Bool
+  public var isLocationRefused: Bool
   
-  @BindableState var shouldShowErrorPopup = false
+  @BindableState public var shouldShowErrorPopup = false
   
   public init(
     uvIndex: Index = 0,
@@ -31,11 +31,11 @@ public struct AppState: Equatable {
     weatherRequestInFlight: Bool = false,
     getCityNameRequestInFlight: Bool = false,
     errorText: String = "",
-
     userLocation: Models.Location? = nil,
     isRequestingCurrentLocation: Bool = false,
     hasAlreadyRequestLocation: Bool = false,
-    isLocationRefused: Bool = false
+    isLocationRefused: Bool = false,
+    shouldShowErrorPopup: Bool = false
   ) {
     self.uvIndex = uvIndex
     self.cityName = cityName
@@ -47,6 +47,7 @@ public struct AppState: Equatable {
     self.isRequestingCurrentLocation = isRequestingCurrentLocation
     self.hasAlreadyRequestLocation = hasAlreadyRequestLocation
     self.isLocationRefused = isLocationRefused
+    self.shouldShowErrorPopup = shouldShowErrorPopup
   }
 }
 

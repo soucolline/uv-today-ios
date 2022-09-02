@@ -19,6 +19,8 @@ let package = Package(
       .target(
         name: "AppFeature",
         dependencies: [
+          "Models",
+          "UVClient",
           .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
           .product(name: "ComposableCoreLocation", package: "composable-core-location")
         ]
@@ -29,6 +31,21 @@ let package = Package(
         dependencies: [
           "Models",
           .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+        ]
+      ),
+      .testTarget(
+        name: "AppFeatureTests",
+        dependencies: [
+          "AppFeature",
+          "Models",
+          "UVClient",
+          .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+        ]
+      ),
+      .testTarget(
+        name: "ModelsTests",
+        dependencies: [
+          "Models"
         ]
       )
     ]

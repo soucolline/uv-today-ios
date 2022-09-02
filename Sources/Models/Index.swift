@@ -17,7 +17,7 @@ extension Index {
     case 0: return UIColor.systemBlue
     case 1, 2: return UIColor.systemGreen
     case 3, 4, 5: return UIColor.systemYellow
-    case 6, 7: return UIColor(named: "LightRed")!
+    case 6, 7: return UIColor(red: 0.906, green: 0.373, blue: 0.184, alpha: 1)
     case 8, 9, 10: return UIColor.systemRed
     case 11, 12, 13, 14: return UIColor.systemPurple
     default : return UIColor.black
