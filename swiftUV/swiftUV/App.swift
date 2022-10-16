@@ -20,7 +20,7 @@ struct SwiftUVApp: App {
       ContentView(
         store: Store(
           initialState: AppReducer.State(),
-          reducer: AppReducer(uvClient: .live, locationManager: .live)
+          reducer: AppReducer()
         )
       )
     }

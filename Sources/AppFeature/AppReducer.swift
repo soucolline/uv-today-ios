@@ -8,6 +8,7 @@
 
 import ComposableArchitecture
 import ComposableCoreLocation
+import LocationManager
 import Models
 import UVClient
 
@@ -61,13 +62,10 @@ public struct AppReducer: ReducerProtocol {
     case binding(BindingAction<State>)
   }
   
-  public let uvClient: UVClient
-  public let locationManager: LocationManager
+  @Dependency(\.uvClient) public var uvClient: UVClient
+  @Dependency(\.locationManager) public var locationManager: LocationManager
   
-  public init(uvClient: UVClient, locationManager: LocationManager) {
-    self.uvClient = uvClient
-    self.locationManager = locationManager
-  }
+  public init() {}
   
   public var body: some ReducerProtocol<State, Action> {
     BindingReducer()

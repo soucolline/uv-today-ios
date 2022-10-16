@@ -8,6 +8,7 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
       .library(name: "AppFeature", targets: ["AppFeature"]),
+      .library(name: "LocationManager", targets: ["LocationManager"]),
       .library(name: "Models", targets: ["Models"]),
       .library(name: "UVClient", targets: ["UVClient"])
     ],
@@ -19,9 +20,16 @@ let package = Package(
       .target(
         name: "AppFeature",
         dependencies: [
+          "LocationManager",
           "Models",
           "UVClient",
           .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+          .product(name: "ComposableCoreLocation", package: "composable-core-location")
+        ]
+      ),
+      .target(
+        name: "LocationManager",
+        dependencies: [
           .product(name: "ComposableCoreLocation", package: "composable-core-location")
         ]
       ),

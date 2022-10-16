@@ -106,7 +106,7 @@ struct ContentView_Previews: PreviewProvider {
           weatherRequestInFlight: false,
           getCityNameRequestInFlight: false
         ),
-        reducer: AppReducer(uvClient: .mock, locationManager: .live)
+        reducer: AppReducer()
       )
     )
   }
