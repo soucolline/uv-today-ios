@@ -18,16 +18,15 @@ class AppReducerTests: XCTestCase {
     let expectedForecast = Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
     let store = TestStore(
       initialState:
-        AppState(
+        AppReducer.State(
           getCityNameRequestInFlight: true,
           userLocation: Location(latitude: 12.0, longitude: 13.0)
         ),
-      reducer: appReducer,
-      environment: .unimplemented
+      reducer: AppReducer()
     )
     
-    store.environment.uvClient.fetchUVIndex = { _ in Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5) }
-    store.environment.uvClient.fetchCityName = { _ in "Gueugnon" }
+    store.dependencies.uvClient.fetchUVIndex = { _ in Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5) }
+    store.dependencies.uvClient.fetchCityName = { _ in "Gueugnon" }
     
     await store.send(.getUVRequest) {
       $0.weatherRequestInFlight = true
@@ -48,16 +47,15 @@ class AppReducerTests: XCTestCase {
   func testGetUVRequestFailure() async {
     let store = TestStore(
       initialState:
-        AppState(
+        AppReducer.State(
           getCityNameRequestInFlight: true,
           userLocation: Location(latitude: 12.0, longitude: 13.0)
         ),
-      reducer: appReducer,
-      environment: .unimplemented
+      reducer: AppReducer()
     )
     
-    store.environment.uvClient.fetchUVIndex = { _ in throw "test" }
-    store.environment.uvClient.fetchCityName = { _ in throw "no city" }
+    store.dependencies.uvClient.fetchUVIndex = { _ in throw "test" }
+    store.dependencies.uvClient.fetchCityName = { _ in throw "no city" }
     
     await store.send(.getUVRequest) {
       $0.weatherRequestInFlight = true
@@ -80,11 +78,10 @@ class AppReducerTests: XCTestCase {
   func testGetUVRequestFailureNoLocation() {
     let store = TestStore(
       initialState:
-        AppState(
+        AppReducer.State(
           getCityNameRequestInFlight: true
         ),
-      reducer: appReducer,
-      environment: .unimplemented
+      reducer: AppReducer()
     )
     
     store.send(.getUVRequest) {
@@ -97,11 +94,10 @@ class AppReducerTests: XCTestCase {
   func testDismissErrorPopup() {
     let store = TestStore(
       initialState:
-        AppState(
+        AppReducer.State(
           shouldShowErrorPopup: true
         ),
-      reducer: appReducer,
-      environment: .unimplemented
+      reducer: AppReducer()
     )
     
     store.send(.set(\.$shouldShowErrorPopup, true)) {
@@ -111,22 +107,14 @@ class AppReducerTests: XCTestCase {
   
   func testOnDisappear() {
     let store = TestStore(
-      initialState: AppState(hasAlreadyRequestLocation: true),
-      reducer: appReducer,
-      environment: .unimplemented
+      initialState: AppReducer.State(hasAlreadyRequestLocation: true),
+      reducer: AppReducer()
     )
     
     store.send(.onDisappear) {
       $0.hasAlreadyRequestLocation = false
     }
   }
-}
-
-extension AppEnvironment {
-  static let unimplemented = Self(
-    uvClient: .unimplemented,
-    locationManager: .failing
-  )
 }
 
 extension String: Error {}

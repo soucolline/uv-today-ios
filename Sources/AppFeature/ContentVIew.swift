@@ -11,14 +11,14 @@ import ComposableCoreLocation
 import SwiftUI
 
 public struct ContentView: View {
-  let store: Store<AppState, AppAction>
+  let store: StoreOf<AppReducer>
   
-  public init(store: Store<AppState, AppAction>) {
+  public init(store: StoreOf<AppReducer>) {
     self.store = store
   }
   
   public var body: some View {
-    WithViewStore(self.store) { viewStore in
+    WithViewStore(self.store, observe: { $0 }) { viewStore in
       ZStack {
         Rectangle()
           .animation(.easeIn(duration: 0.5), value: viewStore.uvIndex.associatedColor)
@@ -100,17 +100,13 @@ struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView(
       store: Store(
-        initialState: AppState(
+        initialState: AppReducer.State(
           uvIndex: 6,
           cityName: "Gueugnon",
           weatherRequestInFlight: false,
           getCityNameRequestInFlight: false
         ),
-        reducer: appReducer,
-        environment: AppEnvironment(
-          uvClient: .mock,
-          locationManager: .live
-        )
+        reducer: AppReducer()
       )
     )
   }

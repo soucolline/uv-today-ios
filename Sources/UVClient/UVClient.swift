@@ -21,9 +21,22 @@ public struct UVClientRequest {
 
 public struct UVClient {
   public var fetchUVIndex: @Sendable (UVClientRequest) async throws -> Forecast
-  public var fetchCityName: @Sendable (Location) async throws -> String
+  public var fetchCityName: @Sendable (Models.Location) async throws -> String
   
   struct Failure: Error, Equatable {
     let errorDescription: String
+  }
+}
+
+private enum UVClientKey: DependencyKey {
+  static let liveValue = UVClient.live
+  static var testValue = UVClient.unimplemented
+  static var previewValue = UVClient.mock
+}
+
+public extension DependencyValues {
+  var uvClient: UVClient {
+    get { self[UVClientKey.self] }
+    set { self[UVClientKey.self] = newValue }
   }
 }

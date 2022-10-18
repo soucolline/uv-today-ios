@@ -19,12 +19,8 @@ struct SwiftUVApp: App {
     WindowGroup {
       ContentView(
         store: Store(
-          initialState: AppState(),
-          reducer: appReducer,
-          environment: AppEnvironment(
-            uvClient: .live,
-            locationManager: .live
-          )
+          initialState: AppReducer.State(),
+          reducer: AppReducer()
         )
       )
     }
