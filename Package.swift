@@ -13,7 +13,7 @@ let package = Package(
       .library(name: "UVClient", targets: ["UVClient"])
     ],
     dependencies: [
-      .package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "0.42.0"),
+      .package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "0.43.0"),
       .package(url: "https://github.com/pointfreeco/composable-core-location", exact: "0.2.0"),
     ],
     targets: [
