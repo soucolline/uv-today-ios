@@ -3,6 +3,9 @@
 
 import PackageDescription
 
+let tca: Target.Dependency = .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+let tcaCoreLocation: Target.Dependency = .product(name: "ComposableCoreLocation", package: "composable-core-location")
+
 let package = Package(
     name: "uv-today-ios",
     platforms: [.iOS(.v15)],
@@ -23,14 +26,14 @@ let package = Package(
           "LocationManager",
           "Models",
           "UVClient",
-          .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-          .product(name: "ComposableCoreLocation", package: "composable-core-location")
+          tca,
+          tcaCoreLocation
         ]
       ),
       .target(
         name: "LocationManager",
         dependencies: [
-          .product(name: "ComposableCoreLocation", package: "composable-core-location")
+          tcaCoreLocation
         ]
       ),
       .target(name: "Models"),
@@ -38,7 +41,7 @@ let package = Package(
         name: "UVClient",
         dependencies: [
           "Models",
-          .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+          tca
         ]
       ),
       .testTarget(
@@ -47,7 +50,7 @@ let package = Package(
           "AppFeature",
           "Models",
           "UVClient",
-          .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+          tca
         ]
       ),
       .testTarget(

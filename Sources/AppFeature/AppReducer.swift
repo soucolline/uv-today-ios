@@ -53,7 +53,7 @@ public struct AppReducer: ReducerProtocol {
   
   public enum Action: Equatable, BindableAction {
     case getUVRequest
-    case getUVResponse(TaskResult<Forecast>)
+    case getUVResponse(TaskResult<Index>)
     case getCityNameResponse(TaskResult<String>)
 
     case onAppear
@@ -137,9 +137,9 @@ public struct AppReducer: ReducerProtocol {
           _ = await [fetchUV, fetchCityName]
         }
 
-      case .getUVResponse(.success(let forecast)):
+      case .getUVResponse(.success(let index)):
         state.weatherRequestInFlight = false
-        state.uvIndex = Int(forecast.value)
+        state.uvIndex = index
         return .none
         
       case .getUVResponse(.failure(let error)):
@@ -170,7 +170,7 @@ public struct AppReducer: ReducerProtocol {
         return .none
       }
     }
-    ._printChanges()
+    //._printChanges()
     
     LocationReducer()
   }

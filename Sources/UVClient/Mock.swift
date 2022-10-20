@@ -15,7 +15,7 @@ import Models
 extension UVClient {
   public static let mock = Self(
     fetchUVIndex: { _ in
-      Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
+      5
     },
     fetchCityName: { _ in
       "Gueugnon"
