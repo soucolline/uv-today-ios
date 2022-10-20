@@ -15,7 +15,6 @@ import Models
 @MainActor
 class AppReducerTests: XCTestCase {
   func testGetUVRequestSuccess() async {
-    let expectedForecast = Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
     let store = TestStore(
       initialState:
         AppReducer.State(
@@ -25,7 +24,7 @@ class AppReducerTests: XCTestCase {
       reducer: AppReducer()
     )
     
-    store.dependencies.uvClient.fetchUVIndex = { _ in Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5) }
+    store.dependencies.uvClient.fetchUVIndex = { _ in 5 }
     store.dependencies.uvClient.fetchCityName = { _ in "Gueugnon" }
     
     await store.send(.getUVRequest) {
@@ -33,7 +32,7 @@ class AppReducerTests: XCTestCase {
       $0.getCityNameRequestInFlight = true
     }
     
-    await store.receive(.getUVResponse(.success(expectedForecast))) {
+    await store.receive(.getUVResponse(.success(5))) {
       $0.weatherRequestInFlight = false
       $0.uvIndex = 5
     }
