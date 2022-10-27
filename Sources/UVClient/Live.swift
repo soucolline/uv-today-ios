@@ -46,6 +46,19 @@ extension UVClient {
           continuation.resume(returning: cityName)
         }
       }
+    },
+    fetchWeatherKitAttribution: {
+      if #available(iOS 16.0, *) {
+        do {
+          let attribution = try await WeatherService.shared.attribution
+          
+          return AttributionResponse(logo: attribution.combinedMarkDarkURL, link: attribution.legalPageURL)
+        } catch {
+          throw UVError.noAttributionAvailable
+        }
+      } else {
+        fatalError("Trying to call WeatherKit from non iOS 16 device")
+      }
     }
   )
 }

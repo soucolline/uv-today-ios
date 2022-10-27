@@ -22,6 +22,7 @@ public struct UVClientRequest {
 public struct UVClient {
   public var fetchUVIndex: @Sendable (UVClientRequest) async throws -> Index
   public var fetchCityName: @Sendable (Models.Location) async throws -> String
+  public var fetchWeatherKitAttribution: @Sendable () async throws -> AttributionResponse
   
   struct Failure: Error, Equatable {
     let errorDescription: String

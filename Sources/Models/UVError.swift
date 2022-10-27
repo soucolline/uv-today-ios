@@ -13,6 +13,7 @@ public enum UVError: Error, Equatable {
   case noData(String)
   case couldNotDecodeJSON
   case noWeatherAvailable
+  case noAttributionAvailable
   case customError(String)
   
   public var localizedDescription: String {
@@ -25,6 +26,8 @@ public enum UVError: Error, Equatable {
       return "Could not parse JSON"
     case .noWeatherAvailable:
       return "No weather data available"
+    case .noAttributionAvailable:
+      return "No attribution available for WeatherKit"
     case .customError(let message):
       return message
     }

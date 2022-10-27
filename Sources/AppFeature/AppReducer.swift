@@ -18,6 +18,8 @@ public struct AppReducer: ReducerProtocol {
     public var cityName: String
     public var weatherRequestInFlight: Bool
     public var getCityNameRequestInFlight: Bool
+    public var attributionLogo: URL?
+    public var attributionLink: URL?
     public var errorText: String
     public var userLocation: Models.Location?
     public var isRequestingCurrentLocation: Bool
@@ -55,6 +57,8 @@ public struct AppReducer: ReducerProtocol {
     case getUVRequest
     case getUVResponse(TaskResult<Index>)
     case getCityNameResponse(TaskResult<String>)
+    case getAttribution
+    case getAttributionResponse(TaskResult<AttributionResponse>)
 
     case onAppear
     case onDisappear
@@ -159,6 +163,19 @@ public struct AppReducer: ReducerProtocol {
         state.cityName = "app.label.unknown".localized
         return .none
         
+      case .getAttribution:
+        return .task {
+          await .getAttributionResponse(TaskResult { try await uvClient.fetchWeatherKitAttribution() })
+        }
+        
+      case .getAttributionResponse(.success(let attribution)):
+        state.attributionLogo = attribution.logo
+        state.attributionLink = attribution.link
+        return .none
+        
+      case .getAttributionResponse(.failure):
+        return .none
+        
       case .binding(\.$shouldShowErrorPopup):
         state.shouldShowErrorPopup = false
         return .none
@@ -170,7 +187,7 @@ public struct AppReducer: ReducerProtocol {
         return .none
       }
     }
-    //._printChanges()
+    ._printChanges()
     
     LocationReducer()
   }

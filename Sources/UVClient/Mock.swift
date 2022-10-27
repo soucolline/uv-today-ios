@@ -19,6 +19,12 @@ extension UVClient {
     },
     fetchCityName: { _ in
       "Gueugnon"
+    },
+    fetchWeatherKitAttribution: {
+      AttributionResponse(
+        logo: URL(string:"https://www.logo.com")!,
+        link: URL(string: "https://www.link.com")!
+      )
     }
   )
 }
@@ -26,7 +32,8 @@ extension UVClient {
 extension UVClient {
   public static let unimplemented = Self(
     fetchUVIndex: XCTUnimplemented("\(Self.self).fetchUVIndex)"),
-    fetchCityName: XCTUnimplemented("\(Self.self).fetchCityName")
+    fetchCityName: XCTUnimplemented("\(Self.self).fetchCityName"),
+    fetchWeatherKitAttribution: XCTUnimplemented("\(Self.self).fetchWeatherKitAttribution")
   )
 }
 #endif

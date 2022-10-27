@@ -89,6 +89,37 @@ class AppReducerTests: XCTestCase {
       $0.errorText = "app.error.couldNotLocalise".localized
     }
   }
+  
+  func testGetAttributionSuccess() async {
+    let store = TestStore(
+      initialState: .init(),
+      reducer: AppReducer()
+    )
+    
+    let url1 = URL(string: "https://www.url1.com")!
+    let url2 = URL(string: "https://www.url2.com")!
+    let attribution = AttributionResponse(logo: url1, link: url2)
+    
+    store.dependencies.uvClient.fetchWeatherKitAttribution = { attribution }
+    
+    await store.send(.getAttribution)
+    await store.receive(.getAttributionResponse(.success(attribution))) {
+      $0.attributionLogo = attribution.logo
+      $0.attributionLink = attribution.link
+    }
+  }
+  
+  func testGetAttributionFailure() async {
+    let store = TestStore(
+      initialState: .init(),
+      reducer: AppReducer()
+    )
+    
+    store.dependencies.uvClient.fetchWeatherKitAttribution = { throw UVError.noAttributionAvailable }
+    
+    await store.send(.getAttribution)
+    await store.receive(.getAttributionResponse(.failure(UVError.noAttributionAvailable)))
+  }
     
   func testDismissErrorPopup() {
     let store = TestStore(
