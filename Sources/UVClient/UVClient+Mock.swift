@@ -29,6 +29,11 @@ extension UVClient {
   )
 }
 
+extension UVClientKey {
+  static let testValue = UVClient.unimplemented
+  static let previewValue = UVClient.mock
+}
+
 extension UVClient {
   public static let unimplemented = Self(
     fetchUVIndex: XCTUnimplemented("\(Self.self).fetchUVIndex)"),

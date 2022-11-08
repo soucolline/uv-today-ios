@@ -28,16 +28,3 @@ public struct UVClient {
     let errorDescription: String
   }
 }
-
-private enum UVClientKey: DependencyKey {
-  static let liveValue = UVClient.live
-  static var testValue = UVClient.unimplemented
-  static var previewValue = UVClient.mock
-}
-
-public extension DependencyValues {
-  var uvClient: UVClient {
-    get { self[UVClientKey.self] }
-    set { self[UVClientKey.self] = newValue }
-  }
-}
