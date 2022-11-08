@@ -15,10 +15,16 @@ import Models
 extension UVClient {
   public static let mock = Self(
     fetchUVIndex: { _ in
-      Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
+      5
     },
     fetchCityName: { _ in
       "Gueugnon"
+    },
+    fetchWeatherKitAttribution: {
+      AttributionResponse(
+        logo: URL(string:"https://www.logo.com")!,
+        link: URL(string: "https://www.link.com")!
+      )
     }
   )
 }
@@ -26,7 +32,8 @@ extension UVClient {
 extension UVClient {
   public static let unimplemented = Self(
     fetchUVIndex: XCTUnimplemented("\(Self.self).fetchUVIndex)"),
-    fetchCityName: XCTUnimplemented("\(Self.self).fetchCityName")
+    fetchCityName: XCTUnimplemented("\(Self.self).fetchCityName"),
+    fetchWeatherKitAttribution: XCTUnimplemented("\(Self.self).fetchWeatherKitAttribution")
   )
 }
 #endif

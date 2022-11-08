@@ -80,6 +80,22 @@ public struct ContentView: View {
             .foregroundColor(.white)
             .font(.system(size: 12))
             .redacted(reason: viewStore.weatherRequestInFlight ? .placeholder : [])
+          
+          if let attributionLogo = viewStore.attributionLogo {
+            AsyncImage(url: attributionLogo, content: { image in
+              image
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 100)
+            }, placeholder: {
+              
+            })
+          }
+          
+          if let attributionLink = viewStore.attributionLink {
+            Link(destination: attributionLink, label: { Text("Other data sources")})
+              .foregroundColor(.white)
+          }
         }
       }
       .alert(isPresented: viewStore.binding(\.$shouldShowErrorPopup)) {
@@ -90,6 +106,11 @@ public struct ContentView: View {
       }
       .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
         viewStore.send(.onDisappear)
+      }
+      .task {
+        if #available(iOS 16.0, *) {
+          viewStore.send(.getAttribution)
+        }
       }
     }
   }

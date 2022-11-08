@@ -15,7 +15,6 @@ import Models
 @MainActor
 class AppReducerTests: XCTestCase {
   func testGetUVRequestSuccess() async {
-    let expectedForecast = Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5)
     let store = TestStore(
       initialState:
         AppReducer.State(
@@ -25,7 +24,7 @@ class AppReducerTests: XCTestCase {
       reducer: AppReducer()
     )
     
-    store.dependencies.uvClient.fetchUVIndex = { _ in Forecast(lat: 12.0, lon: 13.0, dateIso: "32323", date: 1234, value: 5) }
+    store.dependencies.uvClient.fetchUVIndex = { _ in 5 }
     store.dependencies.uvClient.fetchCityName = { _ in "Gueugnon" }
     
     await store.send(.getUVRequest) {
@@ -33,7 +32,7 @@ class AppReducerTests: XCTestCase {
       $0.getCityNameRequestInFlight = true
     }
     
-    await store.receive(.getUVResponse(.success(expectedForecast))) {
+    await store.receive(.getUVResponse(.success(5))) {
       $0.weatherRequestInFlight = false
       $0.uvIndex = 5
     }
@@ -89,6 +88,37 @@ class AppReducerTests: XCTestCase {
       $0.shouldShowErrorPopup = true
       $0.errorText = "app.error.couldNotLocalise".localized
     }
+  }
+  
+  func testGetAttributionSuccess() async {
+    let store = TestStore(
+      initialState: .init(),
+      reducer: AppReducer()
+    )
+    
+    let url1 = URL(string: "https://www.url1.com")!
+    let url2 = URL(string: "https://www.url2.com")!
+    let attribution = AttributionResponse(logo: url1, link: url2)
+    
+    store.dependencies.uvClient.fetchWeatherKitAttribution = { attribution }
+    
+    await store.send(.getAttribution)
+    await store.receive(.getAttributionResponse(.success(attribution))) {
+      $0.attributionLogo = attribution.logo
+      $0.attributionLink = attribution.link
+    }
+  }
+  
+  func testGetAttributionFailure() async {
+    let store = TestStore(
+      initialState: .init(),
+      reducer: AppReducer()
+    )
+    
+    store.dependencies.uvClient.fetchWeatherKitAttribution = { throw UVError.noAttributionAvailable }
+    
+    await store.send(.getAttribution)
+    await store.receive(.getAttributionResponse(.failure(UVError.noAttributionAvailable)))
   }
     
   func testDismissErrorPopup() {

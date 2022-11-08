@@ -8,18 +8,28 @@
 
 import CoreLocation
 import Models
+import WeatherKit
 
 extension UVClient {
   public static let live = UVClient(
     fetchUVIndex: { request in
-      let url = URL(
-        string: K.Api.baseURL + String(format: K.Api.Endpoints.getUV, arguments: [request.lat, request.long, "73c6746593df6d9b6d412026b3db9239"]))!
-      do {
-        let (response, _) = try await URLSession.shared.data(from: url)
-        let forectast = try JSONDecoder().decode(Forecast.self, from: response)
-        return forectast
-      } catch {
-        throw error
+      if #available(iOS 16.0, *) {
+        let clLocation = CLLocation(latitude: request.lat, longitude: request.long)
+        let weather = try? await WeatherService.shared.weather(for: clLocation, including: .current)
+        
+        guard let weather else { throw UVError.noWeatherAvailable }
+        
+        return weather.uvIndex.value
+      } else {
+        let url = URL(
+          string: K.Api.baseURL + String(format: K.Api.Endpoints.getUV, arguments: [request.lat, request.long, "73c6746593df6d9b6d412026b3db9239"]))!
+        do {
+          let (response, _) = try await URLSession.shared.data(from: url)
+          let forectast = try JSONDecoder().decode(Forecast.self, from: response)
+          return Int(forectast.value)
+        } catch {
+          throw error
+        }
       }
     },
     fetchCityName: { location in
@@ -35,6 +45,19 @@ extension UVClient {
           let cityName = placemarks?.first?.locality ?? "Unknown"
           continuation.resume(returning: cityName)
         }
+      }
+    },
+    fetchWeatherKitAttribution: {
+      if #available(iOS 16.0, *) {
+        do {
+          let attribution = try await WeatherService.shared.attribution
+          
+          return AttributionResponse(logo: attribution.combinedMarkDarkURL, link: attribution.legalPageURL)
+        } catch {
+          throw UVError.noAttributionAvailable
+        }
+      } else {
+        fatalError("Trying to call WeatherKit from non iOS 16 device")
       }
     }
   )
