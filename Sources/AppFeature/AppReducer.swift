@@ -26,7 +26,7 @@ public struct AppReducer: ReducerProtocol {
     public var hasAlreadyRequestLocation: Bool
     public var isLocationRefused: Bool
     
-    @BindableState public var shouldShowErrorPopup: Bool
+    @BindingState public var shouldShowErrorPopup: Bool
     
     public init(
       uvIndex: Index = 0,

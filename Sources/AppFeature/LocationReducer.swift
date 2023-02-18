@@ -15,7 +15,7 @@ struct LocationReducer: ReducerProtocol {
   typealias State = AppReducer.State
   typealias Action = AppReducer.Action
   
-  func reduce(into state: inout AppReducer.State, action: AppReducer.Action) -> Effect<AppReducer.Action, Never> {
+  func reduce(into state: inout AppReducer.State, action: AppReducer.Action) -> EffectTask<AppReducer.Action> {
     switch action {
     case let .locationManager(.didUpdateLocations(locations)):
       guard state.hasAlreadyRequestLocation == false else {
