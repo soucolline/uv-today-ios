@@ -6,23 +6,24 @@
 //  Copyright © 2022 Thomas Guilleminot. All rights reserved.
 //
 
-import ComposableArchitecture
-import ComposableCoreLocation
+import Perception
 import SwiftUI
 
 public struct ContentView: View {
-  let store: StoreOf<AppReducer>
+  @Environment(\.scenePhase) var scenePhase
   
-  public init(store: StoreOf<AppReducer>) {
-    self.store = store
+  @Perception.Bindable private var viewModel: UVViewModel
+  
+  public init(viewModel: UVViewModel) {
+    self.viewModel = viewModel
   }
   
   public var body: some View {
-    WithViewStore(self.store, observe: { $0 }) { viewStore in
+    WithPerceptionTracking {
       ZStack {
         Rectangle()
-          .animation(.easeIn(duration: 0.5), value: viewStore.uvIndex.associatedColor)
-          .foregroundColor(Color(viewStore.uvIndex.associatedColor))
+          .animation(.easeIn(duration: 0.5), value: viewModel.uvIndex.associatedColor)
+          .foregroundColor(Color(viewModel.uvIndex.associatedColor))
           .edgesIgnoringSafeArea(.all)
 
         VStack {
@@ -30,7 +31,9 @@ public struct ContentView: View {
             Spacer()
             
             Button {
-              viewStore.send(.getUVRequest)
+              Task {
+                await viewModel.getUVRequest()
+              }
             } label: {
               Image(systemName: "arrow.clockwise")
                 .resizable()
@@ -39,31 +42,31 @@ public struct ContentView: View {
                 .foregroundColor(.white)
                 .padding(.trailing, 20)
             }
-            .disabled(viewStore.isLocationRefused)
+            .disabled(viewModel.isLocationRefused)
           }
 
           HStack {
-            Text(viewStore.cityName)
+            Text(viewModel.cityName)
               .padding(.top, 33)
               .font(.system(size: 38, weight: .bold, design: .rounded))
               .foregroundColor(.white)
               .padding(.horizontal, 20)
               .lineLimit(1)
               .minimumScaleFactor(0.2)
-              .redacted(reason: viewStore.getCityNameRequestInFlight ? .placeholder : [])
+              .redacted(reason: viewModel.getCityNameRequestInFlight ? .placeholder : [])
             Spacer()
           }
 
           Spacer()
 
-          Text(String(viewStore.uvIndex))
+          Text(String(viewModel.uvIndex))
             .foregroundColor(.white)
             .font(.system(size: 80, weight: .semibold, design: .rounded))
-            .redacted(reason: viewStore.weatherRequestInFlight ? .placeholder : [])
+            .redacted(reason: viewModel.weatherRequestInFlight ? .placeholder : [])
 
           Spacer()
           
-          if viewStore.isLocationRefused {
+          if viewModel.isLocationRefused {
             Button {
               UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             } label: {
@@ -75,13 +78,13 @@ public struct ContentView: View {
             .cornerRadius(8)
           }
           
-          Text(viewStore.uvIndex.associatedDescription)
+          Text(viewModel.uvIndex.associatedDescription)
             .padding(20)
             .foregroundColor(.white)
             .font(.system(size: 12))
-            .redacted(reason: viewStore.weatherRequestInFlight ? .placeholder : [])
+            .redacted(reason: viewModel.weatherRequestInFlight ? .placeholder : [])
           
-          if let attributionLogo = viewStore.attributionLogo {
+          if let attributionLogo = viewModel.attributionLogo {
             AsyncImage(url: attributionLogo, content: { image in
               image
                 .resizable()
@@ -92,44 +95,31 @@ public struct ContentView: View {
             })
           }
           
-          if let attributionLink = viewStore.attributionLink {
+          if let attributionLink = viewModel.attributionLink {
             Link(destination: attributionLink, label: { Text("Other data sources")})
               .foregroundColor(.white)
           }
         }
       }
-      .alert(isPresented: viewStore.binding(\.$shouldShowErrorPopup)) {
-        Alert(title: Text("app.label.error"), message: Text(viewStore.errorText))
+      .alert(isPresented: $viewModel.shouldShowErrorPopup) {
+        Alert(title: Text("app.label.error"), message: Text(viewModel.errorText))
       }
-      .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-        viewStore.send(.onAppear)
-      }
-      .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
-        viewStore.send(.onDisappear)
+      .onChange(of: scenePhase) { value in
+        switch value {
+        case .active: viewModel.onAppear()
+        case .inactive, .background: viewModel.onDisappear()
+        @unknown default: break
+        }
       }
       .task {
         if #available(iOS 16.0, *) {
-          viewStore.send(.getAttribution)
+          await viewModel.getAtribution()
         }
       }
     }
   }
 }
 
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView(
-      store: Store(
-        initialState: AppReducer.State(
-          uvIndex: 6,
-          cityName: "Gueugnon",
-          weatherRequestInFlight: false,
-          getCityNameRequestInFlight: false
-        ),
-        reducer: AppReducer()
-      )
-    )
-  }
+#Preview {
+  ContentView(viewModel: UVViewModel())
 }
-#endif
