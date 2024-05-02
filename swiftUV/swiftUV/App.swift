@@ -7,8 +7,8 @@
 //
 
 import AppFeature
+import Perception
 import SwiftUI
-import ComposableArchitecture
 import FirebaseCore
 
 @main
@@ -16,13 +16,12 @@ struct SwiftUVApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   
   var body: some Scene {
-    WindowGroup {
-      ContentView(
-        store: Store(
-          initialState: AppReducer.State(),
-          reducer: AppReducer()
+    WithPerceptionTracking {
+      WindowGroup {
+        ContentView(
+          viewModel: UVViewModel()
         )
-      )
+      }
     }
   }
 }
