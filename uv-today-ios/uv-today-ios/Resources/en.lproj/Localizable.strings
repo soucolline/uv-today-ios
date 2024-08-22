@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  swiftUV
+
+  Created by Thomas Guilleminot on 17/03/2017.
+  Copyright © 2017 Thomas Guilleminot. All rights reserved.
+*/
+
+// Labels
+"app.label.city" = "City";
+"app.label.unknown" = "Unknown";
+"app.label.error" = "Error";
+
+// Errros
+"app.error.localisationDisabled" = "You disabled location service";
+"app.error.couldNotLocalise" = "Could not find your location";
+"app.error.noData" = "No data available";
+"app.error.openSettings" = "Authorize location in settings";
+
+
+// Description
+
+"lowUV.desc" = "Wear sunglasses on bright days. If you burn easily, cover up and use broad spectrum SPF 30+ sunscreen. Bright surfaces, such as sand, water and snow, will increase UV exposure.";
+
+"middleUV.desc" = "Stay in shade near midday when the sun is strongest. If outdoors, wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. Bright surfaces, such as sand, water and snow, will increase UV exposure.";
+
+"highUV.desc" = "Reduce time in the sun between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. Bright surfaces, such sand, water and snow, will increase UV exposure.";
+
+"veryHighUV.desc" = "Minimize sun exposure between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. Bright surfaces, such as sand, water and snow, will increase UV exposure.";
+
+"extremeUV.desc" = "Try to avoid sun exposure between 10 a.m. and 4 p.m. If outdoors, seek shade and wear sun protective clothing, a wide-brimmed hat, and UV-blocking sunglasses. Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. Bright surfaces, such as sand, water and snow, will increase UV exposure.";
+
+"error.desc" = "An error occured, please restart the app";
