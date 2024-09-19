@@ -16,8 +16,8 @@ let package = Package(
       .library(name: "UVClient", targets: ["UVClient"])
     ],
     dependencies: [
-      .package(url: "https://github.com/pointfreeco/swift-perception", exact: "1.1.5"),
-      .package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.2.2")
+      .package(url: "https://github.com/pointfreeco/swift-perception", exact: "1.3.5"),
+      .package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.4.0")
     ],
     targets: [
       .target(

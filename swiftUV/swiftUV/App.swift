@@ -16,8 +16,8 @@ struct SwiftUVApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   
   var body: some Scene {
-    WithPerceptionTracking {
-      WindowGroup {
+    WindowGroup {
+      WithPerceptionTracking {
         ContentView(
           viewModel: UVViewModel()
         )
