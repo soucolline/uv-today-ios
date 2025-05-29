@@ -15,9 +15,11 @@ import Perception
 import UVClient
 
 @Perceptible
-public class UVViewModel {
-  @PerceptionIgnored @Dependency(\.uvClient) public var uvClient: UVClient
-  @PerceptionIgnored @Dependency(\.locationManager) public var locationManager: LocationManager
+public class UVScreenViewModel {
+  @PerceptionIgnored
+  @Dependency(\.uvClient) public var uvClient: UVClient
+  @PerceptionIgnored
+  @Dependency(\.locationManager) public var locationManager: LocationManager
   
   public var uvIndex: Index = 0
   public var cityName = "loading"
