@@ -1,4 +1,4 @@
-// swift-tools-version: 5.6
+// swift-tools-version: 6.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -8,7 +8,7 @@ let dependencies: Target.Dependency = .product(name: "Dependencies", package: "s
 
 let package = Package(
     name: "uv-today-ios",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v16)],
     products: [
       .library(name: "AppFeature", targets: ["AppFeature"]),
       .library(name: "LocationManager", targets: ["LocationManager"]),

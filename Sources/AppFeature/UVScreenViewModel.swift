@@ -14,6 +14,7 @@ import Models
 import Perception
 import UVClient
 
+@MainActor
 @Perceptible
 public class UVScreenViewModel {
   @PerceptionIgnored
@@ -99,8 +100,8 @@ public class UVScreenViewModel {
       return
     }
     
-    async let fetchUV = uvClient.fetchUVIndex(UVClientRequest(lat: location.latitude, long: location.longitude))
-    async let fetchCityName = uvClient.fetchCityName(location)
+    async let fetchUV = uvClient.fetchUVIndex(request: UVClientRequest(lat: location.latitude, long: location.longitude))
+    async let fetchCityName = uvClient.fetchCityName(location: location)
     
     do {
       let (index, name) = try await (fetchUV, fetchCityName)

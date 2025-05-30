@@ -6,7 +6,7 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
-public struct Location: Equatable {
+public struct Location: Equatable, Sendable {
   public let latitude: Double
   public let longitude: Double
   

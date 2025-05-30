@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AttributionResponse: Equatable {
+public struct AttributionResponse: Equatable, Sendable {
   public let logo: URL
   public let link: URL
   
