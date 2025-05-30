@@ -9,12 +9,12 @@
 import Perception
 import SwiftUI
 
-public struct ContentView: View {
+public struct UVScreen: View {
   @Environment(\.scenePhase) var scenePhase
   
-  @Perception.Bindable private var viewModel: UVViewModel
+  @Perception.Bindable private var viewModel: UVScreenViewModel
   
-  public init(viewModel: UVViewModel) {
+  public init(viewModel: UVScreenViewModel) {
     self.viewModel = viewModel
   }
   
@@ -121,5 +121,5 @@ public struct ContentView: View {
 }
 
 #Preview {
-  ContentView(viewModel: UVViewModel())
+  UVScreen(viewModel: UVScreenViewModel())
 }

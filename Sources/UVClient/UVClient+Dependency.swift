@@ -9,7 +9,7 @@ import Foundation
 import Dependencies
 
 enum UVClientKey: DependencyKey {
-  static let liveValue = UVClient.live
+  static let liveValue: any UVClient = UVClientImpl()
 }
 
 public extension DependencyValues {

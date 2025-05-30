@@ -6,24 +6,49 @@
 //  Copyright © 2022 Thomas Guilleminot. All rights reserved.
 //
 
+import CoreLocation
 import Models
+import WeatherKit
 
-public struct UVClientRequest {
-  public let lat: Double
-  public let long: Double
-  
-  public init(lat: Double, long: Double) {
-    self.lat = lat
-    self.long = long
-  }
+public protocol UVClient: Sendable {
+  func fetchUVIndex(request: UVClientRequest) async throws -> Index
+  func fetchCityName(location: Models.Location) async throws -> String
+  func fetchWeatherKitAttribution() async throws -> AttributionResponse
 }
 
-public struct UVClient {
-  public var fetchUVIndex: @Sendable (UVClientRequest) async throws -> Index
-  public var fetchCityName: @Sendable (Models.Location) async throws -> String
-  public var fetchWeatherKitAttribution: @Sendable () async throws -> AttributionResponse
+public final class UVClientImpl: UVClient {
+  public func fetchUVIndex(request: UVClientRequest) async throws -> Index {
+    let clLocation = CLLocation(latitude: request.lat, longitude: request.long)
+    let weather = try? await WeatherService.shared.weather(for: clLocation, including: .current)
+    
+    guard let weather else { throw UVError.noWeatherAvailable }
+    
+    return weather.uvIndex.value
+  }
   
-  struct Failure: Error, Equatable {
-    let errorDescription: String
+  public func fetchCityName(location: Location) async throws -> String {
+    try await withUnsafeThrowingContinuation { continuation in
+      let geocoder = CLGeocoder()
+      let clLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+      geocoder.reverseGeocodeLocation(clLocation) { placemarks, error in
+        guard error == nil else {
+          continuation.resume(throwing: error!)
+          return
+        }
+        
+        let cityName = placemarks?.first?.locality ?? "Unknown"
+        continuation.resume(returning: cityName)
+      }
+    }
+  }
+  
+  public func fetchWeatherKitAttribution() async throws -> AttributionResponse {
+    do {
+      let attribution = try await WeatherService.shared.attribution
+      
+      return AttributionResponse(logo: attribution.combinedMarkDarkURL, link: attribution.legalPageURL)
+    } catch {
+      throw UVError.noAttributionAvailable
+    }
   }
 }

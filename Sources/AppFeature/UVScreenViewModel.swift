@@ -14,10 +14,13 @@ import Models
 import Perception
 import UVClient
 
+@MainActor
 @Perceptible
-public class UVViewModel {
-  @PerceptionIgnored @Dependency(\.uvClient) public var uvClient: UVClient
-  @PerceptionIgnored @Dependency(\.locationManager) public var locationManager: LocationManager
+public class UVScreenViewModel {
+  @PerceptionIgnored
+  @Dependency(\.uvClient) public var uvClient: UVClient
+  @PerceptionIgnored
+  @Dependency(\.locationManager) public var locationManager: LocationManager
   
   public var uvIndex: Index = 0
   public var cityName = "loading"
@@ -97,8 +100,8 @@ public class UVViewModel {
       return
     }
     
-    async let fetchUV = uvClient.fetchUVIndex(UVClientRequest(lat: location.latitude, long: location.longitude))
-    async let fetchCityName = uvClient.fetchCityName(location)
+    async let fetchUV = uvClient.fetchUVIndex(request: UVClientRequest(lat: location.latitude, long: location.longitude))
+    async let fetchCityName = uvClient.fetchCityName(location: location)
     
     do {
       let (index, name) = try await (fetchUV, fetchCityName)

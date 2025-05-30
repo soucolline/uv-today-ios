@@ -9,7 +9,7 @@ import Dependencies
 import Foundation
 
 private enum LocationManagerKey: DependencyKey {
-  static var liveValue = LocationManager()
+  static let liveValue = LocationManager()
 }
 
 public extension DependencyValues {
