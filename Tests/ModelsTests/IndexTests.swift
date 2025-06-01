@@ -6,40 +6,43 @@
 //  Copyright © 2018 Thomas Guilleminot. All rights reserved.
 //
 
-import XCTest
 import Models
+import UIKit
+import Testing
 
-class IndexTests: XCTestCase {
+class IndexTests {
   
-  func testGetColorFromIndex() {
+  @Test
+  func getColorFromIndex() {
     for index in 0...15 {
       switch index {
-      case 0: XCTAssertEqual(index.associatedColor, UIColor.systemBlue)
-      case 1, 2: XCTAssertEqual(index.associatedColor, UIColor.systemGreen)
-      case 3, 4, 5: XCTAssertEqual(index.associatedColor, UIColor.systemYellow)
-      case 6, 7: XCTAssertEqual(index.associatedColor, UIColor(red: 0.906, green: 0.373, blue: 0.184, alpha: 1))
-      case 8, 9, 10: XCTAssertEqual(index.associatedColor, UIColor.systemRed)
-      case 11, 12, 13, 14: XCTAssertEqual(index.associatedColor, UIColor.systemPurple)
-      default : XCTAssertEqual(index.associatedColor, UIColor.black)
+      case 0: #expect(index.associatedColor == UIColor.systemBlue)
+      case 1, 2: #expect(index.associatedColor == UIColor.systemGreen)
+      case 3, 4, 5: #expect(index.associatedColor == UIColor.systemYellow)
+      case 6, 7: #expect(index.associatedColor == UIColor(red: 0.906, green: 0.373, blue: 0.184, alpha: 1))
+      case 8, 9, 10: #expect(index.associatedColor == UIColor.systemRed)
+      case 11, 12, 13, 14: #expect(index.associatedColor == UIColor.systemPurple)
+      default : #expect(index.associatedColor == UIColor.black)
       }
     }
   }
   
-  func testGetDescriptionFromIndex() {
+  @Test
+  func getDescriptionFromIndex() {
     for index in 0...15 {
       switch index {
       case 0, 1, 2:
-        XCTAssertEqual(index.associatedDescription, "lowUV.desc".localized)
+        #expect(index.associatedDescription == "lowUV.desc".localized)
       case 3, 4, 5:
-        XCTAssertEqual(index.associatedDescription, "middleUV.desc".localized)
+        #expect(index.associatedDescription == "middleUV.desc".localized)
       case 6, 7:
-        XCTAssertEqual(index.associatedDescription, "highUV.desc".localized)
+        #expect(index.associatedDescription == "highUV.desc".localized)
       case 8, 9, 10:
-        XCTAssertEqual(index.associatedDescription, "veryHighUV.desc".localized)
+        #expect(index.associatedDescription == "veryHighUV.desc".localized)
       case 11, 12, 13, 14:
-        XCTAssertEqual(index.associatedDescription, "extremeUV.desc".localized)
+        #expect(index.associatedDescription == "extremeUV.desc".localized)
       default:
-        XCTAssertEqual(index.associatedDescription, "error.desc".localized)
+        #expect(index.associatedDescription == "error.desc".localized)
       }
     }
   }

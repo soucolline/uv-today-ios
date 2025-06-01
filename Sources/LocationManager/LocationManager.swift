@@ -13,7 +13,7 @@ public enum LocationManagerError: Error {
   case notAuthorised
 }
 
-public class LocationManager: NSObject, CLLocationManagerDelegate {
+public class LocationManager: NSObject, CLLocationManagerDelegate, @unchecked Sendable {
   public var authorizationStatus = PassthroughSubject<Result<CLAuthorizationStatus, Error>, Never>()
   public var location = PassthroughSubject<CLLocation, Error>()
   
