@@ -14,7 +14,6 @@ import Models
 import Perception
 import UVClient
 
-@MainActor
 @Perceptible
 public class UVScreenViewModel {
   @PerceptionIgnored

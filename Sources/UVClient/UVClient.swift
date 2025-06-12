@@ -17,7 +17,7 @@ public protocol UVClient: Sendable {
 }
 
 public final class UVClientImpl: UVClient {
-  public func fetchUVIndex(request: UVClientRequest) async throws -> Index {
+  @concurrent public func fetchUVIndex(request: UVClientRequest) async throws -> Index {
     let clLocation = CLLocation(latitude: request.lat, longitude: request.long)
     let weather = try? await WeatherService.shared.weather(for: clLocation, including: .current)
     
@@ -26,7 +26,7 @@ public final class UVClientImpl: UVClient {
     return weather.uvIndex.value
   }
   
-  public func fetchCityName(location: Location) async throws -> String {
+  @concurrent public func fetchCityName(location: Location) async throws -> String {
     try await withUnsafeThrowingContinuation { continuation in
       let geocoder = CLGeocoder()
       let clLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
@@ -42,7 +42,7 @@ public final class UVClientImpl: UVClient {
     }
   }
   
-  public func fetchWeatherKitAttribution() async throws -> AttributionResponse {
+  @concurrent public func fetchWeatherKitAttribution() async throws -> AttributionResponse {
     do {
       let attribution = try await WeatherService.shared.attribution
       

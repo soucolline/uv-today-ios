@@ -1,4 +1,4 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -28,12 +28,18 @@ let package = Package(
           "UVClient",
           perception,
           dependencies
+        ],
+        swiftSettings: [
+          .defaultIsolation(MainActor.self)
         ]
       ),
       .target(
         name: "LocationManager",
         dependencies: [
           dependencies
+        ],
+        swiftSettings: [
+          .defaultIsolation(MainActor.self)
         ]
       ),
       .target(name: "Models"),
@@ -42,12 +48,18 @@ let package = Package(
         dependencies: [
           "Models",
           dependencies
+        ],
+        swiftSettings: [
+          .defaultIsolation(MainActor.self)
         ]
       ),
       .testTarget(
         name: "ModelsTests",
         dependencies: [
           "Models"
+        ],
+        swiftSettings: [
+          .defaultIsolation(MainActor.self)
         ]
       )
     ]
