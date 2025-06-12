@@ -40,6 +40,8 @@ public struct UVScreen: View {
                 .frame(width: 20, height: 20, alignment: .center)
                 .font(Font.title.weight(Font.Weight.thin))
                 .foregroundColor(.white)
+                .padding()
+                .glassEffectCustom()
                 .padding(.trailing, 20)
             }
             .disabled(viewModel.isLocationRefused)
@@ -47,7 +49,7 @@ public struct UVScreen: View {
 
           HStack {
             Text(viewModel.cityName)
-              .padding(.top, 33)
+              .padding(.top, 12)
               .font(.system(size: 38, weight: .bold, design: .rounded))
               .foregroundColor(.white)
               .padding(.horizontal, 20)
@@ -122,4 +124,15 @@ public struct UVScreen: View {
 
 #Preview {
   UVScreen(viewModel: UVScreenViewModel())
+}
+
+extension View {
+  @ViewBuilder
+  func glassEffectCustom() -> some View {
+    if #available(iOS 26, *) {
+      glassEffect()
+    } else {
+      self
+    }
+  }
 }
