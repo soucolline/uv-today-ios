@@ -12,42 +12,28 @@ import SwiftUI
 public struct UVScreen: View {
   @Environment(\.scenePhase) var scenePhase
   
-  @Perception.Bindable private var viewModel: UVScreenViewModel
+  @Bindable private var viewModel: UVScreenViewModel
   
   public init(viewModel: UVScreenViewModel) {
     self.viewModel = viewModel
   }
   
   public var body: some View {
-    WithPerceptionTracking {
+    NavigationStack {
       ZStack {
         Rectangle()
           .animation(.easeIn(duration: 0.5), value: viewModel.uvIndex.associatedColor)
           .foregroundColor(Color(viewModel.uvIndex.associatedColor))
           .edgesIgnoringSafeArea(.all)
-
+        
         VStack {
           HStack {
             Spacer()
-            
-            Button {
-              Task {
-                await viewModel.getUVRequest()
-              }
-            } label: {
-              Image(systemName: "arrow.clockwise")
-                .resizable()
-                .frame(width: 20, height: 20, alignment: .center)
-                .font(Font.title.weight(Font.Weight.thin))
-                .foregroundColor(.white)
-                .padding(.trailing, 20)
-            }
-            .disabled(viewModel.isLocationRefused)
           }
-
+          
           HStack {
             Text(viewModel.cityName)
-              .padding(.top, 33)
+              .padding(.top, 12)
               .font(.system(size: 38, weight: .bold, design: .rounded))
               .foregroundColor(.white)
               .padding(.horizontal, 20)
@@ -56,14 +42,14 @@ public struct UVScreen: View {
               .redacted(reason: viewModel.getCityNameRequestInFlight ? .placeholder : [])
             Spacer()
           }
-
+          
           Spacer()
-
+          
           Text(String(viewModel.uvIndex))
             .foregroundColor(.white)
             .font(.system(size: 80, weight: .semibold, design: .rounded))
             .redacted(reason: viewModel.weatherRequestInFlight ? .placeholder : [])
-
+          
           Spacer()
           
           if viewModel.isLocationRefused {
@@ -104,8 +90,8 @@ public struct UVScreen: View {
       .alert(isPresented: $viewModel.shouldShowErrorPopup) {
         Alert(title: Text("app.label.error"), message: Text(viewModel.errorText))
       }
-      .onChange(of: scenePhase) { value in
-        switch value {
+      .onChange(of: scenePhase) { _, newValue in
+        switch newValue {
         case .active: viewModel.onAppear()
         case .inactive, .background: viewModel.onDisappear()
         @unknown default: break
@@ -116,10 +102,38 @@ public struct UVScreen: View {
           await viewModel.getAtribution()
         }
       }
+      .toolbar {
+        ToolbarItem {
+          Button {
+            Task {
+              await viewModel.getUVRequest()
+            }
+          } label: {
+            Image(systemName: "arrow.clockwise")
+              .resizable()
+              .frame(width: 20, height: 20, alignment: .center)
+              .font(Font.title.weight(Font.Weight.bold))
+              .toolbarColor()
+              .padding()
+          }
+          .disabled(viewModel.isLocationRefused)
+        }
+      }
     }
   }
 }
 
 #Preview {
   UVScreen(viewModel: UVScreenViewModel())
+}
+
+extension View {
+  @ViewBuilder
+  func toolbarColor() -> some View {
+    if #unavailable(iOS 26) {
+      foregroundColor(.white)
+    } else {
+      self
+    }
+  }
 }

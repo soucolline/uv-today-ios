@@ -17,11 +17,9 @@ struct SwiftUVApp: App {
   
   var body: some Scene {
     WindowGroup {
-      WithPerceptionTracking {
-        UVScreen(
-          viewModel: UVScreenViewModel()
-        )
-      }
+      UVScreen(
+        viewModel: UVScreenViewModel()
+      )
     }
   }
 }
