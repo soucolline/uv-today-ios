@@ -6,7 +6,6 @@
 //  Copyright © 2022 Thomas Guilleminot. All rights reserved.
 //
 
-import Perception
 import SwiftUI
 
 public struct UVScreen: View {

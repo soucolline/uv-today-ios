@@ -11,7 +11,6 @@ import Dependencies
 import Foundation
 import LocationManager
 import Models
-import Perception
 import UVClient
 
 @Observable
