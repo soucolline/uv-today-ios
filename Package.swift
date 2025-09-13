@@ -3,12 +3,11 @@
 
 import PackageDescription
 
-let perception: Target.Dependency = .product(name: "Perception", package: "swift-perception")
 let dependencies: Target.Dependency = .product(name: "Dependencies", package: "swift-dependencies")
 
 let package = Package(
     name: "uv-today-ios",
-    platforms: [.iOS(.v16)],
+    platforms: [.iOS(.v18)],
     products: [
       .library(name: "AppFeature", targets: ["AppFeature"]),
       .library(name: "LocationManager", targets: ["LocationManager"]),
@@ -16,7 +15,6 @@ let package = Package(
       .library(name: "UVClient", targets: ["UVClient"])
     ],
     dependencies: [
-      .package(url: "https://github.com/pointfreeco/swift-perception", exact: "1.6.0"),
       .package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.9.2")
     ],
     targets: [
@@ -26,7 +24,6 @@ let package = Package(
           "LocationManager",
           "Models",
           "UVClient",
-          perception,
           dependencies
         ],
         swiftSettings: [

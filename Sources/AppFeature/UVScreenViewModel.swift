@@ -14,11 +14,11 @@ import Models
 import Perception
 import UVClient
 
-@Perceptible
+@Observable
 public class UVScreenViewModel {
-  @PerceptionIgnored
+  @ObservationIgnored
   @Dependency(\.uvClient) public var uvClient: UVClient
-  @PerceptionIgnored
+  @ObservationIgnored
   @Dependency(\.locationManager) public var locationManager: LocationManager
   
   public var uvIndex: Index = 0
