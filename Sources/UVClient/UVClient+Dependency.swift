@@ -8,8 +8,8 @@
 import Foundation
 import Dependencies
 
-enum UVClientKey: DependencyKey {
-  static let liveValue: any UVClient = UVClientImpl()
+package enum UVClientKey: DependencyKey {
+  package static let liveValue: any UVClient = UVClientImpl()
 }
 
 public extension DependencyValues {

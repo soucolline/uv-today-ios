@@ -16,9 +16,9 @@ import UVClient
 @Observable
 public class UVScreenViewModel {
   @ObservationIgnored
-  @Dependency(\.uvClient) public var uvClient: UVClient
+  @Dependency(UVClientKey.self) public var uvClient: UVClient
   @ObservationIgnored
-  @Dependency(\.locationManager) public var locationManager: LocationManager
+  @Dependency(LocationManagerKey.self) public var locationManager: LocationManager
   
   public var uvIndex: Index = 0
   public var cityName = "loading"
