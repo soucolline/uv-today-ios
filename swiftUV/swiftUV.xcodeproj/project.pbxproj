@@ -11,7 +11,7 @@
 		E989314F28C14F3300F973FD /* UVClient in Frameworks */ = {isa = PBXBuildFile; productRef = E989314E28C14F3300F973FD /* UVClient */; };
 		E989315128C1541700F973FD /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E989315028C1541700F973FD /* AppFeature */; };
 		E9AF34A3289C606D00C0F763 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF34A2289C606D00C0F763 /* App.swift */; };
-		E9CB9A32291AEA71008A44DB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E9CB9A31291AEA71008A44DB /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		E9CB9A32291AEA71008A44DB /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = E9CB9A31291AEA71008A44DB /* FirebaseAnalyticsCore */; };
 		E9CB9A34291AEA71008A44DB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = E9CB9A33291AEA71008A44DB /* FirebaseCrashlytics */; };
 		E9CB9A36291AEAB3008A44DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9CB9A35291AEAB3008A44DB /* GoogleService-Info.plist */; };
 		EBCAA0451E7C30F000DC2E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBCAA0471E7C30F000DC2E9D /* Localizable.strings */; };
@@ -60,7 +60,7 @@
 			files = (
 				E989315128C1541700F973FD /* AppFeature in Frameworks */,
 				E989314D28C14F2C00F973FD /* Models in Frameworks */,
-				E9CB9A32291AEA71008A44DB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				E9CB9A32291AEA71008A44DB /* FirebaseAnalyticsCore in Frameworks */,
 				E9CB9A34291AEA71008A44DB /* FirebaseCrashlytics in Frameworks */,
 				E989314F28C14F3300F973FD /* UVClient in Frameworks */,
 			);
@@ -181,7 +181,7 @@
 				E989314C28C14F2C00F973FD /* Models */,
 				E989314E28C14F3300F973FD /* UVClient */,
 				E989315028C1541700F973FD /* AppFeature */,
-				E9CB9A31291AEA71008A44DB /* FirebaseAnalyticsWithoutAdIdSupport */,
+				E9CB9A31291AEA71008A44DB /* FirebaseAnalyticsCore */,
 				E9CB9A33291AEA71008A44DB /* FirebaseCrashlytics */,
 			);
 			productName = swiftUV;
@@ -630,10 +630,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = AppFeature;
 		};
-		E9CB9A31291AEA71008A44DB /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+		E9CB9A31291AEA71008A44DB /* FirebaseAnalyticsCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E9CB9A30291AEA71008A44DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
+			productName = FirebaseAnalyticsCore;
 		};
 		E9CB9A33291AEA71008A44DB /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
