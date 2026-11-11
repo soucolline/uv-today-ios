@@ -4,6 +4,10 @@
 import PackageDescription
 
 let dependencies: Target.Dependency = .product(name: "Dependencies", package: "swift-dependencies")
+let composableArchitecture: Target.Dependency = .product(
+  name: "ComposableArchitecture",
+  package: "swift-composable-architecture"
+)
 
 let package = Package(
     name: "uv-today-ios",
@@ -15,6 +19,7 @@ let package = Package(
       .library(name: "UVClient", targets: ["UVClient"])
     ],
     dependencies: [
+      .package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.26.2"),
       .package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.17.2")
     ],
     targets: [
@@ -24,19 +29,14 @@ let package = Package(
           "LocationManager",
           "Models",
           "UVClient",
-          dependencies
-        ],
-        swiftSettings: [
-          .defaultIsolation(MainActor.self)
+          composableArchitecture
         ]
       ),
       .target(
         name: "LocationManager",
         dependencies: [
+          "Models",
           dependencies
-        ],
-        swiftSettings: [
-          .defaultIsolation(MainActor.self)
         ]
       ),
       .target(name: "Models"),
@@ -50,6 +50,7 @@ let package = Package(
           .defaultIsolation(MainActor.self)
         ]
       ),
+      .testTarget(name: "AppFeatureTests", dependencies: ["AppFeature"]),
       .testTarget(
         name: "ModelsTests",
         dependencies: [

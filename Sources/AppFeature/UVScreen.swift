@@ -6,15 +6,17 @@
 //  Copyright © 2022 Thomas Guilleminot. All rights reserved.
 //
 
+import ComposableArchitecture
+import Models
 import SwiftUI
 
 public struct UVScreen: View {
   @Environment(\.scenePhase) var scenePhase
   
-  @Bindable private var viewModel: UVScreenViewModel
+  private let store: StoreOf<UVFeature>
   
-  public init(viewModel: UVScreenViewModel) {
-    self.viewModel = viewModel
+  public init(store: StoreOf<UVFeature>) {
+    self.store = store
   }
   
   public var body: some View {
@@ -30,8 +32,8 @@ public struct UVScreen: View {
     NavigationStack {
       ZStack {
         Rectangle()
-          .animation(.easeIn(duration: 0.5), value: viewModel.uvIndex.associatedColor)
-          .foregroundColor(Color(viewModel.uvIndex.associatedColor))
+          .animation(.easeIn(duration: 0.5), value: store.uvIndex.associatedColor)
+          .foregroundColor(Color(store.uvIndex.associatedColor))
           .edgesIgnoringSafeArea(.all)
         
         VStack {
@@ -40,29 +42,29 @@ public struct UVScreen: View {
           }
           
           HStack {
-            Text(viewModel.cityName)
+            Text(store.cityName)
               .padding(.top, 12)
               .font(.system(size: 38, weight: .bold, design: .rounded))
               .foregroundColor(.white)
               .padding(.horizontal, 20)
               .lineLimit(1)
               .minimumScaleFactor(0.2)
-              .redacted(reason: viewModel.getCityNameRequestInFlight ? .placeholder : [])
+              .redacted(reason: store.loading != nil ? .placeholder : [])
             Spacer()
           }
           
           Spacer()
           
-          Text(String(viewModel.uvIndex))
+          Text(String(store.uvIndex))
             .foregroundColor(.white)
             .font(.system(size: 80, weight: .semibold, design: .rounded))
-            .redacted(reason: viewModel.weatherRequestInFlight ? .placeholder : [])
+            .redacted(reason: store.loading != nil ? .placeholder : [])
           
           Spacer()
           
-          if viewModel.isLocationRefused {
+          if store.isLocationRefused {
             Button {
-              UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+              store.send(.openSettingsButtonTapped)
             } label: {
               Label("app.error.openSettings".localized, systemImage: "location")
             }
@@ -72,14 +74,14 @@ public struct UVScreen: View {
             .cornerRadius(8)
           }
           
-          Text(viewModel.uvIndex.associatedDescription)
+          Text(store.uvIndex.associatedDescription)
             .multilineTextAlignment(.center)
             .padding(20)
             .foregroundColor(.white)
             .font(.system(size: 12))
-            .redacted(reason: viewModel.weatherRequestInFlight ? .placeholder : [])
+            .redacted(reason: store.loading != nil ? .placeholder : [])
           
-          if let attributionLogo = viewModel.attributionLogo {
+          if let attributionLogo = store.attribution?.logo {
             AsyncImage(url: attributionLogo, content: { image in
               image
                 .resizable()
@@ -90,33 +92,37 @@ public struct UVScreen: View {
             })
           }
           
-          if let attributionLink = viewModel.attributionLink {
+          if let attributionLink = store.attribution?.link {
             Link(destination: attributionLink, label: { Text("Other data sources")})
               .foregroundColor(.white)
           }
         }
       }
-      .alert(isPresented: $viewModel.shouldShowErrorPopup) {
-        Alert(title: Text("app.label.error"), message: Text(viewModel.errorText))
+      .alert(
+        "app.label.error",
+        isPresented: Binding(
+          get: { store.errorText != nil },
+          set: { if !$0 { store.send(.errorDismissed) } }
+        )
+      ) {
+        Button("OK", role: .cancel) {}
+      } message: {
+        Text(store.errorText ?? "")
       }
-      .onChange(of: scenePhase) { _, newValue in
-        switch newValue {
-        case .active: viewModel.onAppear()
-        case .inactive, .background: viewModel.onDisappear()
+      .onChange(of: scenePhase, initial: true) { _, phase in
+        switch phase {
+        case .active: store.send(.sceneBecameActive)
+        case .background: store.send(.sceneEnteredBackground)
+        case .inactive: break
         @unknown default: break
         }
       }
-      .task {
-        if #available(iOS 16.0, *) {
-          await viewModel.getAtribution()
-        }
-      }
+      .onDisappear { store.send(.screenDisappeared) }
+      .task { await store.send(.screenTask).finish() }
       .toolbar {
         ToolbarItem {
           Button {
-            Task {
-              await viewModel.getUVRequest()
-            }
+            store.send(.refreshButtonTapped)
           } label: {
             Image(systemName: "arrow.clockwise")
               .resizable()
@@ -125,7 +131,7 @@ public struct UVScreen: View {
               .toolbarColor()
               .padding()
           }
-          .disabled(viewModel.isLocationRefused)
+          .disabled(store.isLocationRefused || store.loading != nil)
         }
       }
     }
@@ -133,7 +139,11 @@ public struct UVScreen: View {
 }
 
 #Preview {
-  UVScreen(viewModel: UVScreenViewModel())
+  UVScreen(
+    store: Store(initialState: UVFeature.State()) {
+      Reduce<UVFeature.State, UVFeature.Action> { _, _ in .none }
+    }
+  )
 }
 
 extension View {

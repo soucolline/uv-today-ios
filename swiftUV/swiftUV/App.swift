@@ -7,6 +7,7 @@
 //
 
 import AppFeature
+import ComposableArchitecture
 import SwiftUI
 import FirebaseCore
 
@@ -16,10 +17,16 @@ struct SwiftUVApp: App {
   
   var body: some Scene {
     WindowGroup {
-      UVScreen(
-        viewModel: UVScreenViewModel()
-      )
+      UVScene()
     }
+  }
+}
+
+private struct UVScene: View {
+  @State private var store = Store(initialState: UVFeature.State()) { UVFeature() }
+
+  var body: some View {
+    UVScreen(store: store)
   }
 }
 
