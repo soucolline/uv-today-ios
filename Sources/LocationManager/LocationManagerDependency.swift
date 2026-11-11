@@ -8,8 +8,8 @@
 import Dependencies
 import Foundation
 
-private enum LocationManagerKey: DependencyKey {
-  static let liveValue = LocationManager()
+package enum LocationManagerKey: DependencyKey {
+  package static let liveValue = LocationManager()
 }
 
 public extension DependencyValues {

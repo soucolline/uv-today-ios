@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -15,7 +15,7 @@ let package = Package(
       .library(name: "UVClient", targets: ["UVClient"])
     ],
     dependencies: [
-      .package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.9.2")
+      .package(url: "https://github.com/pointfreeco/swift-dependencies", exact: "1.17.2")
     ],
     targets: [
       .target(

@@ -18,6 +18,15 @@ public struct UVScreen: View {
   }
   
   public var body: some View {
+    if #available(iOS 27.1, *) {
+      navigation
+        .toolbarVerticalBehavior(.disabled)
+    } else {
+      navigation
+    }
+  }
+
+  private var navigation: some View {
     NavigationStack {
       ZStack {
         Rectangle()
@@ -64,6 +73,7 @@ public struct UVScreen: View {
           }
           
           Text(viewModel.uvIndex.associatedDescription)
+            .multilineTextAlignment(.center)
             .padding(20)
             .foregroundColor(.white)
             .font(.system(size: 12))
